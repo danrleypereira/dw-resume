@@ -1,0 +1,11 @@
+npm init
+npm install express
+npm install @types/express -D
+npm install ts-node -D //rodar código typescript
+npm install ts-node-dev -D //restart quando muda o código
+npm install typescript -D
+npx tsc --init  //criar arquivo de configuração do typescript
+
+
+
+
