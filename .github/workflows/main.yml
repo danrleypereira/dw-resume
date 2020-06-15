@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-web:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,26 +25,10 @@ jobs:
       with:
         node-version: 10
 
-    # Runs a single command using the runners shell
-    - name: Go to Web directory
-      run: cd web/
-
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Test and build web app
       run: |
         npm install
         npm run test
         npm run build
-        echo test, and deploy your project.
-        
-    # Runs a single command using the runners shell
-    - name: Go to server directory
-      run: cd ../server/
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        npm install
-        npm run test
-        npm run start
         echo test, and deploy your project.
