@@ -1,0 +1,48 @@
+.social-midia-aside {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.social-midia-icon {
+    height: 48px;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+ /* Small devices until medium devices (landscape phones, 576px and up) */
+@media (max-width: 991.98px) {
+    .social-midia-aside {
+        flex-direction: row;
+        align-items: center;
+        height: 70px;
+        width: 100vw;
+        bottom: 0;
+    }
+    .social-midia-icon {
+        margin: 0px 10px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .social-midia-aside {
+        flex-direction: column;
+        height: 100vh;
+        width: 70px;
+        right: 0;
+    }
+    .social-midia-icon {
+        margin: 10px 0;
+    }
+ }
+
+
+
+  
