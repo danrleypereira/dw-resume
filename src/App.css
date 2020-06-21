@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+ /* Small devices until medium devices (landscape phones, 576px and up) */
+ @media (max-width: 991.98px) {
+  .App {
+    padding-bottom: 70px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .App {
+    padding: 0 70px;
+  }
+}

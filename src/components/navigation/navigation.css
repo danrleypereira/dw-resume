@@ -1,0 +1,54 @@
+.navigation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
+.opened {
+    width: 20vw;
+}
+.closed {
+    width: 70px;
+}
+
+.menu-icon {
+    height: 48px;
+    pointer-events: none;
+}
+
+ /* Small devices until medium devices (landscape phones, 576px and up) */
+@media (max-width: 991.98px) {
+    .navigation {
+        flex-direction: row;
+        align-items: center;
+        width: 100vw;
+        top: 0;
+    }
+    .menu-icon {
+        margin: 0px 10px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .navigation {
+        flex-direction: column;
+        height: 100vh;
+        left: 0;
+    }
+    .menu-icon {
+        margin: 10px 0;
+    }
+ }
+
+
+
+  

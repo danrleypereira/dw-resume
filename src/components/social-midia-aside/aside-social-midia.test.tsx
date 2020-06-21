@@ -16,6 +16,7 @@ test('renders social midia images and links', () => {
         expect(images[i])
           .toHaveAttribute('src', sources[i]);
     }  
+        
    
 //   expect(getByAltText('icon')).toBeInTheDocument();
 //   const linkElement = getByAltText(/facebook/i);
