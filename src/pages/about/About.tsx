@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
 import './about.css';
 
 import AsideLinks from '../../components/navigation/aside-links';
