@@ -14,13 +14,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -34,5 +33,18 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+ /* Small devices until medium devices (landscape phones, 576px and up) */
+ @media (max-width: 991.98px) {
+  .App {
+    padding-bottom: 70px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .App {
   }
 }
