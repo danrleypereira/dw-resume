@@ -2,24 +2,17 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Navigation from './navigation';
 
-test('renders social midia images and links', () => {
+test('Hide and show correct menu when hover and mouseLeave', () => {
   const { container } = render(<Navigation />);
   
-  let openedMenu = container.getElementsByClassName("opened");
-  let closedMenu = container.getElementsByClassName("closed");
+  let openedMenu = document.getElementById("opened");
+  let closedMenu = document.getElementById("closed");
 
   fireEvent.mouseOver(container);
-  expect(openedMenu[0]).toHaveStyle('display: block;');
-  
-  // expect(closedMenu[0]).toHaveStyle('display: none;');
-  // console.log(closedMenu[0].className);
+  expect(openedMenu).toHaveStyle('display: block;');
+  // expect(closedMenu).toHaveClass('hide');
 
   fireEvent.mouseLeave(container);
-  expect(openedMenu[0]).toHaveClass('hide opened');
-  expect(closedMenu[0]).toHaveClass('show closed');
-        
-   
-//   expect(getByAltText('icon')).toBeInTheDocument();
-//   const linkElement = getByAltText(/facebook/i);
-//   expect(linkElement).toBeInTheDocument();
+  expect(openedMenu).toHaveClass('hide');
+  expect(closedMenu).toHaveClass('show');
 });

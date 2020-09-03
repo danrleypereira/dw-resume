@@ -1,0 +1,21 @@
+.wrap-div {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.about {
+    width: 80vw;
+    height: 100vh;
+    left: 0;
+    border-left: 3px dashed black;
+}
+
+.aside {
+    width: 20vw;
+    height: 100vh;
+    left: 0;
+}

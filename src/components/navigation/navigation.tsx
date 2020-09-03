@@ -1,43 +1,59 @@
 import React from 'react';
-import menuIconMobile from '../../assets/navigation/three-dots.svg';
 import menuIcon from '../../assets/navigation/three-parallel-lines.svg';
+import perfil from '../../assets/perfil1-nav.png';
+
+import telephone from '../../assets/navigation/telephone.png';
+import glasses from '../../assets/navigation/glasses.png';
+import account from '../../assets/navigation/account-50.png';
+import briefcase from '../../assets/navigation/briefcase.svg';
+
 import './navigation.css';
 
 function Navigation() {
   let showOnHoverEvent = function() {
-    let openedMenu = document.getElementsByClassName("opened");
-    let closedMenu = document.getElementsByClassName("closed");
-    openedMenu[0].className = "show opened";
-    closedMenu[0].className = "hide closed";
+    let openedMenu = document.getElementById("opened");
+    let closedMenu = document.getElementById("closed");
+    //question mark make sure that is not undefined or null
+    // console.log(closedMenu?.className);
+    //exclamation mark says that I am sure that isn't null
+    openedMenu!.className = "show";
+    closedMenu!.className = "hide";    
   };
   let hideOnLeaveEvent = function() {
-    let openedMenu = document.getElementsByClassName("opened");
-    let closedMenu = document.getElementsByClassName("closed");
-    openedMenu[0].className = "hide opened";
-    closedMenu[0].className = "show closed";
+    let openedMenu = document.getElementById("opened");
+    let closedMenu = document.getElementById("closed");
+    openedMenu!.className = "hide";
+    closedMenu!.className = "show";
   };
 
   return (
     <div className="navigation" onMouseOver={showOnHoverEvent} onMouseLeave={hideOnLeaveEvent}>
-      <div className="show closed">
+      <div id="closed" className="show">
         <img src={menuIcon} className="social-midia-icon" alt="github icon/link" />
       </div>
-      <div className="hide opened">
-        <a
+      <div id="opened" className="hide">
+      <a
           href="https://github.com/danrleywillyan"
           target="_blank"
           rel="noopener noreferrer"
-          title="github icon/link"
+          title="home link"
+          className="nav-profile"
         >
-          <img src={menuIconMobile} className="" alt="github icon/link" />
+          <div>
+            <img src={perfil} className="" alt="github icon/link" />
+            <h3>Danrley Pereira</h3>
+          </div>
         </a>
         <a
-          href="https://www.linkedin.com/in/danrley-willyan/"
+          href="https://danrleywillyan-blog.firebaseapp.com"
           target="_blank"
           rel="noopener noreferrer"
           title="linkedin icon/link"
         >
-            <img src={menuIconMobile} className="" alt="linkedin icon/link" />
+          <div className="nav-link">
+            <img src={account} className="" alt="github icon/link" />
+            <h3>Euzinho</h3>
+          </div>
         </a>
         <a
           href="https://www.instagram.com/danrleypereira/"
@@ -45,7 +61,20 @@ function Navigation() {
           rel="noopener noreferrer"
           title="instagram icon/link"
         >
-            <img src={menuIconMobile} className="" alt="instagram icon/link" />
+          <div className="nav-link">
+            <img src={glasses} className="" alt="github icon/link" />
+            <h3>Habilidades</h3>
+          </div>        </a>
+        <a
+          href="https://www.facebook.com/danrleywillyan"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="facebook icon/link"
+        >
+          <div className="nav-link">
+            <img src={briefcase} className="" alt="github icon/link" />
+            <h3>Projetos</h3>
+          </div>
         </a>
         <a
           href="https://www.facebook.com/danrleywillyan"
@@ -53,7 +82,10 @@ function Navigation() {
           rel="noopener noreferrer"
           title="facebook icon/link"
         >
-            <img src={menuIconMobile} className="" alt="facebook icon/link" />
+          <div className="nav-link">
+            <img src={telephone} className="" alt="github icon/link" />
+            <h3>Contato</h3>
+          </div>
         </a>
       </div>
     </div>
