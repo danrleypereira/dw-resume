@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import SocialMidiaAside from './aside-social-midia';
+import {SocialMidiaAside} from './aside-social-midia';
 
 test('renders social midia images and links', () => {
   const { container } = render(<SocialMidiaAside />);

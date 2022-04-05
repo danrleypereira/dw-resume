@@ -25,13 +25,15 @@
 }
 
 .nav-profile div {
+    padding-top: 10px;
     height: 40%;
     border-bottom: 3px double #000000;
 }
 
 .nav-profile div > img {
-    height: 80%;
+    height: 83%;
     width: 80%;
+    border-radius: 50%;
 }
 
 .nav-profile h3 {

@@ -1,5 +1,5 @@
 import React from 'react';
-import menuIcon from '../../assets/navigation/three-parallel-lines.svg';
+import menuIcon from 'assets/navigation/three-parallel-lines.svg';
 
 import './navigation.css';
 

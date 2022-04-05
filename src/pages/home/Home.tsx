@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import logo from 'assets/logo.svg';
 import './home.css';
 
-import SocialMidiaAside from '../../components/social-midia-aside/aside-social-midia';
-import Navigation from '../../components/navigation/navigation';
+import {SocialMidiaAside} from 'components/social-midia-aside/aside-social-midia';
+import Navigation from 'components/navigation/navigation';
 
 function Home() {
   return (

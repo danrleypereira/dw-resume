@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
 
-import AsideLinks from '../../components/navigation/aside-links';
+import AsideLinks from 'components/navigation/aside-links';
 
 function About() {
   return (

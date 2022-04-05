@@ -1,12 +1,12 @@
 import React from 'react';
-// import facebook from '../../assets/social-midias/facebook-48.svg';
-// import linkedin from '../../assets/social-midias/linkedin-48.svg';
-// import github from '../../assets/social-midias/github-48.svg';
-// import instagram from '../../assets/social-midias/instagram-48.svg';
-import facebook from '../../assets/social-midias/facebook.svg';
-import linkedin from '../../assets/social-midias/linkedin.svg';
-import github from '../../assets/social-midias/github.svg';
-import instagram from '../../assets/social-midias/instagram.svg';
+// import facebook from 'assets/social-midias/facebook-48.svg';
+// import linkedin from 'assets/social-midias/linkedin-48.svg';
+// import github from 'assets/social-midias/github-48.svg';
+// import instagram from 'assets/social-midias/instagram-48.svg';
+import facebook from 'assets/social-midias/facebook.svg';
+import linkedin from 'assets/social-midias/linkedin.svg';
+import github from 'assets/social-midias/github.svg';
+import instagram from 'assets/social-midias/instagram.svg';
 import './aside-social-midia.css';
 
 const socialMidias = [
@@ -62,4 +62,4 @@ function SocialMidiaAside() {
   );
 }
 
-export default SocialMidiaAside;
+export {SocialMidiaAside, socialMidias};
