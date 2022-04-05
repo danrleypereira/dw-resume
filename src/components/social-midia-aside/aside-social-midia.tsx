@@ -44,6 +44,7 @@ function SocialMidiaAside() {
         socialMidias.map((midia, index) => {
           return (
             <a
+              key={index}
               href={midia.link}
               target="_blank"
               rel="noopener noreferrer"

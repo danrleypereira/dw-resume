@@ -62,6 +62,7 @@ function AsideLinks() {
                 items.map((item, index) => {
                     return (
                         <a
+                            key={index}
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -81,6 +82,7 @@ function AsideLinks() {
                     socialMidias.map((midia, index) => {
                         return (
                             <a
+                                key={index}
                                 href={midia.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
