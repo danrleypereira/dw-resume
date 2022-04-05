@@ -7,10 +7,10 @@ test('renders social midia images and links', () => {
 //   console.log(getByAltText("icon"));
     let images = container.querySelectorAll(".social-midia-icon");
     const sources = [
-        'github-48.svg',
-        'linkedin-48.svg',
-        'instagram-48.svg',
-        'facebook-48.svg'
+        'github.svg',
+        'linkedin.svg',
+        'instagram.svg',
+        'facebook.svg'
     ];
     for(let i=0; i <images.length; i++) {
         expect(images[i])
