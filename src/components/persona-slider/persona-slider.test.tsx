@@ -2,22 +2,21 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import PersonaSlider from './persona-slider';
 
-test('renders social midia images and links', () => {
+test('renders some image from DW', () => {
   const { container } = render(<PersonaSlider />);
-//   console.log(getByAltText("icon"));
-    let images = container.querySelectorAll(".persona-slider");
+    let images = container.querySelectorAll(".img-flex");
+    let imageE = images[0]
     const sources = [
-        'engineer-min.png',
-        'educator-min.png',
-        'citizen-min.png',
+        'engineer1013_1265.png',
+        'educator1013_1267.png',
+        'citizen1013_1266.png',
     ];
-    for(let i=0; i <images.length; i++) {
-        expect(images[i])
-          .toHaveAttribute('src', sources[i]);
-    }  
-        
-   
-//   expect(getByAltText('icon')).toBeInTheDocument();
-//   const linkElement = getByAltText(/facebook/i);
-//   expect(linkElement).toBeInTheDocument();
+
+    let thereIsImage = false
+    thereIsImage = sources.some((image) => {
+      return imageE.getAttribute('src') === image
+    })
+
+    expect(thereIsImage).toBe(true)
+    expect(imageE).toBeInTheDocument();
 });
