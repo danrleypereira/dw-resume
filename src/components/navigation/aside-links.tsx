@@ -82,6 +82,7 @@ function AsideLinks() {
                     socialMidias.map((midia, index) => {
                         return (
                             <a
+                                className='block-a'
                                 key={index}
                                 href={midia.link}
                                 target="_blank"
