@@ -18,26 +18,26 @@ import { socialMidias } from 'components/social-midia-aside/aside-social-midia';
 
 const items = [
     {
-        href: "https://github.com/danrleypereira",
-        title: "home link",
+        href: "https://www.instagram.com/danrleypereira/",
+        title: "instagram",
         icon: perfil,
         text: "Danrley Pereira"
     },
     {
-        href: "https://danrleywillyan-blog.firebaseapp.com",
-        title: "linkedin icon/link",
+        href: "https://danrleypereira.com/",
+        title: "meu outro site",
         icon: account,
         text: "Euzinho"
     },
     {
-        href: "https://www.instagram.com/danrleypereira/",
-        title: "instagram icon/link",
+        href: "https://www.linkedin.com/in/danrleypereira/",
+        title: "linkedin",
         icon: glasses,
         text: "Habilidades"
     },
     {
-        href: "https://www.facebook.com/danrleywillyan",
-        title: "facebook icon/link",
+        href: "https://github.com/danrleypereira",
+        title: "github",
         icon: briefcase,
         text: "Projetos"
     },
@@ -49,7 +49,7 @@ const items = [
     },
     {
         href: "https://drive.google.com/file/d/1igtaG0Y6VysFgfO8Mw80EIuDYMKrw8ua/view?usp=sharing",
-        title: "resume link",
+        title: "Curriculum",
         icon: resume,
         text: "Curriculum"
     }
