@@ -48,7 +48,7 @@ const items = [
         text: "Contato"
     },
     {
-        href: "https://drive.google.com/file/d/1igtaG0Y6VysFgfO8Mw80EIuDYMKrw8ua/view?usp=sharing",
+        href: "https://drive.google.com/file/d/1ttJdxKq7AHNH7vfELLP7LU1qy5fabv3C/view?usp=sharing",
         title: "Curriculum",
         icon: resume,
         text: "Curriculum"
