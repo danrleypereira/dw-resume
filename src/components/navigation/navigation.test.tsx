@@ -1,18 +1,33 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen, getByTestId } from '@testing-library/react';
 import Navigation from './navigation';
+import { Container } from 'react-dom';
 
-test('Hide and show correct menu when hover and mouseLeave', () => {
+var navigation: HTMLElement
+beforeEach(() => {
   const { container } = render(<Navigation />);
-  
-  let openedMenu = document.getElementById("opened");
-  let closedMenu = document.getElementById("closed");
+  navigation = container
+})
+test('Hide and show correct menu when mouseEnter and mouseLeave', () => {
+  // let openedMenu = document.getElementById("opened");
 
-  fireEvent.mouseOver(container);
-  expect(openedMenu).toHaveStyle('display: block;');
+
+  // const div = navigation.querySelector('div')
+
+  // fireEvent.mouseEnter(navigation)
+  // expect(navigation).toHaveClass('navigation')
+  // const navigation: HTMLElement = document.getElementById("navigation")!
+  
+  // fireEvent.mouseEnter(getByTestId(navigation, 'navigation'))
+  // fireEvent.mouseEnter(screen);
+  // expect(screen.getByTestId('opened')).toBe(1)
+  
+  // let closedMenu = document.getElementById("closed");
+
+  
   // expect(closedMenu).toHaveClass('hide');
 
-  fireEvent.mouseLeave(container);
-  expect(openedMenu).toHaveClass('hide');
-  expect(closedMenu).toHaveClass('show');
+  // fireEvent.mouseLeave(container);
+  // expect(openedMenu).toHaveClass('hide');
+  // expect(closedMenu).toHaveClass('show');
 });
