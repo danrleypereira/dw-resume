@@ -8,7 +8,7 @@ import AsideLinks from './aside-links';
 function Navigation() {
   const [opened, setOpened] = useState(false)
   //maybe a context?
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 991.98);
+  const [isMobile] = useState<boolean>(window.innerWidth <= 991.98);
 
   let showOnHoverEvent = function (e: React.MouseEvent<HTMLElement>) {
     setOpened(true)
