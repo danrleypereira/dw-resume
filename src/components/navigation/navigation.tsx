@@ -24,8 +24,8 @@ function Navigation() {
     e.preventDefault()
   };
   let onClick = function (e: React.MouseEvent<HTMLElement>) {
+    if(!opened) e.preventDefault()
     setOpened(!opened)
-    e.preventDefault()
   }
 
   return (
