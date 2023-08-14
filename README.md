@@ -1,6 +1,2 @@
-## connect to heroku
-heroku ps:exec --app=appname
-
-## add domain to heroku
-heroku domains:add www.danrleypereira.com.br --app=dw-resume
-heroku domains:wait 'www.danrleypereira.com.br' --app=dw-resume
+## To test on mobile 
+HOST=0.0.0.0 npm run start

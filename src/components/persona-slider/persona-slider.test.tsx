@@ -7,9 +7,9 @@ test('renders some image from DW', () => {
     let images = container.querySelectorAll(".img-flex");
     let imageE = images[0]
     const sources = [
-        'engineer1013_1265.png',
-        'educator1013_1267.png',
-        'citizen1013_1266.png',
+        'engineer-min.png',
+        'educator-min.png',
+        'citizen-min.png',
     ];
 
     let thereIsImage = false

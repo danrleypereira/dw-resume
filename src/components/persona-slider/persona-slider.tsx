@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 // pictures
-import engineer from 'assets/engineer1013_1265.png';
-import educator from 'assets/educator1013_1267.png';
-import citizen from 'assets/citizen1013_1266.png';
+import engineer from 'assets/engineer-min.png';
+import educator from 'assets/educator-min.png';
+import citizen from 'assets/citizen-min.png';
 
 import './personas.css'
 
@@ -33,7 +33,7 @@ const PersonasSlider = () => {
             else {
                 setCurrentPersona(nextPersona);
             }
-        }, 4000);
+        }, 4500);
         return () => clearInterval(interval);
     }, [currentPersona])
 
@@ -44,6 +44,7 @@ const PersonasSlider = () => {
                     <h1>{cards[currentPersona].persona}</h1>
                 </div>
                 <img className='img-flex'
+                    loading="lazy"
                     src={cards[currentPersona].picture}
                     alt={cards[currentPersona].persona} />
             </div>
