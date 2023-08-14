@@ -21,10 +21,35 @@
     bottom: 0;
     width: 40%;
     border: 1px solid #ccc;
-    border-radius: 0 6px 6px;
+    border-radius: 0 0 6px 6px;
     background-color: #FFF;
 }
 
 .persona h1 {
     color: black;
 }
+
+ /* Small devices until medium devices (landscape phones, 576px and up) */
+ @media (max-width: 991.98px) {
+     .persona-slider {
+        height: 50vh;
+     }
+    .persona img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .persona-title {
+        width: 60%;
+    }
+
+    .persona h1 {
+        margin: 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+ }
+
