@@ -1,0 +1,44 @@
+img {
+  height: 50%;
+  width: 50%;
+}
+
+.content-container {
+  width: calc(80vw - 70px);
+  float: right;
+  margin: 0 70px;
+}
+
+@media screen and (max-width: 991.98px) {
+  .content-container {
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+/* Container for the transitions */
+/* Initial state of entering route */
+.routeTransition-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* State when entering route is active (transitioning in) */
+.routeTransition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+/* Initial state of exiting route */
+.routeTransition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* State when exiting route is active (transitioning out) */
+.routeTransition-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms ease, transform 300ms ease;
+}

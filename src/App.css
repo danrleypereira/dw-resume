@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -36,13 +37,12 @@
   }
 }
 
- /* Small devices until medium devices (landscape phones, 576px and up) */
- @media (max-width: 991.98px) {
-  
+/* Small devices until medium devices (landscape phones, 576px and up) */
+@media (max-width: 991.98px) {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .App {
   }
 }

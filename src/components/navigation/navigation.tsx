@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import menuIcon from 'assets/navigation/three-parallel-lines.svg';
+import React, { useState } from "react";
+import menuIcon from "assets/navigation/three-parallel-lines.svg";
 
-import './navigation.css';
+import "./navigation.css";
 
-import AsideLinks from './aside-links';
+import AsideLinks from "./aside-links";
 
 function Navigation() {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(false);
   //maybe a context?
   const [isMobile] = useState<boolean>(window.innerWidth <= 991.98);
 
   let showOnHoverEvent = function (e: React.MouseEvent<HTMLElement>) {
-    setOpened(true)
-    e.preventDefault()
+    setOpened(true);
+    e.preventDefault();
     //question mark make sure that is not undefined or null
     // console.log(closedMenu?.className);
     //exclamation mark says that I am sure that isn't null
@@ -20,33 +20,44 @@ function Navigation() {
     // closedMenu!.className = "hide";
   };
   let hideOnLeaveEvent = function (e: React.MouseEvent<HTMLElement>) {
-    setOpened(false)
-    e.preventDefault()
+    setOpened(false);
+    e.preventDefault();
   };
   let onClick = function (e: React.MouseEvent<HTMLElement>) {
-    if(!opened) e.preventDefault()
-    setOpened(!opened)
-  }
+    if (!opened) e.preventDefault();
+    setOpened(!opened);
+  };
 
   return (
-    <div className="navigation"
-      onMouseEnter={isMobile ? () => {return false} : (e) => showOnHoverEvent(e)}
+    <div
+      className="navigation"
+      style={{
+        backgroundColor: opened ? "white" : "transparent",
+        zIndex: opened ? 22 : 1,
+      }}
+      onMouseEnter={
+        isMobile
+          ? () => {
+              return false;
+            }
+          : (e) => showOnHoverEvent(e)
+      }
       onMouseLeave={(e) => hideOnLeaveEvent(e)}
       onClick={(e) => onClick(e)}
     >
-      {opened ?
-        (
-          <div id="opened">
-            <AsideLinks />
-          </div>
-        )
-        :
-        (
-          <div id="closed">
-            <img src={menuIcon} className="social-midia-icon" alt="github icon/link" />
-          </div>
-        )
-      }
+      {opened ? (
+        <div id="opened">
+          <AsideLinks />
+        </div>
+      ) : (
+        <div id="closed">
+          <img
+            src={menuIcon}
+            className="social-midia-icon"
+            alt="github icon/link"
+          />
+        </div>
+      )}
     </div>
   );
 }
