@@ -39,7 +39,7 @@ export default function PersonaSlider() {
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       {/* Persona Image */}
-      <div className="relative w-full max-w-sm">
+      <div className="relative w-full max-w-[320px]">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-3xl" />
         <img
           src={current.image}

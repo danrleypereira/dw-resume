@@ -43,23 +43,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/RVfCxKV26ILUTndHKlNXQ3/sandbox/TQl50bwfApF0dzRUyTdxJG-img-1_1770916380000_na1fn_aGVyby1iYWNrZ3JvdW5k.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvUlZmQ3hLVjI2SUxVVG5kSEtsTlhRMy9zYW5kYm94L1RRbDUwYndmQXBGMGR6UlV5VGR4SkctaW1nLTFfMTc3MDkxNjM4MDAwMF9uYTFmbl9hR1Z5YnkxaVlXTnJaM0p2ZFc1ay5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=j-km-7cne9jy6JgWm4JyNZHi9s8q2aaQP9as5GtBTGtro-xkc8TX-MdQAkF1pRYt639s36WrqgjOvQcpbXSyLRKfPj74Xd2Lc5pj-TOw9YG-k7M2-KFscSxG49IzNryYcdwlR8VnQzzWqt0wDTdoFFTma5Lh1MxzyGakmT5iVquLBBQVGrORXqPjm4tMZ3eU4D2J8Ci5iM8B56WJ1ULRbdOsfA2ovzGKc7w-qK2oVFQooKhJ8IWEd-3EwT8Gqm0z~a-W5GNQUEEJ7AkCyyDq-elwW8qb7zP1ELmfGrsdiAT~5JqymEbv95hGyoav3zl~MHuOkGdM9E-q3NqUm11O1A__')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-background/40 z-10" />
-
-        {/* Content */}
-        <div className="container relative z-20 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="min-h-[calc(100vh-80px)] flex items-start overflow-hidden">
+        <div className="container py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: Text Content */}
             <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
               <div className="space-y-6">
