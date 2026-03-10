@@ -1,197 +1,84 @@
-# DW Portfolio - Danrley Pereira
+# DW Resume - Danrley Pereira
 
-Um portfólio profissional moderno e responsivo para Danrley Pereira, engenheiro de software, educador e cidadão. Construído com React 19, TypeScript, TailwindCSS e Vite.
+Portfólio/currículo profissional interativo com transições 3D em cubo entre páginas. Construído com React 19, TypeScript, TailwindCSS 4 e Vite.
 
-## 🎨 Design Philosophy
+## Stack
 
-**Minimalismo Moderno com Tipografia Ousada**
+- **React 19** + TypeScript
+- **TailwindCSS 4** + shadcn/ui
+- **Vite 7** (dev e build)
+- **Wouter** (routing)
+- **Framer Motion** (animações)
+- **Express** (server-side)
 
-- Tipografia contrastante: Playfair Display (títulos) + Inter (corpo)
-- Paleta monocromática elegante: Off-white, Charcoal, Azul Profundo
-- Layout assimétrico com espaço generoso
-- Animações sutis que demonstram atenção aos detalhes
-- Responsivo e otimizado para SEO
-
-## 🚀 Stack Tecnológico
-
-- **Frontend:** React 19, TypeScript
-- **Styling:** TailwindCSS 4, shadcn/ui
-- **Build Tool:** Vite
-- **Routing:** Wouter
-- **Icons:** Lucide React
-- **Hosting:** Firebase Hosting (ou similar)
-
-## 📁 Estrutura do Projeto
+## Estrutura
 
 ```
 client/
-├── public/              # Arquivos estáticos
 ├── src/
-│   ├── pages/          # Páginas principais (Home, About, Projects)
-│   ├── components/     # Componentes reutilizáveis
-│   ├── contexts/       # React contexts (ThemeContext)
-│   ├── hooks/          # Custom hooks
-│   ├── lib/            # Utilitários e helpers
-│   ├── App.tsx         # Componente raiz com rotas
-│   ├── main.tsx        # Ponto de entrada
-│   └── index.css       # Estilos globais e design tokens
-├── index.html          # Template HTML
-└── package.json        # Dependências
-
-server/                 # Placeholder para compatibilidade
-shared/                 # Tipos compartilhados
+│   ├── pages/           # Home, About, Projects, NotFound
+│   ├── components/
+│   │   ├── CubeTransition.tsx  # Transição 3D entre páginas
+│   │   ├── CubeFace.tsx        # Face individual do cubo
+│   │   ├── CubeLink.tsx        # Link com animação de cubo
+│   │   ├── PersonaSlider.tsx   # Slider de personas
+│   │   ├── Map.tsx             # Componente de mapa
+│   │   ├── ErrorBoundary.tsx   # Error boundary
+│   │   └── ui/                 # Componentes shadcn/ui
+│   ├── contexts/        # ThemeContext
+│   ├── hooks/           # Custom hooks
+│   ├── lib/             # Utilitários
+│   ├── App.tsx          # Rotas e providers
+│   ├── const.ts         # Constantes
+│   ├── main.tsx         # Entry point
+│   └── index.css        # Estilos globais
+server/                  # Express server
+shared/                  # Tipos compartilhados
 ```
 
-## 🛠️ Setup Local
+## Setup
 
-### Pré-requisitos
-- Node.js 18+ e npm/pnpm
-- Git
-
-### Instalação
-
-1. Clone o repositório:
 ```bash
-git clone https://github.com/danrleypereira/dw-portfolio.git
-cd dw-portfolio
-```
-
-2. Instale as dependências:
-```bash
+git clone https://github.com/danrleypereira/dw-resume.git
+cd dw-resume
 pnpm install
-# ou
-npm install
-```
-
-3. Inicie o servidor de desenvolvimento:
-```bash
 pnpm dev
-# ou
-npm run dev
 ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) no navegador
+Acesse `http://localhost:5173`
 
-## 📝 Páginas Disponíveis
+## Scripts
 
-- **Home** (`/`) - Página inicial com hero section e preview de seções
-- **About** (`/about`) - Informações detalhadas, experiência e habilidades
-- **Projects** (`/projects`) - Galeria de projetos com detalhes e links
+| Comando | Descrição |
+|---------|-----------|
+| `pnpm dev` | Servidor de desenvolvimento |
+| `pnpm build` | Build de produção (client + server) |
+| `pnpm start` | Inicia servidor de produção |
+| `pnpm preview` | Preview da build |
+| `pnpm check` | Verificação de tipos TypeScript |
+| `pnpm format` | Formatação com Prettier |
 
-## 🎯 Funcionalidades Principais
+## Funcionalidades
 
-### Home
-- Hero section com background customizado
-- Navegação sticky
-- Links para redes sociais (GitHub, LinkedIn, Email)
-- Preview das seções principais
-- CTA (Call-to-Action) para contato
+- **Transição 3D em cubo** entre as páginas Home, About e Projects
+- **Rotação aleatória** do cubo nas transições
+- **Paleta monocromática** (preto e branco)
+- **Persona Slider** na página inicial
+- **Seção de experiência** profissional
+- **Design responsivo**
 
-### About
-- Trajetória profissional detalhada
-- Experiências listadas com período e descrição
-- Habilidades técnicas organizadas por categoria
-- Valores e princípios
-- Sidebar com informações adicionais
+## Páginas
 
-### Projects
-- Grid de projetos com imagens
-- Descrições detalhadas
-- Tecnologias utilizadas
-- Links para GitHub e demo ao vivo
-- Projetos em destaque
+- `/` — Home com hero section e persona slider
+- `/about` — Trajetória, experiências e habilidades
+- `/projects` — Galeria de projetos
 
-## 🎨 Customização
-
-### Cores
-Edite as variáveis CSS em `client/src/index.css`:
-```css
-:root {
-  --primary: #0D47A1;           /* Azul Profundo */
-  --background: #F9F7F4;        /* Off-white */
-  --foreground: #2C2C2C;        /* Charcoal */
-  /* ... outras cores */
-}
-```
-
-### Tipografia
-As fontes estão importadas em `client/index.html`:
-- Display: Playfair Display (títulos)
-- Body: Inter (corpo de texto)
-
-### Conteúdo
-Atualize o conteúdo nas páginas:
-- `client/src/pages/Home.tsx` - Página inicial
-- `client/src/pages/About.tsx` - Sobre e experiências
-- `client/src/pages/Projects.tsx` - Projetos
-
-## 🚀 Build e Deploy
-
-### Build para produção
-```bash
-pnpm build
-# ou
-npm run build
-```
-
-### Preview da build
-```bash
-pnpm preview
-# ou
-npm run preview
-```
-
-### Deploy no Firebase Hosting
-```bash
-firebase deploy
-```
-
-## ✅ Checklist de Melhorias Implementadas
-
-Com base na análise anterior, as seguintes melhorias foram implementadas:
-
-- [x] **Links Sociais Corrigidos** - GitHub e outras redes sociais apontam para os perfis corretos
-- [x] **Menu de Navegação Funcional** - Navegação clara e responsiva
-- [x] **Conteúdo Completo** - Seções "Sobre", "Projetos" e "Contato" com informações detalhadas
-- [x] **SEO Otimizado** - Meta tags, títulos descritivos e estrutura semântica
-- [x] **Design Moderno** - Tipografia ousada, paleta elegante, animações sutis
-- [x] **Responsivo** - Funciona perfeitamente em mobile, tablet e desktop
-- [x] **Performance** - Vite para build rápido, imagens otimizadas
-- [x] **Acessibilidade** - Atributos alt, contraste adequado, navegação por teclado
-
-## 📊 SEO
-
-O site inclui:
-- Meta tags otimizadas (title, description, keywords)
-- Open Graph tags para compartilhamento em redes sociais
-- Twitter Card tags
-- Estrutura semântica com headings apropriados
-- Imagens com atributos alt descritivos
-- URLs amigáveis
-
-## 🔧 Scripts Disponíveis
-
-- `pnpm dev` - Inicia servidor de desenvolvimento
-- `pnpm build` - Build para produção
-- `pnpm preview` - Preview da build
-- `pnpm check` - Verifica tipos TypeScript
-- `pnpm format` - Formata código com Prettier
-
-## 📄 Licença
+## Licença
 
 MIT
 
-## 👤 Autor
+## Autor
 
 **Danrley Pereira**
 - GitHub: [@danrleypereira](https://github.com/danrleypereira)
 - LinkedIn: [Danrley Pereira](https://linkedin.com/in/danrleypereira)
-- Email: contact@danrleypereira.com
-
-## 🤝 Contribuições
-
-Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
-
----
-
-Desenvolvido com ❤️ usando React, TailwindCSS e Vite.

@@ -109,3 +109,5 @@ temp/
 .webdev/
 
 Relatório de Melhorias — danrleypereira.com.pdf
+
+.claude/settings.local.json
