@@ -78,13 +78,17 @@ export default function Home() {
                 </p>
 
                 <div className="flex gap-4 pt-4">
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-8">
-                    Ver Projetos
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <Button variant="outline" className="border-foreground/20 hover:bg-foreground/5">
-                    Entrar em Contato
-                  </Button>
+                  <CubeLink href="/projects">
+                    <Button className="bg-primary hover:bg-primary/90 text-white px-8">
+                      Ver Projetos
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </CubeLink>
+                  <a href="#contact">
+                    <Button variant="outline" className="border-foreground/20 hover:bg-foreground/5">
+                      Entrar em Contato
+                    </Button>
+                  </a>
                 </div>
 
                 {/* Social Links */}
@@ -161,15 +165,17 @@ export default function Home() {
                 Além de desenvolvedor, sou educador apaixonado por compartilhar conhecimento e mentor de 
                 profissionais em desenvolvimento.
               </p>
-              <Button className="bg-primary hover:bg-primary/90">
-                Saiba Mais
-              </Button>
+              <CubeLink href="/about">
+                <Button className="bg-primary hover:bg-primary/90">
+                  Saiba Mais
+                </Button>
+              </CubeLink>
             </div>
-            <div className="relative">
+            <div className="relative flex justify-center">
               <img
                 src="/educator-min.png"
                 alt="Danrley Pereira - Educador e Engenheiro"
-                className="rounded-xl shadow-lg w-full h-auto object-cover"
+                className="rounded-xl shadow-lg max-h-[420px] w-auto object-cover"
               />
             </div>
           </div>

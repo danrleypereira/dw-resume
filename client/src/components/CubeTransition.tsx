@@ -1,85 +1,156 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { CubeFace } from "./CubeFace";
+import { useEffect, useState, useMemo } from "react";
 import {
   useCubeNavigation,
   CubeNavigationContext,
+  type TransitionState,
 } from "@/hooks/useCubeNavigation";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
 
-const FACES = [
-  { path: "/", angle: 0, Component: Home },
-  { path: "/about", angle: 90, Component: About },
-  { path: "/projects", angle: -90, Component: Projects },
-];
+const PAGE_MAP: Record<string, React.ComponentType> = {
+  "/": Home,
+  "/about": About,
+  "/projects": Projects,
+};
+
+function getTransforms(
+  transition: TransitionState | null,
+  halfWidth: number,
+  halfHeight: number,
+) {
+  if (!transition) {
+    return {
+      depth: halfWidth,
+      currentFace: `translateZ(${halfWidth}px)`,
+      nextFace: "",
+      cubeFrom: `translateZ(${-halfWidth}px)`,
+      cubeTo: `translateZ(${-halfWidth}px)`,
+    };
+  }
+
+  const { direction } = transition;
+  const isVertical = direction === "up" || direction === "down";
+  const d = isVertical ? halfHeight : halfWidth;
+
+  let nextFace: string;
+  let cubeTo: string;
+
+  switch (direction) {
+    case "right":
+      nextFace = `rotateY(90deg) translateZ(${d}px)`;
+      cubeTo = `translateZ(${-d}px) rotateY(-90deg)`;
+      break;
+    case "left":
+      nextFace = `rotateY(-90deg) translateZ(${d}px)`;
+      cubeTo = `translateZ(${-d}px) rotateY(90deg)`;
+      break;
+    case "up":
+      nextFace = `rotateX(-90deg) translateZ(${d}px)`;
+      cubeTo = `translateZ(${-d}px) rotateX(90deg)`;
+      break;
+    case "down":
+      nextFace = `rotateX(90deg) translateZ(${d}px)`;
+      cubeTo = `translateZ(${-d}px) rotateX(-90deg)`;
+      break;
+  }
+
+  return {
+    depth: d,
+    currentFace: `translateZ(${d}px)`,
+    nextFace,
+    cubeFrom: `translateZ(${-d}px)`,
+    cubeTo,
+  };
+}
 
 export function CubeTransition() {
   const {
-    targetAngle,
+    displayPath,
+    transition,
     isAnimating,
     navigateTo,
     onAnimationComplete,
-    currentPath,
     animationDuration,
   } = useCubeNavigation();
 
-  const [halfWidth, setHalfWidth] = useState(() => window.innerWidth / 2);
-
-  const [visitedPaths, setVisitedPaths] = useState<Set<string>>(
-    () => new Set([currentPath])
-  );
+  const [dimensions, setDimensions] = useState(() => ({
+    halfWidth: window.innerWidth / 2,
+    halfHeight: window.innerHeight / 2,
+  }));
 
   useEffect(() => {
-    const updateSize = () => setHalfWidth(window.innerWidth / 2);
+    const updateSize = () =>
+      setDimensions({
+        halfWidth: window.innerWidth / 2,
+        halfHeight: window.innerHeight / 2,
+      });
     window.addEventListener("resize", updateSize);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  useEffect(() => {
-    setVisitedPaths((prev) => {
-      if (prev.has(currentPath)) return prev;
-      return new Set(prev).add(currentPath);
-    });
-  }, [currentPath]);
+  const { halfWidth, halfHeight } = dimensions;
+  const transforms = useMemo(
+    () => getTransforms(transition, halfWidth, halfHeight),
+    [transition, halfWidth, halfHeight],
+  );
+
+  const CurrentPage = PAGE_MAP[displayPath];
+  const NextPage = transition ? PAGE_MAP[transition.nextPath] : null;
 
   return (
     <CubeNavigationContext.Provider value={{ navigateTo, isAnimating }}>
-      {/* Scene: perspective container */}
       <div
         className="fixed inset-0 overflow-hidden"
         style={{ perspective: "1200px" }}
       >
-        {/* Cube: translateZ pushes cube back, FM rotates it */}
         <motion.div
           className="relative w-full h-full"
-          style={{
-            transformStyle: "preserve-3d",
-          }}
-          animate={{
-            transform: `translateZ(${-halfWidth}px) rotateY(${targetAngle}deg)`,
-          }}
+          style={{ transformStyle: "preserve-3d" }}
+          initial={false}
+          animate={{ transform: transition ? transforms.cubeTo : transforms.cubeFrom }}
           transition={{
-            duration: animationDuration,
+            duration: transition ? animationDuration : 0,
             ease: [0.4, 0.0, 0.2, 1],
           }}
           onAnimationComplete={onAnimationComplete}
         >
-          {FACES.map(({ path, angle, Component }) => (
-            <CubeFace
-              key={path}
-              rotateY={angle}
-              halfWidth={halfWidth}
-              isActive={currentPath === path}
+          {/* Current face */}
+          <div
+            className="absolute inset-0"
+            style={{
+              transform: transforms.currentFace,
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+            }}
+          >
+            <div
+              className="w-full h-full overflow-y-auto overflow-x-hidden bg-background"
+              style={{ pointerEvents: !transition ? "auto" : "none" }}
             >
-              {visitedPaths.has(path) ? (
-                <Component />
-              ) : (
-                <div className="w-full h-full bg-background" />
-              )}
-            </CubeFace>
-          ))}
+              {CurrentPage && <CurrentPage />}
+            </div>
+          </div>
+
+          {/* Next face - only during transition */}
+          {transition && NextPage && (
+            <div
+              className="absolute inset-0"
+              style={{
+                transform: transforms.nextFace,
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+              }}
+            >
+              <div
+                className="w-full h-full overflow-y-auto overflow-x-hidden bg-background"
+                style={{ pointerEvents: "none" }}
+              >
+                <NextPage />
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
     </CubeNavigationContext.Provider>

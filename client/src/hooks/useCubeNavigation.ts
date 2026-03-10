@@ -1,16 +1,20 @@
 import { createContext, useContext, useState, useCallback, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 
-// Ângulo que o CUBO precisa girar para mostrar a face
-// About está na face direita (rotateY 90deg) → cubo gira -90deg para revelar
-// Projects está na face esquerda (rotateY -90deg) → cubo gira +90deg para revelar
-const ROUTE_ANGLES: Record<string, number> = {
-  "/": 0,
-  "/about": -90,
-  "/projects": 90,
-};
+export type Direction = "left" | "right" | "up" | "down";
 
+const DIRECTIONS: Direction[] = ["left", "right", "up", "down"];
+const CUBE_ROUTES = ["/", "/about", "/projects"];
 const ANIMATION_DURATION = 0.8;
+
+function pickRandomDirection(): Direction {
+  return DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)];
+}
+
+export interface TransitionState {
+  direction: Direction;
+  nextPath: string;
+}
 
 interface CubeNavigationContextType {
   navigateTo: (path: string) => void;
@@ -28,48 +32,51 @@ export function useCubeNav() {
 
 export function useCubeNavigation() {
   const [location, setLocation] = useLocation();
-  const [targetAngle, setTargetAngle] = useState(() => ROUTE_ANGLES[location] ?? 0);
+  const [displayPath, setDisplayPath] = useState(location);
   const [isAnimating, setIsAnimating] = useState(false);
-  const previousLocation = useRef(location);
+  const [transition, setTransition] = useState<TransitionState | null>(null);
+  const transitionRef = useRef(transition);
+  transitionRef.current = transition;
 
+  // Handle external navigation (browser back/forward)
   useEffect(() => {
-    if (location !== previousLocation.current) {
-      const newAngle = ROUTE_ANGLES[location];
-      if (newAngle !== undefined) {
-        setTargetAngle(newAngle);
-        setIsAnimating(true);
-      }
-      previousLocation.current = location;
+    if (!isAnimating && location !== displayPath && CUBE_ROUTES.includes(location)) {
+      const direction = pickRandomDirection();
+      setTransition({ direction, nextPath: location });
+      setIsAnimating(true);
     }
-  }, [location]);
+  }, [location, displayPath, isAnimating]);
 
   const navigateTo = useCallback(
     (path: string) => {
-      if (isAnimating) return;
-      const angle = ROUTE_ANGLES[path];
-      if (angle === undefined) {
+      if (isAnimating || path === displayPath) return;
+      if (!CUBE_ROUTES.includes(path)) {
         setLocation(path);
         return;
       }
+      const direction = pickRandomDirection();
+      setTransition({ direction, nextPath: path });
       setIsAnimating(true);
-      setTargetAngle(angle);
       setLocation(path);
     },
-    [isAnimating, setLocation]
+    [isAnimating, displayPath, setLocation]
   );
 
   const onAnimationComplete = useCallback(() => {
-    setIsAnimating(false);
+    const t = transitionRef.current;
+    if (t) {
+      setDisplayPath(t.nextPath);
+      setTransition(null);
+      setIsAnimating(false);
+    }
   }, []);
 
   return {
-    targetAngle,
+    displayPath,
+    transition,
     isAnimating,
     navigateTo,
     onAnimationComplete,
-    currentPath: location,
     animationDuration: ANIMATION_DURATION,
   };
 }
-
-export { ROUTE_ANGLES };

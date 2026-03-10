@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Laptop, GraduationCap, Gamepad2, Cpu, Newspaper, type LucideIcon } from "lucide-react";
 import { CubeLink } from "@/components/CubeLink";
 
 /**
@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Aplicação de Gerenciamento de Eventos",
       description: "Plataforma multi-camadas para gerenciamento de eventos, emissão de certificados e agendamento de salas. Integração com API Sympla para sincronização de dados. Arquitetura com React (frontend), Python (lógica de negócio) e Java Spring Boot (backend).",
       technologies: ["React", "Python", "Java Spring Boot", "Sympla API", "GitHub Actions", "CI/CD"],
-      image: "/engineer1013_1265.png",
+      icon: Calendar,
       github: "https://github.com/danrleypereira",
       featured: true,
     },
@@ -23,35 +23,35 @@ export default function Projects() {
       title: "LabTech - Software Fabric da UDF",
       description: "Plataforma de desenvolvimento de software como serviço para a universidade. Atuei como Product Manager, refinando produtos, implementando processos estruturados e liderando equipes em tarefas desafiadoras. Foco em alinhamento com necessidades de negócio e visão futura.",
       technologies: ["Product Management", "Agile", "Team Leadership", "Process Design"],
-      image: "/educator1013_1267.png",
+      icon: Laptop,
       featured: true,
     },
     {
       title: "SAEDF - Sistema Educacional",
       description: "Projeto governamental de sistema educacional. Atuei como desenvolvedor, construindo classes Java enquanto entendia a lógica de negócio. Experiência com JPA, JSP e Servlets em ambiente corporativo.",
       technologies: ["Java", "JPA", "JSP", "Servlets", "Banco de Dados"],
-      image: "/citizen1013_1266.png",
+      icon: GraduationCap,
       featured: false,
     },
     {
       title: "Trinca Social Game",
       description: "Jogo sério desenvolvido para auxiliar pesquisa de mestrado com foco em educação. Contribuí no desenvolvimento frontend com JADE, enquanto apoiava o desenvolvedor backend. Emulação de jogos de cartas para propor soluções a questões sociais.",
       technologies: ["JADE", "Frontend Development", "Game Design", "Education Technology"],
-      image: "/educator1013_1267.png",
+      icon: Gamepad2,
       featured: false,
     },
     {
       title: "Protótipo de Monitoramento de Cisterna",
       description: "Projeto educacional desenvolvido como professor voluntário. Protótipo usando Arduino para monitoramento de nível de água em cisternas, com sensor ultrassônico e módulo Bluetooth. Combinava hardware, programação e impacto social.",
       technologies: ["Arduino", "C++", "Sensor Ultrassônico", "Bluetooth", "IoT"],
-      image: "/engineer1013_1265.png",
+      icon: Cpu,
       featured: false,
     },
     {
       title: "Gama Cidadão - Jornalismo Digital",
       description: "Portal de notícias e cidadania onde atuo como jornalista independente desde 2017. Cobertura de temas sociais, políticos e comunitários. Trabalho reconhecido com Moção de Louvor da Câmara Legislativa do Distrito Federal em 2019.",
       technologies: ["Jornalismo", "Comunicação Digital", "Pesquisa", "Cidadania"],
-      image: "/citizen1013_1266.png",
+      icon: Newspaper,
       featured: false,
     },
   ];
@@ -66,11 +66,11 @@ export default function Projects() {
             <CubeLink href="/about" className="link-underline text-sm font-medium hover:text-primary">
               Sobre
             </CubeLink>
-            <CubeLink href="/" className="link-underline text-sm font-medium hover:text-primary">
+            <CubeLink href="/projects" className="link-underline text-sm font-medium hover:text-primary">
               Projetos
             </CubeLink>
             <CubeLink href="/" className="link-underline text-sm font-medium hover:text-primary">
-              Contato
+              Home
             </CubeLink>
             <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
               CV
@@ -105,14 +105,12 @@ export default function Projects() {
                   i % 2 === 1 ? "lg:grid-cols-2 lg:[&>:first-child]:order-2" : ""
                 }`}
               >
-                {/* Image */}
+                {/* Icon */}
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl blur-2xl group-hover:blur-3xl transition-all duration-300" />
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="relative rounded-xl shadow-lg w-full h-80 object-cover"
-                  />
+                  <div className="relative rounded-xl shadow-lg w-full h-80 bg-gradient-to-br from-primary/10 via-primary/5 to-background border border-border flex items-center justify-center">
+                    <project.icon className="w-24 h-24 text-primary/40" strokeWidth={1.2} />
+                  </div>
                 </div>
 
                 {/* Content */}
