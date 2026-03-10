@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import {
   useCubeNavigation,
   CubeNavigationContext,
@@ -99,6 +99,10 @@ export function CubeTransition() {
   const CurrentPage = PAGE_MAP[displayPath];
   const NextPage = transition ? PAGE_MAP[transition.nextPath] : null;
 
+  const scrollRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) node.scrollTop = 0;
+  }, [displayPath]);
+
   return (
     <CubeNavigationContext.Provider value={{ navigateTo, isAnimating }}>
       <div
@@ -126,6 +130,7 @@ export function CubeTransition() {
             }}
           >
             <div
+              ref={scrollRef}
               className="w-full h-full overflow-y-auto overflow-x-hidden bg-background"
               style={{ pointerEvents: !transition ? "auto" : "none" }}
             >

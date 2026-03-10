@@ -12,12 +12,12 @@ const personas = [
     description: 'Desenvolvedor de software apaixonado por criar soluções inovadoras',
   },
   {
-    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663332801415/lummaKlVKDVfBzZo.png',
+    image: '/educator-min.png',
     title: 'Educador',
     description: 'Mentor dedicado a compartilhar conhecimento e desenvolver talentos',
   },
   {
-    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663332801415/ETHhCrqxYLLucYjU.png',
+    image: '/citizen-min.png',
     title: 'Cidadão',
     description: 'Comprometido com impacto positivo na sociedade e comunidade',
   },
