@@ -1,38 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github } from "lucide-react";
 import { CubeLink } from "@/components/CubeLink";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { OWNER } from "@/data/social";
 import { PROJECTS } from "@/data/projects";
-
-/**
- * Design Philosophy: Minimalismo Moderno
- * - Grid de projetos com cards elegantes
- * - Imagens de destaque e descrições detalhadas
- * - Links para GitHub e demo ao vivo
- */
 
 export default function Projects() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-4">
-          <CubeLink href="/" className="text-2xl font-bold text-primary">DW</CubeLink>
-          <div className="flex gap-8 items-center">
-            <CubeLink href="/about" className="link-underline text-sm font-medium hover:text-primary">
-              Sobre
-            </CubeLink>
-            <CubeLink href="/projects" className="link-underline text-sm font-medium hover:text-primary">
-              Projetos
-            </CubeLink>
-            <CubeLink href="/" className="link-underline text-sm font-medium hover:text-primary">
-              Home
-            </CubeLink>
-            <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
-              CV
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navbar currentPage="projects" />
 
       {/* Header */}
       <section className="py-16 bg-secondary/30 border-b border-border">
@@ -43,7 +20,7 @@ export default function Projects() {
           </CubeLink>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Meus Projetos</h1>
           <p className="text-xl text-foreground/80 max-w-2xl">
-            Uma seleção dos projetos mais interessantes que desenvolvi, demonstrando minhas habilidades 
+            Uma seleção dos projetos mais interessantes que desenvolvi, demonstrando minhas habilidades
             em diferentes tecnologias, liderança e impacto social.
           </p>
         </div>
@@ -96,17 +73,19 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-4 pt-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
-                    >
-                      <Github className="w-4 h-4" />
-                      Ver no GitHub
-                    </a>
-                  </div>
+                  {project.github && (
+                    <div className="flex gap-4 pt-4">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
+                      >
+                        <Github className="w-4 h-4" />
+                        Ver no GitHub
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -121,18 +100,13 @@ export default function Projects() {
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
             Tenho interesse em novos desafios, oportunidades de colaboração e projetos que gerem impacto positivo.
           </p>
-          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg">
-            Entrar em Contato
+          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" asChild>
+            <a href={`mailto:${OWNER.email}`}>Entrar em Contato</a>
           </Button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground/5 border-t border-border py-8">
-        <div className="container text-center text-foreground/60 text-sm">
-          <p>&copy; 2026 Danrley Pereira. Todos os direitos reservados.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

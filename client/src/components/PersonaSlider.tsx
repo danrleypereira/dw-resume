@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PERSONAS } from '@/data/personas';
+import { PERSONAS, PERSONA_ROTATION_MS } from '@/data/personas';
 
 export default function PersonaSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,7 +7,7 @@ export default function PersonaSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % PERSONAS.length);
-    }, 4500);
+    }, PERSONA_ROTATION_MS);
 
     return () => clearInterval(interval);
   }, []);

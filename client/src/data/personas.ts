@@ -4,6 +4,8 @@ export interface Persona {
   description: string;
 }
 
+export const PERSONA_ROTATION_MS = 4500;
+
 export const PERSONAS: Persona[] = [
   {
     image: "/engineer-min.png",

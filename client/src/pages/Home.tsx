@@ -3,15 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import PersonaSlider from "@/components/PersonaSlider";
 import { CubeLink } from "@/components/CubeLink";
-import { SOCIAL_LINKS } from "@/data/social";
-
-/**
- * Design Philosophy: Minimalismo Moderno
- * - Tipografia ousada (Playfair Display para títulos)
- * - Espaço generoso e layout assimétrico
- * - Animações sutis (fade-in, slide-up)
- * - Paleta: Off-white, Charcoal, Azul Profundo
- */
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { SOCIAL_LINKS, OWNER } from "@/data/social";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,26 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-4">
-          <div className="text-2xl font-bold text-primary">DW</div>
-          <div className="flex gap-8 items-center">
-            <CubeLink href="/about" className="link-underline text-sm font-medium hover:text-primary">
-              Sobre
-            </CubeLink>
-            <CubeLink href="/projects" className="link-underline text-sm font-medium hover:text-primary">
-              Projetos
-            </CubeLink>
-            <a href="#contact" className="link-underline text-sm font-medium hover:text-primary">
-              Contato
-            </a>
-            <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
-              CV
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navbar currentPage="home" />
 
       {/* Hero Section */}
       <section className="min-h-[calc(100vh-80px)] flex items-start overflow-hidden">
@@ -55,12 +30,12 @@ export default function Home() {
                     Bem-vindo ao meu portfólio
                   </p>
                   <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                    Danrley Pereira
+                    {OWNER.name}
                   </h1>
                 </div>
 
                 <p className="text-xl text-foreground/80 max-w-xl leading-relaxed">
-                  Engenheiro de software apaixonado por resolver problemas complexos através da tecnologia. 
+                  Engenheiro de software apaixonado por resolver problemas complexos através da tecnologia.
                   Educador, cidadão e inovador em busca de impacto positivo.
                 </p>
 
@@ -121,11 +96,11 @@ export default function Home() {
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
               <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                Com mais de uma década de experiência em engenharia de software, tenho dedicado minha carreira 
+                Com mais de uma década de experiência em engenharia de software, tenho dedicado minha carreira
                 a criar soluções inovadoras que impactam positivamente a vida das pessoas.
               </p>
               <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                Além de desenvolvedor, sou educador apaixonado por compartilhar conhecimento e mentor de 
+                Além de desenvolvedor, sou educador apaixonado por compartilhar conhecimento e mentor de
                 profissionais em desenvolvimento.
               </p>
               <CubeLink href="/about">
@@ -137,7 +112,7 @@ export default function Home() {
             <div className="relative flex justify-center">
               <img
                 src="/educator-min.png"
-                alt="Danrley Pereira - Educador e Engenheiro"
+                alt={`${OWNER.name} - Educador e Engenheiro`}
                 className="rounded-xl shadow-lg max-h-[420px] w-auto object-cover"
               />
             </div>
@@ -187,18 +162,13 @@ export default function Home() {
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
             Tenho interesse em oportunidades de colaboração e novos desafios. Entre em contato!
           </p>
-          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg">
-            Enviar Mensagem
+          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" asChild>
+            <a href={`mailto:${OWNER.email}`}>Enviar Mensagem</a>
           </Button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground/5 border-t border-border py-8">
-        <div className="container text-center text-foreground/60 text-sm">
-          <p>&copy; 2026 Danrley Pereira. Todos os direitos reservados.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

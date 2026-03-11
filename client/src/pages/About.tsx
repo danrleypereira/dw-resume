@@ -2,15 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Code2, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { CubeLink } from "@/components/CubeLink";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { OWNER } from "@/data/social";
 import { EXPERIENCES } from "@/data/experiences";
 import { SKILLS } from "@/data/skills";
-
-/**
- * Design Philosophy: Minimalismo Moderno
- * - Seção detalhada sobre o profissional
- * - Layout com cards para habilidades e experiências
- * - Tipografia clara e espaçamento generoso
- */
+import { CERTIFICATIONS, LANGUAGES } from "@/data/certifications";
 
 export default function About() {
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
@@ -26,26 +23,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-4">
-          <CubeLink href="/" className="text-2xl font-bold text-primary">DW</CubeLink>
-          <div className="flex gap-8 items-center">
-            <CubeLink href="/about" className="link-underline text-sm font-medium hover:text-primary">
-              Sobre
-            </CubeLink>
-            <CubeLink href="/projects" className="link-underline text-sm font-medium hover:text-primary">
-              Projetos
-            </CubeLink>
-            <CubeLink href="/" className="link-underline text-sm font-medium hover:text-primary">
-              Home
-            </CubeLink>
-            <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
-              CV
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navbar currentPage="about" />
 
       {/* Header */}
       <section className="py-16 bg-secondary/30 border-b border-border">
@@ -56,7 +34,7 @@ export default function About() {
           </CubeLink>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Sobre Mim</h1>
           <p className="text-xl text-foreground/80 max-w-2xl">
-            Technical Lead, Product Manager, Pesquisador e Educador. Combinando desenvolvimento técnico 
+            Technical Lead, Product Manager, Pesquisador e Educador. Combinando desenvolvimento técnico
             com responsabilidade social e inovação educacional.
           </p>
         </div>
@@ -72,19 +50,19 @@ export default function About() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Minha Jornada</h2>
                 <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
-                  Além de ser um solucionador de problemas, evoluí como integrador e mentor. Minha trajetória 
-                  profissional é marcada pela combinação de desenvolvimento técnico, liderança de projetos e 
+                  Além de ser um solucionador de problemas, evoluí como integrador e mentor. Minha trajetória
+                  profissional é marcada pela combinação de desenvolvimento técnico, liderança de projetos e
                   comprometimento com impacto social.
                 </p>
                 <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
-                  Atualmente, como Technical Lead & Project Manager na UDF Centro Universitário, lidero 
-                  aplicações multi-camadas para gerenciamento de eventos, emissão de certificados e agendamento 
-                  de salas, integrando APIs como Sympla. Coordeno equipes especializadas em React (frontend), 
+                  Atualmente, como Technical Lead & Project Manager na UDF Centro Universitário, lidero
+                  aplicações multi-camadas para gerenciamento de eventos, emissão de certificados e agendamento
+                  de salas, integrando APIs como Sympla. Coordeno equipes especializadas em React (frontend),
                   Python (lógica de negócio) e Java Spring Boot (operações de banco de dados).
                 </p>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Como jornalista independente, pesquisador e educador voluntário, combino tecnologia com 
-                  responsabilidade social, trabalhando em projetos que beneficiam a comunidade e promovem 
+                  Como jornalista independente, pesquisador e educador voluntário, combino tecnologia com
+                  responsabilidade social, trabalhando em projetos que beneficiam a comunidade e promovem
                   inovação educacional.
                 </p>
               </div>
@@ -135,6 +113,7 @@ export default function About() {
 
                         <button
                           onClick={() => toggleCard(i)}
+                          aria-expanded={isExpanded}
                           className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 font-medium mt-1 cursor-pointer"
                         >
                           {isExpanded ? "Ver menos" : "Ler mais"}
@@ -186,7 +165,7 @@ export default function About() {
                 <div className="rounded-xl overflow-hidden shadow-lg mb-8">
                   <img
                     src="/perfil1-nav.jpeg"
-                    alt="Danrley Pereira"
+                    alt={OWNER.name}
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -214,25 +193,23 @@ export default function About() {
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
                   <h4 className="font-bold text-primary mb-3">Certificações</h4>
                   <ul className="space-y-2 text-sm text-foreground/80">
-                    <li>✓ Kanban Foundation (KIKF)</li>
-                    <li>✓ Scrum Fundamentals Certified</li>
-                    <li>✓ Business Intelligence com Power BI</li>
-                    <li>✓ Inglês Profissional (B2)</li>
+                    {CERTIFICATIONS.map((cert, i) => (
+                      <li key={i}>✓ {cert.name}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
                   <h4 className="font-bold text-primary mb-3">Idiomas</h4>
                   <ul className="space-y-2 text-sm text-foreground/80">
-                    <li>🇧🇷 Português - Nativo</li>
-                    <li>🇺🇸 Inglês - Profissional</li>
-                    <li>🇪🇸 Espanhol - Intermediário</li>
-                    <li>🇩🇪 Alemão - Básico</li>
+                    {LANGUAGES.map((lang, i) => (
+                      <li key={i}>{lang.flag} {lang.name} - {lang.level}</li>
+                    ))}
                   </ul>
                 </div>
 
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Entrar em Contato
+                <Button className="w-full bg-primary hover:bg-primary/90" asChild>
+                  <a href={`mailto:${OWNER.email}`}>Entrar em Contato</a>
                 </Button>
               </div>
             </div>
@@ -240,12 +217,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground/5 border-t border-border py-8">
-        <div className="container text-center text-foreground/60 text-sm">
-          <p>&copy; 2026 Danrley Pereira. Todos os direitos reservados.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
