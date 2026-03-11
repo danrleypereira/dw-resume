@@ -14,7 +14,6 @@ export function Navbar({ currentPage }: NavbarProps) {
     ...(currentPage !== "home" ? [{ href: "/", label: "Home" }] : []),
     { href: "/about", label: "Sobre" },
     { href: "/projects", label: "Projetos" },
-    ...(currentPage === "home" ? [{ href: "#contact", label: "Contato", anchor: true }] : []),
   ];
 
   return (
