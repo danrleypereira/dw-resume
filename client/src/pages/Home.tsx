@@ -47,11 +47,6 @@ export default function Home() {
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </CubeLink>
-                  <a href="#contact">
-                    <Button variant="outline" className="border-foreground/20 hover:bg-foreground/5">
-                      Entrar em Contato
-                    </Button>
-                  </a>
                 </div>
 
                 {/* Social Links */}
@@ -153,19 +148,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="contact" className="py-20 bg-primary text-white">
-        <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Vamos Trabalhar Juntos?</h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Tenho interesse em oportunidades de colaboração e novos desafios. Entre em contato!
-          </p>
-          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" asChild>
-            <a href={`mailto:${OWNER.email}`}>Enviar Mensagem</a>
-          </Button>
         </div>
       </section>
 

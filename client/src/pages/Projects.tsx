@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github } from "lucide-react";
 import { CubeLink } from "@/components/CubeLink";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { OWNER } from "@/data/social";
 import { PROJECTS } from "@/data/projects";
 
 export default function Projects() {
@@ -90,19 +88,6 @@ export default function Projects() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Quer trabalhar juntos?</h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Tenho interesse em novos desafios, oportunidades de colaboração e projetos que gerem impacto positivo.
-          </p>
-          <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" asChild>
-            <a href={`mailto:${OWNER.email}`}>Entrar em Contato</a>
-          </Button>
         </div>
       </section>
 

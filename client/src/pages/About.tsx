@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, Code2, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { CubeLink } from "@/components/CubeLink";
@@ -208,9 +207,6 @@ export default function About() {
                   </ul>
                 </div>
 
-                <Button className="w-full bg-primary hover:bg-primary/90" asChild>
-                  <a href={`mailto:${OWNER.email}`}>Entrar em Contato</a>
-                </Button>
               </div>
             </div>
           </div>
