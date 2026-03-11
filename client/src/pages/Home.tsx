@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, ArrowRight, Instagram, Facebook } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import PersonaSlider from "@/components/PersonaSlider";
 import { CubeLink } from "@/components/CubeLink";
+import { SOCIAL_LINKS } from "@/data/social";
 
 /**
  * Design Philosophy: Minimalismo Moderno
@@ -79,42 +80,18 @@ export default function Home() {
 
                 {/* Social Links */}
                 <div className="flex gap-4 pt-8">
-                  <a
-                    href="https://github.com/danrleypereira"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <Github className="w-5 h-5 text-primary" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/danrleypereira/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5 text-primary" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/danrleypereira"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-5 h-5 text-primary" />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/danrleywillyan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-5 h-5 text-primary" />
-                  </a>
+                  {SOCIAL_LINKS.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors"
+                      aria-label={link.ariaLabel}
+                    >
+                      <link.icon className="w-5 h-5 text-primary" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

@@ -5,13 +5,12 @@ import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CubeTransition } from "./components/CubeTransition";
-
-const CUBE_ROUTES = ["/", "/about", "/projects"];
+import { CUBE_ROUTES } from "./data/routes";
 
 function Router() {
   const [location] = useLocation();
 
-  if (CUBE_ROUTES.includes(location)) {
+  if ((CUBE_ROUTES as readonly string[]).includes(location)) {
     return <CubeTransition />;
   }
 

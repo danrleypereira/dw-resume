@@ -1,40 +1,18 @@
 import { useState, useEffect } from 'react';
-
-/**
- * Componente que exibe as 3 personas: Engenheiro, Educador, Cidadão
- * Rotaciona automaticamente a cada 4.5 segundos
- */
-
-const personas = [
-  {
-    image: '/engineer-min.png',
-    title: 'Engenheiro',
-    description: 'Desenvolvedor de software apaixonado por criar soluções inovadoras',
-  },
-  {
-    image: '/educator-min.png',
-    title: 'Educador',
-    description: 'Mentor dedicado a compartilhar conhecimento e desenvolver talentos',
-  },
-  {
-    image: '/citizen-min.png',
-    title: 'Cidadão',
-    description: 'Comprometido com impacto positivo na sociedade e comunidade',
-  },
-];
+import { PERSONAS } from '@/data/personas';
 
 export default function PersonaSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % personas.length);
+      setCurrentIndex((prev) => (prev + 1) % PERSONAS.length);
     }, 4500);
 
     return () => clearInterval(interval);
   }, []);
 
-  const current = personas[currentIndex];
+  const current = PERSONAS[currentIndex];
 
   return (
     <div className="flex flex-col items-center justify-center gap-8">
@@ -60,14 +38,14 @@ export default function PersonaSlider() {
 
       {/* Indicators */}
       <div className="flex gap-2">
-        {personas.map((_, index) => (
+        {PERSONAS.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex ? 'bg-primary w-8' : 'bg-primary/30 w-2'
             }`}
-            aria-label={`Go to ${personas[index].title}`}
+            aria-label={`Go to ${PERSONAS[index].title}`}
           />
         ))}
       </div>

@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, useCallback, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
+import { CUBE_ROUTES } from "@/data/routes";
 
 export type Direction = "left" | "right" | "up" | "down";
 
 const DIRECTIONS: Direction[] = ["left", "right", "up", "down"];
-const CUBE_ROUTES = ["/", "/about", "/projects"];
 const ANIMATION_DURATION = 0.8;
 
 function pickRandomDirection(): Direction {
@@ -40,7 +40,7 @@ export function useCubeNavigation() {
 
   // Handle external navigation (browser back/forward)
   useEffect(() => {
-    if (!isAnimating && location !== displayPath && CUBE_ROUTES.includes(location)) {
+    if (!isAnimating && location !== displayPath && (CUBE_ROUTES as readonly string[]).includes(location)) {
       const direction = pickRandomDirection();
       setTransition({ direction, nextPath: location });
       setIsAnimating(true);
@@ -50,7 +50,7 @@ export function useCubeNavigation() {
   const navigateTo = useCallback(
     (path: string) => {
       if (isAnimating || path === displayPath) return;
-      if (!CUBE_ROUTES.includes(path)) {
+      if (!(CUBE_ROUTES as readonly string[]).includes(path)) {
         setLocation(path);
         return;
       }
