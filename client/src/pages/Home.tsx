@@ -6,6 +6,7 @@ import { CubeLink } from "@/components/CubeLink";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SOCIAL_LINKS, OWNER } from "@/data/social";
+import { PROJECTS } from "@/data/projects";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -125,29 +126,29 @@ export default function Home() {
         <div className="container">
           <h2 className="text-4xl md:text-5xl font-bold mb-12">Projetos em Destaque</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
+            {PROJECTS.filter((p) => p.featured).map((project) => (
               <div
-                key={i}
+                key={project.title}
                 className="card-hover bg-card border border-border rounded-xl overflow-hidden shadow-sm"
               >
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary/30 mb-2">Projeto {i}</div>
-                    <p className="text-foreground/50 text-sm">Imagem em breve</p>
-                  </div>
+                  <project.icon className="w-16 h-16 text-primary/40" strokeWidth={1.2} />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Projeto Destacado {i}</h3>
-                  <p className="text-foreground/70 text-sm mb-4">
-                    Descrição breve do projeto e tecnologias utilizadas.
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-foreground/70 text-sm mb-4 line-clamp-2">
+                    {project.description}
                   </p>
                   <div className="flex gap-2 flex-wrap mb-4">
-                    <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">React</span>
-                    <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">TypeScript</span>
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <span key={tech} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                  <a href="#" className="link-underline text-primary text-sm font-medium">
+                  <CubeLink href="/projects" className="link-underline text-primary text-sm font-medium">
                     Ver Projeto →
-                  </a>
+                  </CubeLink>
                 </div>
               </div>
             ))}

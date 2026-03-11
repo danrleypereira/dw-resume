@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { Suspense, useEffect, useState, useMemo, useCallback } from "react";
 import {
   useCubeNavigation,
   CubeNavigationContext,
   type TransitionState,
 } from "@/hooks/useCubeNavigation";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Projects from "@/pages/Projects";
-
-const PAGE_MAP: Record<string, React.ComponentType> = {
-  "/": Home,
-  "/about": About,
-  "/projects": Projects,
-};
+import { PAGE_MAP } from "@/data/routes";
 
 function getTransforms(
   transition: TransitionState | null,
@@ -63,6 +55,14 @@ function getTransforms(
     cubeFrom: `translateZ(${-d}px)`,
     cubeTo,
   };
+}
+
+function PageLoader() {
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-background">
+      <div className="text-primary text-2xl font-bold animate-pulse">DW</div>
+    </div>
+  );
 }
 
 export function CubeTransition() {
@@ -134,7 +134,9 @@ export function CubeTransition() {
               className="w-full h-full overflow-y-auto overflow-x-hidden bg-background"
               style={{ pointerEvents: !transition ? "auto" : "none" }}
             >
-              {CurrentPage && <CurrentPage />}
+              <Suspense fallback={<PageLoader />}>
+                {CurrentPage && <CurrentPage />}
+              </Suspense>
             </div>
           </div>
 
@@ -152,7 +154,9 @@ export function CubeTransition() {
                 className="w-full h-full overflow-y-auto overflow-x-hidden bg-background"
                 style={{ pointerEvents: "none" }}
               >
-                <NextPage />
+                <Suspense fallback={<PageLoader />}>
+                  <NextPage />
+                </Suspense>
               </div>
             </div>
           )}
