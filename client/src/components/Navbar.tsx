@@ -25,17 +25,11 @@ export function Navbar({ currentPage }: NavbarProps) {
 
         {/* Desktop */}
         <div className="hidden md:flex gap-8 items-center">
-          {links.map((link) =>
-            link.anchor ? (
-              <a key={link.href} href={link.href} className="link-underline text-sm font-medium hover:text-primary">
-                {link.label}
-              </a>
-            ) : (
-              <CubeLink key={link.href} href={link.href} className="link-underline text-sm font-medium hover:text-primary">
-                {link.label}
-              </CubeLink>
-            )
-          )}
+          {links.map((link) => (
+            <CubeLink key={link.href} href={link.href} className="link-underline text-sm font-medium hover:text-primary">
+              {link.label}
+            </CubeLink>
+          ))}
           <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90" asChild>
             <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
           </Button>
@@ -56,27 +50,16 @@ export function Navbar({ currentPage }: NavbarProps) {
       {isOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-4">
-            {links.map((link) =>
-              link.anchor ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium hover:text-primary py-2"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <CubeLink
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium hover:text-primary py-2"
-                >
-                  {link.label}
-                </CubeLink>
-              )
-            )}
+            {links.map((link) => (
+              <CubeLink
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-sm font-medium hover:text-primary py-2"
+              >
+                {link.label}
+              </CubeLink>
+            ))}
             <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90 w-fit" asChild>
               <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
             </Button>
