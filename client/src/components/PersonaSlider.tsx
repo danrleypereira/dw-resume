@@ -1,23 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { PERSONAS, PERSONA_ROTATION_MS } from '@/data/personas';
 
 export default function PersonaSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startInterval = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % PERSONAS.length);
     }, PERSONA_ROTATION_MS);
-
-    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    startInterval();
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [startInterval]);
+
+  const goTo = useCallback((index: number) => {
+    setCurrentIndex(index);
+    startInterval();
+  }, [startInterval]);
 
   const current = PERSONAS[currentIndex];
 
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       {/* Persona Image */}
-      <div className="relative w-full max-w-[320px]">
+      <div className="relative w-full max-w-[280px]">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-3xl" />
         <img
           src={current.image}
@@ -41,7 +51,7 @@ export default function PersonaSlider() {
         {PERSONAS.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goTo(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex ? 'bg-primary w-8' : 'bg-primary/30 w-2'
             }`}

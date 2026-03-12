@@ -2,13 +2,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { CubeLink } from "@/components/CubeLink";
 import linksData from "@/data/links.json";
 
-const SOCIAL_ICON_MAP: Record<string, string> = {
-  GitHub: "/social-midias/github.svg",
-  LinkedIn: "/social-midias/linkedin.svg",
-  Instagram: "/social-midias/instagram.svg",
-  Facebook: "/social-midias/facebook.svg",
-};
-
 const MOBILE_BREAKPOINT = 991.98;
 
 export function Sidebar() {
@@ -17,14 +10,31 @@ export function Sidebar() {
   const sidebarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) => setIsMobile(e.matches);
+    onChange(mql);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
   }, []);
 
-  const open = useCallback(() => setIsOpen(true), []);
-  const close = useCallback(() => setIsOpen(false), []);
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen]);
+
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout>>(null);
+
+  const open = useCallback(() => {
+    hoverTimeout.current = setTimeout(() => setIsOpen(true), 250);
+  }, []);
+  const close = useCallback(() => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setIsOpen(false);
+  }, []);
 
   const handleToggle = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -35,6 +45,15 @@ export function Sidebar() {
   }, []);
 
   return (
+    <>
+    {/* Mobile backdrop */}
+    {isMobile && isOpen && (
+      <div
+        className="fixed inset-0 bg-black/40 z-40"
+        onClick={close}
+        aria-hidden="true"
+      />
+    )}
     <nav
       ref={sidebarRef}
       className="fixed left-0 top-0 h-screen z-50 bg-white flex flex-col transition-all duration-300 overflow-hidden"
@@ -44,13 +63,13 @@ export function Sidebar() {
             ? "70vw"
             : "20vw"
           : "70px",
-        borderRight: isOpen ? "3px dashed black" : "none",
+        borderRight: "3px dashed black",
       }}
       onMouseEnter={isMobile ? undefined : open}
       onMouseLeave={isMobile ? undefined : close}
     >
       {/* Hamburger / Toggle area */}
-      <div className="flex items-center justify-center min-h-[70px] shrink-0">
+      <div className={`flex items-center justify-center shrink-0 ${isOpen ? "min-h-[70px]" : "flex-1"}`}>
         <button
           onClick={isMobile ? handleToggle : undefined}
           className="p-3 cursor-pointer"
@@ -73,7 +92,7 @@ export function Sidebar() {
             <img
               src={linksData.profile.photo}
               alt={linksData.owner.name}
-              className="w-24 h-24 rounded-full object-cover border-2 border-gray-300"
+              className="w-40 h-40 rounded-full object-cover border-2 border-gray-300"
             />
             <span className="mt-2 text-sm font-semibold text-center text-black">
               {linksData.owner.name}
@@ -89,7 +108,7 @@ export function Sidebar() {
                     src={link.icon}
                     alt=""
                     className="shrink-0"
-                    style={{ width: 52, height: 52 }}
+                    style={{ width: 36, height: 36 }}
                   />
                   <span className="text-sm font-medium text-black whitespace-nowrap">
                     {link.label}
@@ -136,7 +155,7 @@ export function Sidebar() {
                 aria-label={social.name}
               >
                 <img
-                  src={SOCIAL_ICON_MAP[social.name] ?? ""}
+                  src={social.icon}
                   alt={social.name}
                   className="w-6 h-6 hover:opacity-70 transition-opacity"
                 />
@@ -146,5 +165,6 @@ export function Sidebar() {
         </div>
       )}
     </nav>
+    </>
   );
 }

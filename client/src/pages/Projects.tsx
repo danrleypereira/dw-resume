@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { Github } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PROJECTS } from "@/data/projects";
 
 export default function Projects() {
+  useEffect(() => { document.title = "Projetos | Danrley Pereira"; }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -22,7 +25,7 @@ export default function Projects() {
           <div className="space-y-16">
             {PROJECTS.map((project, i) => (
               <div
-                key={i}
+                key={project.title}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   i % 2 === 1 ? "lg:grid-cols-2 lg:[&>:first-child]:order-2" : ""
                 }`}
@@ -51,9 +54,9 @@ export default function Projects() {
                   <div>
                     <p className="text-sm font-semibold text-primary mb-3">Tecnologias Utilizadas</p>
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, j) => (
+                      {project.technologies.map((tech) => (
                         <span
-                          key={j}
+                          key={tech}
                           className="text-xs bg-primary/10 text-primary px-3 py-2 rounded-full font-medium"
                         >
                           {tech}

@@ -1,13 +1,16 @@
 import { Code2, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { OWNER } from "@/data/social";
+import linksData from "@/data/links.json";
 import { EXPERIENCES } from "@/data/experiences";
 import { SKILLS } from "@/data/skills";
 import { CERTIFICATIONS, LANGUAGES } from "@/data/certifications";
 
 export default function About() {
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+
+  useEffect(() => { document.title = "Sobre Mim | Danrley Pereira"; }, []);
 
   const toggleCard = (index: number) => {
     setExpandedCards((prev) => {
@@ -63,9 +66,10 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-8">Experiência Profissional</h2>
                 <div className="space-y-8">
                   {EXPERIENCES.map((exp, i) => {
+                    const expKey = `${exp.company}-${exp.title}`;
                     const isExpanded = expandedCards.has(i);
                     return (
-                      <div key={i} className="card-accent bg-card border border-border rounded-lg p-6">
+                      <div key={expKey} className="card-accent bg-card border border-border rounded-lg p-6">
                         <div className="flex items-start justify-between mb-1">
                           <div>
                             <h3 className="text-xl font-bold">{exp.title}</h3>
@@ -83,15 +87,15 @@ export default function About() {
                         {isExpanded && (
                           <>
                             <ul className="text-sm text-foreground/70 space-y-1 list-disc list-inside mb-4">
-                              {exp.highlights.map((h, j) => (
-                                <li key={j}>{h}</li>
+                              {exp.highlights.map((h) => (
+                                <li key={h}>{h}</li>
                               ))}
                             </ul>
                             {exp.skills && (
                               <div className="flex flex-wrap gap-2 mb-3">
-                                {exp.skills.map((skill, j) => (
+                                {exp.skills.map((skill) => (
                                   <span
-                                    key={j}
+                                    key={skill}
                                     className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
                                   >
                                     {skill}
@@ -155,7 +159,7 @@ export default function About() {
                 {/* Profile Image */}
                 <div className="rounded-xl overflow-hidden shadow-lg mb-8">
                   <img
-                    src="/perfil1-nav.jpeg"
+                    src={linksData.profile.photo}
                     alt={OWNER.name}
                     className="w-full h-auto object-cover"
                   />
@@ -163,13 +167,13 @@ export default function About() {
                 <div>
                   <h3 className="text-2xl font-bold mb-6">Habilidades Técnicas</h3>
                   <div className="space-y-6">
-                    {SKILLS.map((skill, i) => (
-                      <div key={i}>
+                    {SKILLS.map((skill) => (
+                      <div key={skill.category}>
                         <h4 className="font-bold text-primary mb-3">{skill.category}</h4>
                         <div className="flex flex-wrap gap-2">
-                          {skill.items.map((item, j) => (
+                          {skill.items.map((item) => (
                             <span
-                              key={j}
+                              key={item}
                               className="text-xs bg-primary/10 text-primary px-3 py-2 rounded-full font-medium"
                             >
                               {item}
@@ -184,8 +188,8 @@ export default function About() {
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
                   <h4 className="font-bold text-primary mb-3">Certificações</h4>
                   <ul className="space-y-2 text-sm text-foreground/80">
-                    {CERTIFICATIONS.map((cert, i) => (
-                      <li key={i}>✓ {cert.name}</li>
+                    {CERTIFICATIONS.map((cert) => (
+                      <li key={cert.name}>✓ {cert.name}</li>
                     ))}
                   </ul>
                 </div>
@@ -193,8 +197,8 @@ export default function About() {
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
                   <h4 className="font-bold text-primary mb-3">Idiomas</h4>
                   <ul className="space-y-2 text-sm text-foreground/80">
-                    {LANGUAGES.map((lang, i) => (
-                      <li key={i}>{lang.flag} {lang.name} - {lang.level}</li>
+                    {LANGUAGES.map((lang) => (
+                      <li key={lang.name}>{lang.flag} {lang.name} - {lang.level}</li>
                     ))}
                   </ul>
                 </div>

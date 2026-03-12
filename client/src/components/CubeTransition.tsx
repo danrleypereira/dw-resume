@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Suspense, useEffect, useState, useMemo, useCallback } from "react";
+import { Suspense, useEffect, useState, useMemo, useRef } from "react";
 import {
   useCubeNavigation,
   CubeNavigationContext,
@@ -82,13 +82,21 @@ export function CubeTransition() {
   }));
 
   useEffect(() => {
-    const updateSize = () =>
-      setDimensions({
-        halfWidth: window.innerWidth / 2,
-        halfHeight: window.innerHeight / 2,
-      });
+    let timeoutId: ReturnType<typeof setTimeout>;
+    const updateSize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setDimensions({
+          halfWidth: window.innerWidth / 2,
+          halfHeight: window.innerHeight / 2,
+        });
+      }, 150);
+    };
     window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", updateSize);
+    };
   }, []);
 
   const { halfWidth, halfHeight } = dimensions;
@@ -100,8 +108,10 @@ export function CubeTransition() {
   const CurrentPage = PAGE_MAP[displayPath];
   const NextPage = transition ? PAGE_MAP[transition.nextPath] : null;
 
-  const scrollRef = useCallback((node: HTMLDivElement | null) => {
-    if (node) node.scrollTop = 0;
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [displayPath]);
 
   return (

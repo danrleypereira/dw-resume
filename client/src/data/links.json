@@ -6,6 +6,12 @@
   },
   "navigation": [
     {
+      "label": "Início",
+      "href": "/",
+      "type": "internal",
+      "icon": "/navigation/account-50.png"
+    },
+    {
       "label": "Sobre",
       "href": "/about",
       "type": "internal",
@@ -27,19 +33,23 @@
   "social": [
     {
       "name": "GitHub",
-      "url": "https://github.com/danrleypereira"
+      "url": "https://github.com/danrleypereira",
+      "icon": "/social-midias/github.svg"
     },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/danrleypereira/"
+      "url": "https://www.linkedin.com/in/danrleypereira/",
+      "icon": "/social-midias/linkedin.svg"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/danrleypereira"
+      "url": "https://www.instagram.com/danrleypereira",
+      "icon": "/social-midias/instagram.svg"
     },
     {
       "name": "Facebook",
-      "url": "https://www.facebook.com/danrleywillyan"
+      "url": "https://www.facebook.com/danrleywillyan",
+      "icon": "/social-midias/facebook.svg"
     }
   ],
   "profile": {
