@@ -1,21 +1,13 @@
-import { ArrowLeft, Github } from "lucide-react";
-import { CubeLink } from "@/components/CubeLink";
-import { Navbar } from "@/components/Navbar";
+import { Github } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PROJECTS } from "@/data/projects";
 
 export default function Projects() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar currentPage="projects" />
-
       {/* Header */}
       <section className="py-16 bg-secondary/30 border-b border-border">
         <div className="container">
-          <CubeLink href="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            Voltar
-          </CubeLink>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Meus Projetos</h1>
           <p className="text-xl text-foreground/80 max-w-2xl">
             Uma seleção dos projetos mais interessantes que desenvolvi, demonstrando minhas habilidades

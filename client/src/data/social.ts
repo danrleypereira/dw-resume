@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
+import linksData from "@/data/links.json";
 
 export interface SocialLink {
   name: string;
@@ -8,35 +9,22 @@ export interface SocialLink {
   ariaLabel: string;
 }
 
-export const SOCIAL_LINKS: SocialLink[] = [
-  {
-    name: "GitHub",
-    url: "https://github.com/danrleypereira",
-    icon: Github,
-    ariaLabel: "GitHub",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/danrleypereira/",
-    icon: Linkedin,
-    ariaLabel: "LinkedIn",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/danrleypereira",
-    icon: Instagram,
-    ariaLabel: "Instagram",
-  },
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com/danrleywillyan",
-    icon: Facebook,
-    ariaLabel: "Facebook",
-  },
-];
+const ICON_MAP: Record<string, LucideIcon> = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Instagram: Instagram,
+  Facebook: Facebook,
+};
+
+export const SOCIAL_LINKS: SocialLink[] = linksData.social.map((s) => ({
+  name: s.name,
+  url: s.url,
+  icon: ICON_MAP[s.name] ?? Github,
+  ariaLabel: s.name,
+}));
 
 export const OWNER = {
-  name: "Danrley Pereira",
-  title: "Engenheiro de Software",
-  email: "contact@danrleypereira.com",
+  name: linksData.owner.name,
+  title: linksData.owner.title,
+  email: linksData.owner.email,
 } as const;

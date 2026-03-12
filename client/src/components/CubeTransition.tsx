@@ -6,6 +6,7 @@ import {
   type TransitionState,
 } from "@/hooks/useCubeNavigation";
 import { PAGE_MAP } from "@/data/routes";
+import { Sidebar } from "@/components/Sidebar";
 
 function getTransforms(
   transition: TransitionState | null,
@@ -105,6 +106,7 @@ export function CubeTransition() {
 
   return (
     <CubeNavigationContext.Provider value={{ navigateTo, isAnimating }}>
+      <Sidebar />
       <div
         className="fixed inset-0 overflow-hidden"
         style={{ perspective: "1200px" }}
