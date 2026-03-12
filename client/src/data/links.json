@@ -1,0 +1,48 @@
+{
+  "owner": {
+    "name": "Danrley Pereira",
+    "title": "Engenheiro de Software",
+    "email": "contact@danrleypereira.com"
+  },
+  "navigation": [
+    {
+      "label": "Sobre",
+      "href": "/about",
+      "type": "internal",
+      "icon": "/navigation/glasses.png"
+    },
+    {
+      "label": "Projetos",
+      "href": "/projects",
+      "type": "internal",
+      "icon": "/navigation/briefcase.svg"
+    },
+    {
+      "label": "Curriculum",
+      "href": "https://drive.google.com/file/d/1ttJdxKq7AHNH7vfELLP7LU1qy5fabv3C/view?usp=sharing",
+      "type": "external",
+      "icon": "/navigation/resume-80.png"
+    }
+  ],
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/danrleypereira"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/danrleypereira/"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/danrleypereira"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/danrleywillyan"
+    }
+  ],
+  "profile": {
+    "photo": "/perfil1-nav.jpeg"
+  }
+}
