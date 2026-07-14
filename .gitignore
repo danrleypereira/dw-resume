@@ -30,3 +30,18 @@ build
 */yarn-debug.log*
 */yarn-error.log*
 
+# LaTeX build artifacts (cv-overleaf)
+cv-overleaf/*.aux
+cv-overleaf/*.log
+cv-overleaf/*.out
+cv-overleaf/*.fls
+cv-overleaf/*.fdb_latexmk
+cv-overleaf/*.synctex.gz
+cv-overleaf/*.toc
+cv-overleaf/*.bbl
+cv-overleaf/*.blg
+cv-overleaf/*.run.xml
+cv-overleaf/*.bcf
+# Redundant Overleaf export
+cv-overleaf/Resume_Danrley_english_version.zip
+
