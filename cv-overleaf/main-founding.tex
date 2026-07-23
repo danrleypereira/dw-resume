@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CV Danrley Pereira — Founding Engineer variant             %%%
+%%% Reuses altacv.cls; sidebars: founding-page*sidebar.tex     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+
+%Layout
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+%Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+%Colors
+\definecolor{accent}{HTML}{000e17}
+\definecolor{heading}{HTML}{283AFF}
+\definecolor{emphasis}{HTML}{696969}
+\definecolor{body}{HTML}{01415f}
+
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Danrley Willyan da Silva Pereira}
+\tagline{Founder-Minded Product Developer Focused on Business Value · Python/FastAPI · PostgreSQL · Next.js · Real-Time Systems, Architecture \& DevOps}
+\personalinfo{
+    \email{danrleywillian@gmail.com}
+    \phone{+55 61 9 9423-4712}
+    \location{Brasil, Brasília - DF}
+    \linkedin{\url{https://www.linkedin.com/in/danrleypereira}}
+    \github{https://github.com/danrleypereira}
+    \homepage{https://danrleypereira.com}
+}
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection[founding-page1sidebar]{Introduction}
+
+Founder-minded product developer focused on delivering business value, with 8+ years building and modernizing products across startups, international companies, and government. I work across the whole stack: product discovery, relational data modeling, \textbf{Python} APIs, real-time workflows, \textbf{React/Next.js} interfaces, automated testing, CI/CD, and cloud or on-premise infrastructure. \\
+
+After delivering an AI innovation project end to end at \textbf{Epicor} — shipped to real customers in a little over a year — I chose to focus on my own company, \textbf{DW Corp}, and build the reusable, enterprise-grade blocks (authentication, payments, infrastructure, CI/CD, observability) that let me build almost anything fast without giving up quality. With most of those blocks now in place, I am ready to build a product that generates real value. \\
+
+I am looking for a business idea that fits my interests and experience, and a partner to build a product that delivers value to businesses — ideally working \textbf{hybrid or on-site} for closer collaboration. \\
+
+\cvsection[]{Why I'm a Strong Fit}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] \textbf{Founder mindset, not ticket execution:} I have repeatedly initiated architecture, process, product, hiring, and infrastructure — I set the standards a team inherits.
+\item[--] \textbf{I build products from scratch:} I take products from idea to production and operate them, using reusable auth, payments, CI/CD, and infrastructure that shorten the path to launch.
+\item[--] \textbf{The target stack, hands-on:} \textbf{Python \& FastAPI}, \textbf{SQLAlchemy \& Alembic} on \textbf{PostgreSQL}, \textbf{WebSockets/Socket.io}, \textbf{Next.js}, and thorough unit/integration testing in production systems.
+\item[--] \textbf{Real-time operational systems:} built live monitoring and streaming on Socket.io + Redis serving thousands of users — directly relevant to production-run visibility.
+\item[--] \textbf{Supply-chain \& logistics domain:} delivered procurement/ERP software (Epicor) and transport, delivery and yard management (Compuletra), and hold an \textbf{MBA in Supply Chain \& Integrated Logistics}.
+\item[--] \textbf{Availability \& collaboration:} available full-time and prefer a \textbf{hybrid or on-site} setup for better engagement; can work in any Brazilian capital and travel. Fluent English (C2). Railway is new to me, but Heroku, AWS, GCP, and on-premise/bare-metal operation transfer directly.
+\end{itemize}
+
+\cvsection[]{Core Technologies}
+
+\textbf{Python} · \textbf{FastAPI} · Flask · \textbf{SQLAlchemy} · \textbf{Alembic} · \textbf{PostgreSQL} · \textbf{React} · \textbf{Next.js} · Nuxt · TypeScript · \textbf{WebSockets/Socket.io} · Redis · Celery · RabbitMQ · Docker · Kubernetes · Terraform/OpenTofu · GitHub \& GitLab CI/CD · AWS · GCP · On-Premise/Linux · Pytest · Playwright · Cucumber · Bruno · k6 \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\break
+\newpage
+\cvsection[founding-page2sidebar]{Experience}
+
+\cvevent{Founder \& Principal Product Engineer}{DW Corp LTDA}{Mar 2025 - Present}{Brasília - Brazil}
+
+Focused on building the reusable, enterprise-grade blocks that let me start and run products quickly at high quality.
+
+\textbf{Reusable Product Foundations}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Built \textbf{Curupira}, a Rust/axum \textbf{OAuth2/OIDC authorization service} with \textbf{multi-tenancy}, \textbf{SSO federation}, MFA, PKCE/JWKS, Argon2 password hashing, GDPR erasure, and OpenTelemetry observability, plus a Nuxt SSR admin dashboard — a drop-in identity layer that cuts new-product setup time (built for \textasciitilde US\$12k over 5 months; beta users in production).
+    \item[--] Validated Curupira with a deep automated test suite: \textbf{Cucumber}, \textbf{Playwright}, \textbf{Allure}, \textbf{Bruno} (API), and \textbf{k6} load tests.
+    \item[--] Integrated payments with \textbf{Stripe}, \textbf{Adyen}, and Brazilian providers; previously ran \textbf{Auth0} and built custom identity layers for other companies.
+    \item[--] Delivered DW Corp's digital presence (\textbf{Next.js 14} App Router + Django/Wagtail CMS, i18n, standalone Docker) for \textasciitilde US\$5k across \textasciitilde10 months.
+\end{itemize}
+
+\textbf{Infrastructure, CI/CD \& Observability}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Set up a full \textbf{bare-metal 3-node cluster} with hybrid cloud/on-premise deployment; standardized CI/CD across \textbf{GitHub and GitLab} (self-hosted and hosted runners) and infrastructure-as-code with \textbf{Terraform/OpenTofu}.
+    \item[--] Run \textbf{Grafana} dashboards, alerting, and monitoring agents (including security-breach detection) across software and infrastructure.
+\end{itemize}
+
+\textbf{Team, Mentorship \& Community}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] \textbf{Hired and managed 5 people} (3 engineers, 1 marketing, 1 part-time psychologist for \textasciitilde1 year).
+    \item[--] \textbf{Mentored 10+ engineers} over four years, guiding 5 of them from academic/entry level into mid-level roles at companies.
+    \item[--] Lead \textbf{Brasília's Software Craftsmanship community} (the first in Brazil): TDD katas with pair programming (XP) and round-table discussions on engineering topics.
+    \item[--] Own product discovery, positioning, marketing, and build-vs-buy decisions.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\break
+\newpage
+\cvsection[founding-page3sidebar]{Experience}
+
+\cvevent{Client Engagements — Full-Stack \& Data}{DW Corp LTDA (scoped contracts)}{2025 - Present}{Remote}
+
+To generate revenue and protect my runway, I took scoped engagements with a few companies.
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] \textbf{Structured Finance / CMBS} — Built \textbf{data scraping} and \textbf{data ingestion} pipelines and a \textbf{Data Forge} UI that makes transformed data available to users, backed by \textbf{FastAPI} services and \textbf{advanced PostgreSQL queries}, with a \textbf{Snowflake} lakehouse (external stages, partitioning, materialized views) fed through an event-driven \textbf{AWS SQS} pipeline over CREFC-standard financial data.
+\item[--] \textbf{Healthcare / Life-Sciences Analytics} — Built and evolved a clinical-trial planning platform on \textbf{Flask + SQLAlchemy 2.0} with \textbf{\textasciitilde140 Alembic migrations} over a complex \textbf{PostgreSQL} schema (a \emph{Plan} aggregate spanning 33 tables, 71 relationships, and 50 foreign keys, with many-to-many and self-referential relations). Tuned queries with connection pooling and a functional index; ran async projection compute on \textbf{Celery + Redis}; maintained \textbf{\textasciitilde200 pytest integration tests} against a real Postgres.
+\end{itemize}
+\textbf{Technologies:} Python, FastAPI, Flask, SQLAlchemy, Alembic, PostgreSQL, Snowflake, AWS SQS, Celery, Redis, Pytest, React, Vite.
+\vspace{4mm}
+
+\cvevent{Senior Software Engineer}{Epicor}{Nov 2023 - Mar 2025}{Austin TX - USA}
+
+Delivered an AI innovation project end to end and shipped it to real customers in a little over a year: an \textbf{AI-assisted procurement / RFQ sourcing and purchase-order automation} module \textbf{connected to the real Epicor Kinetic ERP} (buyers, suppliers/vendors, RFQs, quotes, price breaks, POs) via Epicor's event-driven Data Fabric.
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Designed \textbf{.NET Aspire} microservices with \textbf{RabbitMQ} producers/consumers over versioned event contracts, integrating the module with live ERP supply-chain data.
+\item[--] Implemented custom \textbf{OAuth2/SAML} auth in .NET with JWT; deployed on \textbf{Kubernetes}; led a refactor of an Angular integration portal into \textbf{microfrontends}.
+\item[--] Built SOLID-compliant solutions with .NET Results/Generics and reactive functions, reducing try-catch reliance and improving observability; delivered strong xUnit unit \& integration tests plus WebdriverIO E2E through Azure DevOps CI/CD.
+\item[--] Drove sprint-planning and process improvements, unblocked the frontend team by anticipating API dependencies, and authored onboarding documentation.
+\item[--] Integrated \textbf{Azure OpenAI} with Azure Document Intelligence to extract structured quote data from supplier emails/attachments.
+\end{itemize}
+\textbf{Technologies:} .NET, .NET Aspire, C\#, Angular, RabbitMQ, Azure (Cosmos DB, Key Vault, Document Intelligence, OpenAI), OAuth2, SAML, JWT, Kubernetes, Microfrontends, xUnit, WebdriverIO, Azure DevOps.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\break
+\newpage
+\cvsection[founding-page4sidebar]{Experience}
+
+\cvevent{Senior Full-Stack Consultant — SubSurface Dynamics}{DW Corp LTDA (time-bound contract)}{Jan 2024 - Jun 2024}{Alberta - Canada}
+
+A live operational-monitoring platform for oil \& gas frac operations serving \textbf{thousands of users} — my primary real-time case study.
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Led the refactor of a MERN stack into a modern \textbf{TypeScript} project on \textbf{Fastify}, \textbf{Socket.io}, and \textbf{Redis}, improving architecture and maintainability.
+\item[--] Scaled real-time delivery with a \textbf{Socket.io Redis adapter} for multi-node broadcast and \textbf{Bull} worker queues offloading heavy compute; tuned Redis for cost-efficient streaming.
+\item[--] Used MongoDB Atlas time-series features to cut cost and improve performance; re-engineered the frontend in \textbf{React} with reusable, testable components.
+\item[--] Built live operational dashboards, a notification system, and a \textbf{Three.js} 3D wellbore visualization for real-time decisions; secured the platform with Auth0/OAuth2.
+\end{itemize}
+\textbf{Technologies:} Fastify, Socket.io, Redis, TypeScript, React, MongoDB Atlas, Three.js, Auth0, OAuth2, Bull, Vite.
+\vspace{4mm}
+
+\cvevent{Senior Software Engineer}{DW Corp LTDA}{Sep 2022 - Oct 2023}{Brasília - Brazil}
+
+\textbf{Restaurant Orders Manager}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Built order synchronization with Django and Clean Architecture, migrating a Symphony (Oracle) integration from SOAP to REST.
+    \item[--] Implemented Celery tasks with the circuit-breaker pattern to keep services consistent despite intermittent connectivity at restaurant locations; delivered to a data lake for the analytics team.
+\end{itemize}
+
+\textbf{Field Service Management (FSM) Mobile App}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Built a cross-platform FSM app with \textbf{.NET MAUI} and RESTful \textbf{.NET Core/MVC} services; wrote XUnit tests with Allure reporting; published to the App Store and Play Store.
+    \item[--] Created and maintained database procedures, views, and triggers for critical business logic; managed cloud infrastructure across GCP, Digital Ocean and AWS, plus on-premise MinIO storage.
+\end{itemize}
+\textbf{Technologies:} Python, Django, Celery, .NET MAUI, .NET Core, C\#, PostgreSQL, Oracle, XUnit, Allure, GCP, AWS, Digital Ocean, MinIO.
+\vspace{4mm}
+
+\cvevent{Data \& DevOps Engineer}{Dado Global}{Dec 2021 - Apr 2023}{Porto - Portugal}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Designed and built a Python \textbf{ETL} system with layered responsibilities, using \textbf{SQLAlchemy} and rigorous \textbf{pytest} coverage of the transform/load layers; \textbf{improved SLA from 70\% to 95\%}.
+\item[--] Moved manual delivery to \textbf{Continuous Delivery} on GitHub Actions (weekly to daily deploys); administered Fedora/Debian on Digital Ocean and on-premise; automated testing with Behave, Selenium, and Allure.
+\end{itemize}
+\textbf{Technologies:} Python, SQLAlchemy, Pytest, Pandas, Flask, Celery, MySQL, GitHub Actions, Docker, Selenium, Behave, Linux.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\break
+\newpage
+\cvsection[founding-page5sidebar]{Logistics \& Additional Experience}
+
+\cvevent{Researcher \emph{(part-time)}}{Ibict — Brazilian Institute of Information in Science and Technology (MCTI)}{Mar 2025 - Present}{Brasília - Brazil}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Maintain and modernize critical institutional applications and build \textbf{data pipelines in GDPR/LGPD compliance}.
+\item[--] Work on \textbf{data federation, centralization, and ingestion} aimed at future agentic use across institutional sources.
+\item[--] Led a technical audit of a \textbf{600K+-user} platform against ISO/IEC 25000 and LGPD, producing a prioritized remediation roadmap that grounded the handover decision.
+\end{itemize}
+\vspace{2mm}
+
+\cvsubsection{Logistics \& Operational Systems}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] \textbf{Compuletra} — Built \textbf{transport, delivery, and yard-management} software (truck management + logistics), vehicle-inspection and tracking systems, and an ERP desktop platform on \textbf{PostgreSQL}, with PCI-compliant checkout.
+\item[--] \textbf{Ministry of Health / USP} — Operational software for \textbf{medicine distribution across 5,000+ municipalities}, integrating REST APIs and microservices to reduce fraud.
+\item[--] \textbf{Transoft} — Real-time field-service, fleet, and sensor/camera management applications for bus fleets.
+\end{itemize}
+
+\vspace{2mm}
+\cvsubsection{Additional Experience}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] \textbf{ClearSale} — Software Engineer, high-performance anti-fraud microservices; DB views/triggers/procedures with Dapper (C\#/.NET). \emph{2021--2022}
+\item[--] \textbf{Layers Education} — Backend \& microfrontend engineer; MongoDB/BigQuery performance tuning and OWASP hardening. \emph{2022}
+\item[--] \textbf{LabTech, UDF} — Technical Lead \& Researcher; multi-tier event-management platform (React/Python/Spring Boot, RabbitMQ, Kubernetes); co-advised a legal-domain RAG undergraduate thesis (graded 9.0/10). \emph{2023--2025}
+\item[--] \textbf{ConsultMídia / Bank of Brasília} — Full-stack \& BPM (Camunda, AngularJS, Spring Boot) for workflow modernization. \emph{2020--2021}
+\item[--] \textbf{Joves} — Consultant; agile adoption and back-office integration for an early-stage startup. \emph{2021}
+\item[--] \textbf{Taurus Software} — IoT, mobile (Ionic), and lead-capture marketing applications. \emph{2018--2020}
+\item[--] \textbf{Gama Cidadão} — Web \& Digital Marketing Manager; WordPress/Vue portals and campaigns. \emph{2017--2018}
+\end{itemize}
+
+\end{document}
