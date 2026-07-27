@@ -1,8 +1,8 @@
-% Concise AI-engineer CV — English. Dependency-light (compiles with a base TeX Live).
+% Comprehensive CV — English. Base: full career (original resume) + AI & founder inputs.
 \documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1.5cm]{geometry}
+\usepackage[margin=1.4cm]{geometry}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{enumitem}
@@ -17,17 +17,15 @@
 \setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=2pt}
 
 \titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[{\color{ink}\titlerule[1.2pt]}]
-\titlespacing{\section}{0pt}{1.1em}{0.5em}
+\titlespacing{\section}{0pt}{1.0em}{0.45em}
 
-% \job{title}{org}{dates}
 \newcommand{\job}[3]{\vspace{3pt}\noindent{\bfseries #1} \textcolor{muted}{— #2}\hfill\textcolor{muted}{\small #3}\par}
-
 \newcommand{\heads}[1]{\textbf{#1:} }
 
 \begin{document}
 
 {\Huge\bfseries Danrley Pereira}\\[2pt]
-{\large\color{muted} AI \& Backend Software Engineer — LLM Agents, RAG \& ML}\\[4pt]
+{\large\color{muted} Founder \& Full-Stack Software Engineer — AI, Backend \& Product}\\[4pt]
 {\small
 danrley.pereira@dwcorp.com.br \textbullet{} +55 61 9 9423-4712 \textbullet{} Brasília, Brazil \textbullet{}
 \href{https://www.linkedin.com/in/danrleypereira}{LinkedIn} \textbullet{}
@@ -36,61 +34,97 @@ danrley.pereira@dwcorp.com.br \textbullet{} +55 61 9 9423-4712 \textbullet{} Bra
 }
 
 \section{Summary}
-Software engineer since 2017 and founder of DW Corp, focused on building \textbf{AI-enabled products end to end} — LLM agents, Retrieval-Augmented Generation (RAG) pipelines, and machine learning — on a strong Python, C\#/.NET, and Node.js backend foundation. I have shipped AI features to real customers, built \textbf{reusable product foundations} (authentication, payments, CI/CD, cloud and on-premise infrastructure), hired and mentored engineers, and lead Brasília's first \textbf{Software Craftsmanship} community. I own the full path from data and retrieval to backend services and the web interfaces that deliver them.
+Full-stack software engineer since 2017 and founder of DW Corp, building \textbf{AI-enabled products end to end} — LLM agents, RAG pipelines, and machine learning — on a strong Python, C\#/.NET, and Node.js backend. I have shipped AI features to real customers, built \textbf{reusable product foundations} (authentication, payments, CI/CD, cloud and on-premise infrastructure), hired and mentored engineers, and lead Brasília's first \textbf{Software Craftsmanship} community. I own the full path from data and retrieval to backend services and the web interfaces that deliver them, and I have deep experience in operational and logistics software.
 
 \section{Core Skills}
 \begin{itemize}
 \item \heads{AI / ML} LLM APIs (OpenAI, Anthropic, Azure OpenAI), RAG \& embeddings, FAISS, LangChain / LangGraph, agentic workflows, prompt engineering, TensorFlow / Keras, reinforcement learning.
-\item \heads{Backend} Python (FastAPI, Flask, Django), C\#/.NET, Node.js, RESTful APIs, event-driven architecture (RabbitMQ), microservices.
-\item \heads{Data} PostgreSQL, SQLAlchemy, Snowflake, data pipelines / ETL, Pandas.
-\item \heads{Cloud \& DevOps} Docker, Kubernetes, AWS, GCP, Azure, CI/CD (GitHub \& GitLab), Terraform, on-premise / Linux.
+\item \heads{Backend} Python (FastAPI, Flask, Django, Celery), C\#/.NET \& ASP.NET, Node.js, Rust, RESTful APIs, event-driven architecture (RabbitMQ), microservices.
+\item \heads{Frontend} React, Next.js, Vue / Nuxt, Angular, TypeScript.
+\item \heads{Data} PostgreSQL, SQLAlchemy, MySQL, MongoDB, Redis, Snowflake, ETL / data pipelines, Pandas.
+\item \heads{Cloud \& DevOps} Docker, Kubernetes, AWS, GCP, Azure, CI/CD (GitHub \& GitLab), Terraform, Grafana, on-premise / bare-metal Linux.
+\item \heads{Testing} Pytest, Playwright, Cypress, Cucumber, Behave, Allure, TDD / BDD.
 \end{itemize}
 
 \section{Experience}
 
+\job{Founder \& AI Engineer}{DW Corp}{Sep 2022 -- Present}
+\begin{itemize}
+\item Built \textbf{LangChain / LangGraph agents} — a WhatsApp budget assistant and an event-driven multi-agent bus — behind a common multi-provider LLM interface.
+\item Built \textbf{Curupira}, a reusable Rust/OIDC authentication platform (multi-tenancy, SSO, MFA), plus payment integrations (Stripe, Adyen) and a bare-metal + hybrid-cloud stack with Terraform and Grafana.
+\item Delivered client products: a restaurant-orders manager (Django, Celery, circuit-breaker resilience to a data lake) and a .NET MAUI field-service app with database procedures, views and triggers.
+\item Hired and mentored 10+ engineers, and lead Brasília's first Software Craftsmanship community (TDD katas, round tables).
+\end{itemize}
+
 \job{Senior Software Engineer}{Epicor}{Nov 2023 -- Mar 2025}
 \begin{itemize}
-\item Integrated \textbf{Azure OpenAI} and a \textbf{RAG pipeline} over proprietary company data to improve accuracy and customer satisfaction.
-\item Built .NET Aspire microservices with \textbf{RabbitMQ} event-driven processing; used Azure Document Intelligence for structured extraction.
+\item Integrated \textbf{Azure OpenAI} and a \textbf{RAG pipeline} over proprietary company data; used Azure Document Intelligence for structured extraction.
+\item Built \textbf{.NET Aspire} microservices with \textbf{RabbitMQ} event-driven processing, custom OAuth2/SAML, deployed on Kubernetes.
+\item Led an Angular integration portal refactor into microfrontends, with strong xUnit and end-to-end coverage, and drove sprint-planning and documentation.
 \end{itemize}
 
 \job{Researcher}{Ibict / MCTI (federal government)}{Mar 2025 -- Present}
 \begin{itemize}
 \item Built \textbf{Snowflake} data pipelines over institutional data, driving progress toward training ML models on proprietary data.
-\item Co-advised an undergraduate thesis that designed a \textbf{RAG system} for the Brazilian judiciary (graded 9.0/10).
-\end{itemize}
-
-\job{Founder \& AI Engineer}{DW Corp}{Sep 2022 -- Present}
-\begin{itemize}
-\item Built \textbf{LangChain / LangGraph agents} — a WhatsApp budget assistant and an event-driven multi-agent bus — behind a common multi-provider LLM interface.
-\item Built \textbf{Curupira}, a Rust/OIDC authentication platform (multi-tenancy, SSO, MFA) — a reusable identity foundation for new products.
-\item Created reusable foundations: payment integrations (Stripe, Adyen), CI/CD, and hybrid cloud / bare-metal infrastructure with Terraform and Grafana observability.
-\item Hired and manage a small team, mentored 10+ engineers, and lead Brasília's first Software Craftsmanship community (TDD katas, round tables).
-\end{itemize}
-
-\job{Personal Project — jackBlack}{Deep Reinforcement Learning}{2024 -- 2025}
-\begin{itemize}
-\item Trained a \textbf{Deep Q-Network} agent (TensorFlow/Keras) that learns Blackjack by self-play, with GPU training on NVIDIA (CUDA) and AMD (ROCm).
+\item Co-advised an undergraduate thesis that designed a \textbf{RAG system} for the Brazilian judiciary (graded 9.0/10); audited a 600K+-user platform against ISO/IEC 25000 and LGPD.
 \end{itemize}
 
 \job{Senior Full-Stack Consultant}{SubSurface Dynamics}{Jan 2024 -- Jun 2024}
 \begin{itemize}
-\item Built a real-time operational-monitoring platform (TypeScript, Fastify, \textbf{Socket.io + Redis}) serving thousands of users.
+\item Refactored a MERN app into a modern \textbf{TypeScript} project on \textbf{Fastify, Socket.io, Redis} and Typegoose, serving thousands of users in real time.
+\item Tuned Redis and MongoDB Atlas time-series for cost and performance; secured the platform with Azure AD (ADAL) + Auth0 (OAuth2/SAML).
+\item Built 2D/3D charts and a \textbf{Three.js} wellbore visualization, plus dark mode and a notification system.
 \end{itemize}
 
 \job{Data \& DevOps Engineer}{Dado Global}{Dec 2021 -- Apr 2023}
 \begin{itemize}
-\item Built a Python ETL system with \textbf{SQLAlchemy} and rigorous pytest coverage; improved delivery SLA from 70\% to 95\%.
+\item Designed an \textbf{ETL} system with layered responsibilities using \textbf{SQLAlchemy} and rigorous pytest coverage; automated extraction with Selenium and Behave.
+\item Moved delivery to \textbf{Continuous Delivery} on GitHub Actions (weekly $\rightarrow$ daily), improving SLA from 70\% to 95\%.
 \end{itemize}
 
-\section{Additional Experience}
+\job{Software Engineer}{ClearSale}{Nov 2021 -- Mar 2022}
 \begin{itemize}
-\item \textbf{Compuletra} — Full-Stack Engineer: transport, delivery and yard-management (logistics), vehicle-inspection and ERP systems on PostgreSQL. \emph{2020--2021}
-\item \textbf{Ministry of Health / USP} — Platform Developer: operational software for medicine distribution across 5,000+ municipalities. \emph{2019--2020}
-\item \textbf{ClearSale} — Software Engineer: high-performance anti-fraud microservices in C\#/.NET. \emph{2021--2022}
-\item \textbf{Layers Education} — Backend \& microfrontend engineer; performance tuning and OWASP hardening. \emph{2022}
-\item \textbf{ConsultMídia / Bank of Brasília} — Full-stack \& BPM (Camunda) for workflow modernization. \emph{2020--2021}
-\item \textbf{LabTech, UDF} — Technical Lead \& Researcher; multi-tier event platform; mentored junior engineers. \emph{2023}
+\item Built high-performance anti-fraud microservices in \textbf{C\#/.NET}; designed database views, triggers and stored procedures and optimized queries with Dapper.
+\item Outlined engineering processes (UML/BPMN), initiated unit testing, and mentored teammates.
+\end{itemize}
+
+\job{Technical Lead \& Researcher}{LabTech, UDF}{Jan 2023 -- Dec 2023}
+\begin{itemize}
+\item Led a multi-tier event-management platform (React, Python, Spring Boot, RabbitMQ, Kubernetes) and mentored junior engineers.
+\end{itemize}
+
+\job{Software Engineer}{Layers Education}{Mar 2022 -- Sep 2022}
+\begin{itemize}
+\item Maintained backend and microfrontend systems; cut MongoDB query times from 1.3s to 0.6s under load, built a BigQuery data lake for ETL, and hardened security to OWASP.
+\end{itemize}
+
+\job{Full-Stack Engineer}{Compuletra}{Jul 2020 -- Aug 2021}
+\begin{itemize}
+\item Built \textbf{transport, delivery and yard-management} logistics software with fleet and \textbf{vehicle-inspection} systems, and an ERP desktop platform (Electron) on PostgreSQL.
+\item Migrated a legacy AngularJS vehicle-tracking app to React (on-premise), and built a commercial page generator with a PCI-compliant checkout driven from the database.
+\end{itemize}
+
+\job{Full-Stack Developer \& BPM}{ConsultMídia / Bank of Brasília}{Apr 2020 -- Jan 2021}
+\begin{itemize}
+\item Built AngularJS/Spring Boot interfaces and REST APIs on \textbf{Camunda} BPM to modernize the bank's workflows; integrated Alfresco (document management) and automated performance tests (JMeter, Selenium).
+\end{itemize}
+
+\job{Full-Stack \& Mobile Developer}{Transoft}{Feb 2021 -- Oct 2021}
+\begin{itemize}
+\item Built and revamped applications managing sensors and cameras for bus fleets, and a mobile staff-management app integrated with Oracle (Angular, Ionic, Laravel).
+\end{itemize}
+
+\job{Platform Developer}{Ministry of Health / USP}{Jun 2019 -- Jul 2020}
+\begin{itemize}
+\item Helped the Ministry of Health manage \textbf{medicine distribution across 5,000+ municipalities}; built the frontend and integrated REST APIs and microservices to surface data, reduce fraud and streamline service integration.
+\end{itemize}
+
+\section{Earlier Experience}
+\begin{itemize}
+\item \textbf{Taurus Software} — IoT energy-management, hybrid mobile (Ionic) and lead-capture marketing applications. \emph{2018--2020}
+\item \textbf{Gama Cidadão} — Web \& Digital Marketing Manager; WordPress/Vue portals, landing pages, and SEO. \emph{2017--2018}
+\item \textbf{UMESB} — Contract developer (student-registration system, Polymer/Node.js). \emph{2017}
+\item \textbf{IT Universe} — Instructor in web/graphic design and computing fundamentals. \emph{2017}
 \end{itemize}
 
 \section{Education}
@@ -99,6 +133,12 @@ Software engineer since 2017 and founder of DW Corp, focused on building \textbf
 \item B.Sc. Computer Science — University Centre of Federal District
 \item MBA, Supply Chain \& Integrated Logistics — Southern Cross University
 \item MBA, Database Administration — Anhanguera
+\end{itemize}
+
+\section{Certifications \& Speaking}
+\begin{itemize}
+\item Main-stage speaker at \textbf{Campus Party Brazil} — Clean Architecture, TDD, AI, SDET \& Software Craftsmanship.
+\item Business Intelligence with Power BI \textbullet{} Scrum Fundamentals (SFC) \textbullet{} Kanban Foundation \textbullet{} Oral Production B2 (English) — UnB.
 \end{itemize}
 
 \section{Languages}
