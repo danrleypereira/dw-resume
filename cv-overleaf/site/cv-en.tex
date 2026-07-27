@@ -1,0 +1,95 @@
+% Concise AI-engineer CV — English. Dependency-light (compiles with a base TeX Live).
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ink}{HTML}{111111}
+\definecolor{muted}{HTML}{555555}
+\color{ink}
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=2pt}
+
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[{\color{ink}\titlerule[1.2pt]}]
+\titlespacing{\section}{0pt}{1.1em}{0.5em}
+
+% \job{title}{org}{dates}
+\newcommand{\job}[3]{\vspace{3pt}\noindent{\bfseries #1} \textcolor{muted}{— #2}\hfill\textcolor{muted}{\small #3}\par}
+
+\newcommand{\heads}[1]{\textbf{#1:} }
+
+\begin{document}
+
+{\Huge\bfseries Danrley Pereira}\\[2pt]
+{\large\color{muted} AI \& Backend Software Engineer — LLM Agents, RAG \& ML}\\[4pt]
+{\small
+danrley.pereira@dwcorp.com.br \textbullet{} +55 61 9 9423-4712 \textbullet{} Brasília, Brazil \textbullet{}
+\href{https://www.linkedin.com/in/danrleypereira}{LinkedIn} \textbullet{}
+\href{https://github.com/danrleypereira}{GitHub} \textbullet{}
+\href{https://danrleypereira.com}{danrleypereira.com}
+}
+
+\section{Summary}
+Software engineer since 2017 focused on building \textbf{AI-enabled products end to end} — LLM agents, Retrieval-Augmented Generation (RAG) pipelines, and machine learning — on a strong Python, C\#/.NET, and Node.js backend foundation. I have shipped AI features to real customers, designed data pipelines and model-training workflows, and founded DW Corp to build reusable product foundations. I own the full path from data and retrieval to backend services and the web interfaces that deliver them.
+
+\section{Core Skills}
+\begin{itemize}
+\item \heads{AI / ML} LLM APIs (OpenAI, Anthropic, Azure OpenAI), RAG \& embeddings, FAISS, LangChain / LangGraph, agentic workflows, prompt engineering, TensorFlow / Keras, reinforcement learning.
+\item \heads{Backend} Python (FastAPI, Flask, Django), C\#/.NET, Node.js, RESTful APIs, event-driven architecture (RabbitMQ), microservices.
+\item \heads{Data} PostgreSQL, SQLAlchemy, Snowflake, data pipelines / ETL, Pandas.
+\item \heads{Cloud \& DevOps} Docker, Kubernetes, AWS, GCP, Azure, CI/CD (GitHub \& GitLab), Terraform, on-premise / Linux.
+\end{itemize}
+
+\section{Experience}
+
+\job{Senior Software Engineer}{Epicor}{Nov 2023 -- Mar 2025}
+\begin{itemize}
+\item Integrated \textbf{Azure OpenAI} and a \textbf{RAG pipeline} over proprietary company data to improve accuracy and customer satisfaction.
+\item Built .NET Aspire microservices with \textbf{RabbitMQ} event-driven processing; used Azure Document Intelligence for structured extraction.
+\end{itemize}
+
+\job{Researcher}{Ibict / MCTI (federal government)}{Mar 2025 -- Present}
+\begin{itemize}
+\item Built \textbf{Snowflake} data pipelines over institutional data, driving progress toward training ML models on proprietary data.
+\item Co-advised an undergraduate thesis that designed a \textbf{RAG system} for the Brazilian judiciary (graded 9.0/10).
+\end{itemize}
+
+\job{Founder \& AI Engineer}{DW Corp}{Sep 2022 -- Present}
+\begin{itemize}
+\item Built \textbf{LangChain / LangGraph agents} — a WhatsApp budget assistant and an event-driven multi-agent bus — behind a common multi-provider LLM interface.
+\item Created reusable product foundations (authentication, payments, CI/CD, cloud \& on-premise infrastructure).
+\end{itemize}
+
+\job{Personal Project — jackBlack}{Deep Reinforcement Learning}{2024 -- 2025}
+\begin{itemize}
+\item Trained a \textbf{Deep Q-Network} agent (TensorFlow/Keras) that learns Blackjack by self-play, with GPU training on NVIDIA (CUDA) and AMD (ROCm).
+\end{itemize}
+
+\job{Senior Full-Stack Consultant}{SubSurface Dynamics}{Jan 2024 -- Jun 2024}
+\begin{itemize}
+\item Built a real-time operational-monitoring platform (TypeScript, Fastify, \textbf{Socket.io + Redis}) serving thousands of users.
+\end{itemize}
+
+\job{Data \& DevOps Engineer}{Dado Global}{Dec 2021 -- Apr 2023}
+\begin{itemize}
+\item Built a Python ETL system with \textbf{SQLAlchemy} and rigorous pytest coverage; improved delivery SLA from 70\% to 95\%.
+\end{itemize}
+
+\section{Education}
+\begin{itemize}
+\item B.Sc. Software Engineering — University of Brasília
+\item B.Sc. Computer Science — University Centre of Federal District
+\item MBA, Supply Chain \& Integrated Logistics — Southern Cross University
+\item MBA, Database Administration — Anhanguera
+\end{itemize}
+
+\section{Languages}
+Portuguese (native) \textbullet{} English (C2) \textbullet{} Spanish (intermediate)
+
+\end{document}
