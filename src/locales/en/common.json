@@ -22,8 +22,11 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "A timeline of my work.",
-    "comingSoon": "Interactive timeline coming soon."
+    "subtitle": "A timeline of my work — scroll sideways and click a project.",
+    "present": "Present",
+    "close": "Close",
+    "tech": "Tech",
+    "scrollHint": "→ scroll horizontally"
   },
   "cv": {
     "title": "Curriculum",
