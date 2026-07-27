@@ -1,0 +1,94 @@
+% Currículo conciso de engenheiro de IA — Português (Brasil). Leve em dependências.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ink}{HTML}{111111}
+\definecolor{muted}{HTML}{555555}
+\color{ink}
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=2pt}
+
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[{\color{ink}\titlerule[1.2pt]}]
+\titlespacing{\section}{0pt}{1.1em}{0.5em}
+
+\newcommand{\job}[3]{\vspace{3pt}\noindent{\bfseries #1} \textcolor{muted}{— #2}\hfill\textcolor{muted}{\small #3}\par}
+\newcommand{\heads}[1]{\textbf{#1:} }
+
+\begin{document}
+
+{\Huge\bfseries Danrley Pereira}\\[2pt]
+{\large\color{muted} Engenheiro de Software de IA e Backend — Agentes LLM, RAG e ML}\\[4pt]
+{\small
+danrley.pereira@dwcorp.com.br \textbullet{} +55 61 9 9423-4712 \textbullet{} Brasília, Brasil \textbullet{}
+\href{https://www.linkedin.com/in/danrleypereira}{LinkedIn} \textbullet{}
+\href{https://github.com/danrleypereira}{GitHub} \textbullet{}
+\href{https://danrleypereira.com}{danrleypereira.com}
+}
+
+\section{Resumo}
+Engenheiro de software desde 2017, focado em construir \textbf{produtos habilitados por IA de ponta a ponta} — agentes LLM, pipelines de Geração Aumentada por Recuperação (RAG) e machine learning — sobre uma base sólida de backend em Python, C\#/.NET e Node.js. Entreguei recursos de IA para clientes reais, projetei pipelines de dados e fluxos de treinamento de modelos, e fundei a DW Corp para construir fundações de produto reutilizáveis. Sou responsável por todo o caminho, dos dados e da recuperação aos serviços de backend e às interfaces web que os entregam.
+
+\section{Principais Habilidades}
+\begin{itemize}
+\item \heads{IA / ML} APIs de LLM (OpenAI, Anthropic, Azure OpenAI), RAG e embeddings, FAISS, LangChain / LangGraph, fluxos com agentes, prompt engineering, TensorFlow / Keras, aprendizado por reforço.
+\item \heads{Backend} Python (FastAPI, Flask, Django), C\#/.NET, Node.js, APIs RESTful, arquitetura orientada a eventos (RabbitMQ), microsserviços.
+\item \heads{Dados} PostgreSQL, SQLAlchemy, Snowflake, pipelines de dados / ETL, Pandas.
+\item \heads{Nuvem e DevOps} Docker, Kubernetes, AWS, GCP, Azure, CI/CD (GitHub e GitLab), Terraform, on-premise / Linux.
+\end{itemize}
+
+\section{Experiência}
+
+\job{Engenheiro de Software Sênior}{Epicor}{nov 2023 -- mar 2025}
+\begin{itemize}
+\item Integrei o \textbf{Azure OpenAI} e um \textbf{pipeline RAG} sobre dados proprietários da empresa para melhorar a precisão e a satisfação do cliente.
+\item Construí microsserviços com .NET Aspire e processamento orientado a eventos com \textbf{RabbitMQ}; usei o Azure Document Intelligence para extração estruturada.
+\end{itemize}
+
+\job{Pesquisador}{Ibict / MCTI (governo federal)}{mar 2025 -- Atual}
+\begin{itemize}
+\item Construí pipelines de dados no \textbf{Snowflake} sobre dados institucionais, avançando rumo ao treinamento de modelos de ML com dados proprietários.
+\item Coorientei um TCC que projetou um \textbf{sistema RAG} para o judiciário brasileiro (nota 9,0/10).
+\end{itemize}
+
+\job{Fundador e Engenheiro de IA}{DW Corp}{set 2022 -- Atual}
+\begin{itemize}
+\item Construí \textbf{agentes LangChain / LangGraph} — um assistente de orçamento no WhatsApp e um barramento multiagente orientado a eventos — atrás de uma interface comum multi-provedor de LLM.
+\item Criei fundações de produto reutilizáveis (autenticação, pagamentos, CI/CD, infraestrutura em nuvem e on-premise).
+\end{itemize}
+
+\job{Projeto Pessoal — jackBlack}{Aprendizado por Reforço Profundo}{2024 -- 2025}
+\begin{itemize}
+\item Treinei um agente \textbf{Deep Q-Network} (TensorFlow/Keras) que aprende Blackjack por auto-jogo, com treinamento em GPU na NVIDIA (CUDA) e AMD (ROCm).
+\end{itemize}
+
+\job{Consultor Full-Stack Sênior}{SubSurface Dynamics}{jan 2024 -- jun 2024}
+\begin{itemize}
+\item Construí uma plataforma de monitoramento operacional em tempo real (TypeScript, Fastify, \textbf{Socket.io + Redis}) que atende milhares de usuários.
+\end{itemize}
+
+\job{Engenheiro de Dados e DevOps}{Dado Global}{dez 2021 -- abr 2023}
+\begin{itemize}
+\item Construí um sistema ETL em Python com \textbf{SQLAlchemy} e cobertura rigorosa de pytest; melhorei o SLA de entrega de 70\% para 95\%.
+\end{itemize}
+
+\section{Formação}
+\begin{itemize}
+\item Bacharelado em Engenharia de Software — Universidade de Brasília
+\item Bacharelado em Ciência da Computação — Centro Universitário do Distrito Federal
+\item MBA, Cadeia de Suprimentos e Logística Integrada — Southern Cross University
+\item MBA, Administração de Banco de Dados — Anhanguera
+\end{itemize}
+
+\section{Idiomas}
+Português (nativo) \textbullet{} Inglês (C2) \textbullet{} Espanhol (intermediário)
+
+\end{document}
