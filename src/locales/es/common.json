@@ -38,7 +38,8 @@
     "email": "Correo",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "slack": "Slack",
+    "discord": "Discord",
+    "discordNote": "Comunidad en Discord — para evitar bots, envíame un DM para unirte.",
     "website": "Sitio web"
   },
   "lang": {

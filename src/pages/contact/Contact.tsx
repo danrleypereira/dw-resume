@@ -8,10 +8,8 @@ type ContactItem = {
   value: string;
   href: string;
   external?: boolean;
+  noteKey?: string;
 };
-
-// NOTE: Slack points to a placeholder — swap in the real invite/profile URL.
-const SLACK_URL = "https://join.slack.com/";
 
 const items: ContactItem[] = [
   {
@@ -43,10 +41,11 @@ const items: ContactItem[] = [
     external: true,
   },
   {
-    key: "slack",
-    value: "Slack",
-    href: SLACK_URL,
+    key: "discord",
+    value: "discord.gg/jKx32A2Dy",
+    href: "https://discord.gg/jKx32A2Dy",
     external: true,
+    noteKey: "contact.discordNote",
   },
   {
     key: "website",
@@ -76,6 +75,9 @@ export default function Contact() {
             >
               <span className="contact-label">{t(`contact.${item.key}`)}</span>
               <span className="contact-value">{item.value}</span>
+              {item.noteKey && (
+                <span className="contact-note">{t(item.noteKey)}</span>
+              )}
             </a>
           </li>
         ))}
