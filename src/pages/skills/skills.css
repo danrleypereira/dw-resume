@@ -1,94 +1,196 @@
-.skillset-container {
+.skills-page {
+  padding: 3rem 1.5rem 1.5rem;
+  color: #111;
+  text-align: left;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
-.controls {
-  margin-bottom: 20px;
+.skills-layout {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.skills-graph {
+  flex: 1 1 auto;
+  height: 74vh;
+  min-width: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.skills-panel {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skills-reset {
+  align-self: flex-start;
+  border: 2px solid #111;
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+.skills-reset:hover {
+  background: #111;
+  color: #fff;
+}
+
+.panel-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 1.1rem;
+  background: #fafafa;
+}
+.panel-tier {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 0.6rem;
+}
+.tier-role {
+  background: #111;
+  color: #fff;
+}
+.panel-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.panel-desc {
+  margin: 0;
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.panel-prof {
+  display: flex;
   align-items: center;
-}
-
-.search-input,
-.level-filter {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
   color: #333;
 }
-
-.hexagon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
-  gap: 15px;
-  padding: 20px 0;
+.panel-empty {
+  color: #888;
+  font-size: 0.92rem;
+  border: 1px dashed #ddd;
+  border-radius: 12px;
+  padding: 1.5rem 1.1rem;
+  text-align: center;
 }
 
-.hexagon-wrapper {
-  width: 150px;
-  height: 173.21px; /* height = width * √3 / 2 */
-  position: relative;
-  margin: 15px 0;
-}
-
-.hexagon {
-  position: relative;
+/* ---- graph nodes (black & white) ---- */
+.gnode {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0 0.7rem;
+  border-radius: 10px;
+  border: 1.5px solid #111;
+  background: #fff;
+  color: #111;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 150ms ease, transform 120ms ease, background 150ms ease;
   width: 100%;
   height: 100%;
-  background: #000;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
-.hexagon:hover {
-  transform: scale(1.05);
+.gnode:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
 }
-
-.hexagon-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  padding: 10px;
-  width: 90%;
-  font-size: 12px;
-}
-
-.skill-tooltip {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
+.gnode-label {
+  flex: 1 1 auto;
   white-space: nowrap;
-  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gnode-toggle {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
+  text-align: center;
+  border: 1px solid #111;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+/* tier accents */
+.gnode-role {
+  background: #111;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.gnode-role .gnode-toggle {
+  border-color: #fff;
+}
+.gnode-domain {
+  border-width: 2px;
+  font-weight: 700;
+}
+.gnode-base {
+  border-style: dashed;
+  color: #444;
+  font-weight: 500;
+}
+.gnode.is-selected {
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.18);
+}
+
+/* proficiency dots */
+.prof-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+.prof-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  border: 1px solid #111;
+  background: transparent;
+}
+.gnode-role .prof-dots .dot {
+  border-color: currentColor;
+}
+.prof-dots .dot.on {
+  background: #111;
+}
+.panel-prof .prof-dots .dot.on {
+  background: #111;
+}
+
+/* hide the connection handles (used only for edge anchoring) */
+.react-flow__handle {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 991.98px) {
-  .hexagon-grid {
-    grid-template-columns: repeat(auto-fill, 120px);
-  }
-
-  .hexagon-wrapper {
-    width: 120px;
-    height: 138.56px;
-  }
-  .controls {
+  .skills-layout {
     flex-direction: column;
   }
-  .search-input {
-    z-index: 2;
+  .skills-graph {
+    height: 60vh;
+  }
+  .skills-panel {
+    flex-basis: auto;
   }
 }

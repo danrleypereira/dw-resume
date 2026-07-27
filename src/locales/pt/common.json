@@ -14,11 +14,11 @@
   },
   "skills": {
     "title": "Habilidades",
-    "search": "Buscar habilidades...",
-    "minLevel": "Nível mínimo",
-    "technical": "Habilidades Técnicas",
-    "soft": "Soft Skills",
-    "level": "Nível"
+    "hint": "Clique em um papel para explorar. Cada nó abre o próximo nível — até a base (linguagens, bibliotecas e sistemas).",
+    "reset": "Reiniciar",
+    "proficiency": "Proficiência",
+    "level": "Nível",
+    "selectHint": "Selecione um nó para ver os detalhes."
   },
   "projects": {
     "title": "Projetos",
