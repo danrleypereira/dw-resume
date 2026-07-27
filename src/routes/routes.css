@@ -1,13 +1,22 @@
+/* Content fills the space between the fixed chrome; only its inner body scrolls.
+   Absolute inset gives it a definite height so flex children (e.g. the CV
+   viewer) can fill it. */
 .content-container {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 70px; /* mobile: leave room for the bottom social bar */
   overflow: hidden;
   box-sizing: border-box;
 }
 
-/* Desktop: leave room for the fixed left navigation rail */
+/* Desktop: nav rail on the left, social rail on the right, no bottom bar */
 @media (min-width: 992px) {
   .content-container {
-    margin-left: 70px;
+    left: 70px;
+    right: 70px;
+    bottom: 0;
   }
 }
 

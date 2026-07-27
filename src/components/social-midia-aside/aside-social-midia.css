@@ -1,8 +1,9 @@
 .social-midia-aside {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     background-color: white;
+    z-index: 20;
 }
 
 .social-midia-icon {

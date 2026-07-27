@@ -34,6 +34,13 @@
   color: #fff;
 }
 
+/* Desktop: clear the fixed social rail on the right */
+@media (min-width: 992px) {
+  .language-switcher {
+    right: 82px;
+  }
+}
+
 /* On mobile the nav collapses to the top-right; nudge the switcher left of it */
 @media (max-width: 991.98px) {
   .language-switcher {
