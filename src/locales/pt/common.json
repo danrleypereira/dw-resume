@@ -16,6 +16,7 @@
     "title": "Habilidades",
     "hint": "Clique em um papel para explorar. Cada nó abre o próximo nível — até a base (linguagens, bibliotecas e sistemas).",
     "reset": "Reiniciar",
+    "back": "Voltar",
     "proficiency": "Proficiência",
     "level": "Nível",
     "selectHint": "Selecione um nó para ver os detalhes."
