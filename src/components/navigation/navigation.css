@@ -95,25 +95,36 @@
     .navigation {
         flex-direction: row;
         align-items: center;
-        top: 0;
-        right: 0;
-    }
-
-    .menu-icon {
-        margin: 0px 10px;
+        top: 6px;
+        right: 6px;
+        background: transparent; /* no full-width white bar over the page title */
     }
 
     #closed {
-        margin-left: 90vw;
-        width: 10vw;
-        height: 100%;
+        margin: 0;
+        width: auto;
+        height: auto;
+        padding: 6px 8px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .menu-icon {
+        margin: 0;
+        height: 30px;
+        display: block;
     }
 
     #opened {
-        width: 70vw;
-        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 78vw;
+        height: 100vh;
+        background: #fff;
         border-left: 3px dashed black;
-        border-bottom: 3px dashed black;
+        overflow-y: auto;
     }
 
     .nav-profile div {
