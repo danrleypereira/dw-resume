@@ -1,9 +1,13 @@
 .page {
+  height: 100%;
+  box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 3rem;
+  padding: 2.5rem 1.5rem 1.25rem;
   color: #111;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-title {
@@ -12,12 +16,14 @@
   letter-spacing: -0.02em;
   margin: 0 0 0.25rem;
   color: #111;
+  flex: 0 0 auto;
 }
 
 .page-subtitle {
   font-size: 1.05rem;
   color: #555;
-  margin: 0 0 2rem;
+  margin: 0 0 1.2rem;
+  flex: 0 0 auto;
 }
 
 .page-rule {
@@ -25,7 +31,16 @@
   width: 56px;
   background: #111;
   border: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem;
+  flex: 0 0 auto;
+}
+
+/* the only scrollable region on a page — header/footer stay put */
+.page-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 0.5rem;
 }
 
 .page-placeholder {
@@ -38,7 +53,7 @@
 
 @media (max-width: 991.98px) {
   .page {
-    padding: 3rem 1.25rem 2.5rem;
+    padding: 2rem 1.25rem 1rem;
   }
   .page-title {
     font-size: 2rem;

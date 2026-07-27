@@ -24,11 +24,6 @@ const items: ContactItem[] = [
     href: "mailto:danrley.pereira@dwcorp.com.br",
   },
   {
-    key: "email",
-    value: "danrley.pereira@gamacidadao.com.br",
-    href: "mailto:danrley.pereira@gamacidadao.com.br",
-  },
-  {
     key: "github",
     value: "github.com/danrleypereira",
     href: "https://github.com/danrleypereira",
@@ -41,11 +36,11 @@ const items: ContactItem[] = [
     external: true,
   },
   {
-    key: "discord",
-    value: "discord.gg/jKx32A2Dy",
-    href: "https://discord.gg/jKx32A2Dy",
+    key: "instagram",
+    value: "instagram.com/software_craftsmanship",
+    href: "https://instagram.com/software_craftsmanship",
     external: true,
-    noteKey: "contact.discordNote",
+    noteKey: "contact.instagramNote",
   },
   {
     key: "website",
@@ -64,24 +59,28 @@ export default function Contact() {
       <p className="page-subtitle">{t("contact.subtitle")}</p>
       <hr className="page-rule" />
 
-      <ul className="contact-list">
-        {items.map((item, index) => (
-          <li key={index} className="contact-card">
-            <a
-              href={item.href}
-              {...(item.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              <span className="contact-label">{t(`contact.${item.key}`)}</span>
-              <span className="contact-value">{item.value}</span>
-              {item.noteKey && (
-                <span className="contact-note">{t(item.noteKey)}</span>
-              )}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="page-body">
+        <ul className="contact-list">
+          {items.map((item, index) => (
+            <li key={index} className="contact-card">
+              <a
+                href={item.href}
+                {...(item.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                <span className="contact-label">
+                  {t(`contact.${item.key}`)}
+                </span>
+                <span className="contact-value">{item.value}</span>
+                {item.noteKey && (
+                  <span className="contact-note">{t(item.noteKey)}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

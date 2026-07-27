@@ -1,5 +1,6 @@
 .content-container {
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -12,6 +13,7 @@
 
 .route-wrapper {
   width: 100%;
+  height: 100%;
 }
 
 /* Route transition (subtle fade + slide; dice/flip is a later phase) */
