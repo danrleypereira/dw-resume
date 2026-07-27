@@ -14,11 +14,11 @@
   },
   "skills": {
     "title": "Skills",
-    "search": "Search skills...",
-    "minLevel": "Min level",
-    "technical": "Technical Skills",
-    "soft": "Soft Skills",
-    "level": "Level"
+    "hint": "Click a role to explore. Each node opens the next level — down to the base (languages, libraries, and systems).",
+    "reset": "Reset",
+    "proficiency": "Proficiency",
+    "level": "Level",
+    "selectHint": "Select a node to see details."
   },
   "projects": {
     "title": "Projects",

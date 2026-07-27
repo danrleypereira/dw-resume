@@ -14,11 +14,11 @@
   },
   "skills": {
     "title": "Habilidades",
-    "search": "Buscar habilidades...",
-    "minLevel": "Nivel mínimo",
-    "technical": "Habilidades Técnicas",
-    "soft": "Habilidades Blandas",
-    "level": "Nivel"
+    "hint": "Haz clic en un rol para explorar. Cada nodo abre el siguiente nivel — hasta la base (lenguajes, librerías y sistemas).",
+    "reset": "Reiniciar",
+    "proficiency": "Competencia",
+    "level": "Nivel",
+    "selectHint": "Selecciona un nodo para ver los detalles."
   },
   "projects": {
     "title": "Proyectos",
