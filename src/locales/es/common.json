@@ -16,6 +16,7 @@
     "title": "Habilidades",
     "hint": "Haz clic en un rol para explorar. Cada nodo abre el siguiente nivel — hasta la base (lenguajes, librerías y sistemas).",
     "reset": "Reiniciar",
+    "back": "Atrás",
     "proficiency": "Competencia",
     "level": "Nivel",
     "selectHint": "Selecciona un nodo para ver los detalles."

@@ -1,45 +1,35 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import ReactFlow, {
-  Background,
-  Controls,
-  Handle,
-  Position,
-  ReactFlowProvider,
-  useReactFlow,
-  Node as RFNode,
-  Edge as RFEdge,
-  NodeProps,
-} from "reactflow";
-import "reactflow/dist/style.css";
-import dagre from "dagre";
-
-import "../page.css";
-
 import {
-  nodes as allNodes,
   roleNodes,
-  hasChildren,
+  childrenOf,
   byId,
+  hasChildren,
   GraphNode,
-  Tier,
 } from "data/graphData";
 
+import "../page.css";
 import "./skills.css";
 
-const SIZE: Record<Tier, { w: number; h: number }> = {
-  role: { w: 200, h: 58 },
-  domain: { w: 184, h: 50 },
-  skill: { w: 170, h: 44 },
-  base: { w: 150, h: 40 },
-};
-
-type NodeData = {
+interface Placed {
   node: GraphNode;
-  expandable: boolean;
-  expanded: boolean;
-  selected: boolean;
-};
+  x: number; // 0-100 (percent of the square canvas)
+  y: number;
+}
+
+function placeChildren(children: GraphNode[]): Placed[] {
+  const n = children.length;
+  const radius = 34;
+  return children.map((node, i) => {
+    const deg = -90 + (n === 1 ? 0 : (i * 360) / n);
+    const rad = (deg * Math.PI) / 180;
+    return {
+      node,
+      x: 50 + radius * Math.cos(rad),
+      y: 50 + radius * Math.sin(rad),
+    };
+  });
+}
 
 function ProficiencyDots({ level }: { level: number }) {
   return (
@@ -51,189 +41,147 @@ function ProficiencyDots({ level }: { level: number }) {
   );
 }
 
-function SkillNode({ data }: NodeProps<NodeData>) {
-  const { node, expandable, expanded, selected } = data;
-  return (
-    <div
-      className={`gnode gnode-${node.tier} ${selected ? "is-selected" : ""} ${
-        expanded ? "is-expanded" : ""
-      }`}
-    >
-      <Handle type="target" position={Position.Left} isConnectable={false} />
-      <span className="gnode-label">{node.label}</span>
-      {node.tier === "skill" && typeof node.level === "number" && (
-        <ProficiencyDots level={node.level} />
-      )}
-      {expandable && <span className="gnode-toggle">{expanded ? "–" : "+"}</span>}
-      <Handle type="source" position={Position.Right} isConnectable={false} />
-    </div>
-  );
-}
-
-const nodeTypes = { skill: SkillNode };
-
-// Which nodes are visible given the set of expanded ancestors.
-function computeVisible(expanded: Set<string>): Set<string> {
-  const visible = new Set<string>(roleNodes().map((n) => n.id));
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const n of allNodes) {
-      if (visible.has(n.id)) continue;
-      if (n.parents && n.parents.some((p) => visible.has(p) && expanded.has(p))) {
-        visible.add(n.id);
-        changed = true;
-      }
-    }
-  }
-  return visible;
-}
-
-function buildGraph(
-  expanded: Set<string>,
-  selected: string | null
-): { nodes: RFNode<NodeData>[]; edges: RFEdge[] } {
-  const visible = computeVisible(expanded);
-  const visibleNodes = allNodes.filter((n) => visible.has(n.id));
-
-  const g = new dagre.graphlib.Graph();
-  g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: "LR", nodesep: 20, ranksep: 96, marginx: 8, marginy: 8 });
-
-  visibleNodes.forEach((n) =>
-    g.setNode(n.id, { width: SIZE[n.tier].w, height: SIZE[n.tier].h })
-  );
-  const edges: RFEdge[] = [];
-  visibleNodes.forEach((n) => {
-    (n.parents || []).forEach((p) => {
-      if (visible.has(p)) {
-        g.setEdge(p, n.id);
-        edges.push({
-          id: `${p}->${n.id}`,
-          source: p,
-          target: n.id,
-          type: "smoothstep",
-          style: { stroke: "#bbb", strokeWidth: 1.5 },
-        });
-      }
-    });
-  });
-
-  dagre.layout(g);
-
-  const nodes: RFNode<NodeData>[] = visibleNodes.map((n) => {
-    const p = g.node(n.id);
-    const { w, h } = SIZE[n.tier];
-    return {
-      id: n.id,
-      type: "skill",
-      position: { x: p.x - w / 2, y: p.y - h / 2 },
-      data: {
-        node: n,
-        expandable: hasChildren(n.id),
-        expanded: expanded.has(n.id),
-        selected: selected === n.id,
-      },
-      sourcePosition: Position.Right,
-      targetPosition: Position.Left,
-      draggable: false,
-    };
-  });
-
-  return { nodes, edges };
-}
-
-function Graph() {
-  const { t } = useTranslation();
-  const [expanded, setExpanded] = useState<Set<string>>(new Set());
-  const [selected, setSelected] = useState<string | null>(null);
-  const { fitView } = useReactFlow();
-
-  const { nodes, edges } = useMemo(
-    () => buildGraph(expanded, selected),
-    [expanded, selected]
-  );
-
-  // Refit whenever the set of visible nodes changes.
-  useEffect(() => {
-    const id = window.setTimeout(() => fitView({ padding: 0.2, duration: 300 }), 20);
-    return () => window.clearTimeout(id);
-  }, [expanded, fitView]);
-
-  const onNodeClick = useCallback((_: React.MouseEvent, node: RFNode) => {
-    setSelected(node.id);
-    if (hasChildren(node.id)) {
-      setExpanded((prev) => {
-        const next = new Set(prev);
-        if (next.has(node.id)) next.delete(node.id);
-        else next.add(node.id);
-        return next;
-      });
-    }
-  }, []);
-
-  const reset = useCallback(() => {
-    setExpanded(new Set());
-    setSelected(null);
-  }, []);
-
-  const sel = selected ? byId(selected) : undefined;
-
-  return (
-    <div className="skills-layout">
-      <div className="skills-graph">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          nodeTypes={nodeTypes}
-          onNodeClick={onNodeClick}
-          fitView
-          fitViewOptions={{ padding: 0.2 }}
-          minZoom={0.2}
-          maxZoom={1.6}
-          proOptions={{ hideAttribution: true }}
-          nodesConnectable={false}
-          nodesDraggable={false}
-        >
-          <Background color="#eee" gap={20} />
-          <Controls showInteractive={false} />
-        </ReactFlow>
-      </div>
-
-      <aside className="skills-panel">
-        <button type="button" className="skills-reset" onClick={reset}>
-          ↺ {t("skills.reset")}
-        </button>
-        {sel ? (
-          <div className="panel-card">
-            <span className={`panel-tier tier-${sel.tier}`}>{sel.tier}</span>
-            <h3 className="panel-title">{sel.label}</h3>
-            {sel.description && <p className="panel-desc">{sel.description}</p>}
-            {sel.tier === "skill" && typeof sel.level === "number" && (
-              <div className="panel-prof">
-                <span>{t("skills.proficiency")}</span>
-                <ProficiencyDots level={sel.level} />
-              </div>
-            )}
-          </div>
-        ) : (
-          <p className="panel-empty">{t("skills.selectHint")}</p>
-        )}
-      </aside>
-    </div>
-  );
-}
-
 export default function Skills() {
   const { t } = useTranslation();
+  const [path, setPath] = useState<string[]>([]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const currentId = path.length ? path[path.length - 1] : null;
+  const current = currentId ? byId(currentId) : undefined;
+  const children = currentId ? childrenOf(currentId) : roleNodes();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const placed = useMemo(() => placeChildren(children), [currentId]);
+
+  const centerLabel = current ? current.label : t("skills.title");
+  const sel = selectedId ? byId(selectedId) : current;
+
+  const onNodeClick = (node: GraphNode) => {
+    setSelectedId(node.id);
+    if (hasChildren(node.id)) setPath((p) => [...p, node.id]);
+  };
+  const goUp = () => {
+    setPath((p) => p.slice(0, -1));
+    setSelectedId(null);
+  };
+  const crumbTo = (i: number) => {
+    setPath((p) => p.slice(0, i));
+    setSelectedId(null);
+  };
+
+  const crumbs = [
+    { label: t("skills.title") },
+    ...path.map((id) => ({ label: byId(id)?.label ?? id })),
+  ];
+
   return (
     <div className="skills-page">
       <h1 className="page-title">{t("skills.title")}</h1>
       <p className="page-subtitle">{t("skills.hint")}</p>
-      <hr className="page-rule" />
-      <ReactFlowProvider>
-        <Graph />
-      </ReactFlowProvider>
+
+      <nav className="rad-breadcrumb" aria-label="breadcrumb">
+        {crumbs.map((c, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && <span className="crumb-sep">/</span>}
+            <button
+              type="button"
+              className="crumb"
+              onClick={() => crumbTo(i)}
+              disabled={i === crumbs.length - 1}
+            >
+              {c.label}
+            </button>
+          </React.Fragment>
+        ))}
+      </nav>
+
+      <div className="radial-layout">
+        <div className="radial-canvas" key={currentId || "root"}>
+          <svg
+            className="radial-lines"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            {placed.map((p) => (
+              <line
+                key={`s-${p.node.id}`}
+                x1={50}
+                y1={50}
+                x2={p.x}
+                y2={p.y}
+                className="line-spoke"
+              />
+            ))}
+            {placed.length > 1 &&
+              placed.map((p, i) => {
+                if (placed.length === 2 && i === 1) return null;
+                const q = placed[(i + 1) % placed.length];
+                return (
+                  <line
+                    key={`r-${p.node.id}`}
+                    x1={p.x}
+                    y1={p.y}
+                    x2={q.x}
+                    y2={q.y}
+                    className="line-ring"
+                  />
+                );
+              })}
+          </svg>
+
+          <button
+            type="button"
+            className={`rnode rnode-center ${current ? "clickable" : ""}`}
+            style={{ left: "50%", top: "50%" }}
+            onClick={current ? goUp : undefined}
+            disabled={!current}
+            title={current ? t("skills.back") : undefined}
+          >
+            <span>{centerLabel}</span>
+          </button>
+
+          {placed.map((p, i) => (
+            <button
+              key={p.node.id}
+              type="button"
+              className={`rnode rnode-${p.node.tier} ${
+                selectedId === p.node.id ? "is-selected" : ""
+              }`}
+              style={{
+                left: `${p.x}%`,
+                top: `${p.y}%`,
+                animationDelay: `${i * 45}ms`,
+              }}
+              onClick={() => onNodeClick(p.node)}
+            >
+              <span>{p.node.label}</span>
+            </button>
+          ))}
+        </div>
+
+        <aside className="skills-panel">
+          {path.length > 0 && (
+            <button type="button" className="skills-reset" onClick={goUp}>
+              ↑ {t("skills.back")}
+            </button>
+          )}
+          {sel ? (
+            <div className="panel-card">
+              <span className={`panel-tier tier-${sel.tier}`}>{sel.tier}</span>
+              <h3 className="panel-title">{sel.label}</h3>
+              {sel.description && <p className="panel-desc">{sel.description}</p>}
+              {sel.tier === "skill" && typeof sel.level === "number" && (
+                <div className="panel-prof">
+                  <span>{t("skills.proficiency")}</span>
+                  <ProficiencyDots level={sel.level} />
+                </div>
+              )}
+            </div>
+          ) : (
+            <p className="panel-empty">{t("skills.selectHint")}</p>
+          )}
+        </aside>
+      </div>
     </div>
   );
 }
