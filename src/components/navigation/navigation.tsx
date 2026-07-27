@@ -7,8 +7,18 @@ import AsideLinks from "./aside-links";
 
 function Navigation() {
   const [opened, setOpened] = useState(false);
-  const [isMobile] = useState<boolean>(window.innerWidth <= 991.98);
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => window.innerWidth <= 991.98
+  );
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Keep the desktop/mobile flag current so hover-to-open works on wide
+  // screens even if the viewport was narrow at first paint or gets resized.
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 991.98);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   // Close when clicking/tapping anywhere outside the open menu.
   useEffect(() => {
