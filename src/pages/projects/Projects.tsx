@@ -97,6 +97,7 @@ export default function Projects() {
       <p className="page-subtitle">{t("projects.subtitle")}</p>
       <hr className="page-rule" />
 
+      <div className="page-body">
       <div className="timeline-scroll">
         <div
           className="timeline-inner"
@@ -130,6 +131,7 @@ export default function Projects() {
         </div>
       </div>
       <p className="tl-hint">{t("projects.scrollHint")}</p>
+      </div>
 
       {selected && (
         <div className="tl-modal-backdrop" onClick={() => setSelected(null)}>

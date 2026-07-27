@@ -1,65 +1,61 @@
-import React, { useState } from 'react';
-import menuIcon from 'assets/navigation/three-parallel-lines.svg';
+import React, { useEffect, useRef, useState } from "react";
+import menuIcon from "assets/navigation/three-parallel-lines.svg";
 
-import './navigation.css';
+import "./navigation.css";
 
-import AsideLinks from './aside-links';
+import AsideLinks from "./aside-links";
 
 function Navigation() {
-  const [opened, setOpened] = useState(false)
-  //maybe a context?
+  const [opened, setOpened] = useState(false);
   const [isMobile] = useState<boolean>(window.innerWidth <= 991.98);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  let showOnHoverEvent = function (e: React.MouseEvent<HTMLElement>) {
-    setOpened(true)
-    e.preventDefault()
-    //question mark make sure that is not undefined or null
-    // console.log(closedMenu?.className);
-    //exclamation mark says that I am sure that isn't null
-    // openedMenu!.className = "show";
-    // closedMenu!.className = "hide";
-  };
-  let hideOnLeaveEvent = function (e: React.MouseEvent<HTMLElement>) {
-    setOpened(false)
-    e.preventDefault()
-  };
-  let onClick = function (e: React.MouseEvent<HTMLElement>) {
-    if(!opened) e.preventDefault()
-    setOpened(!opened)
-  }
+  // Close when clicking/tapping anywhere outside the open menu.
+  useEffect(() => {
+    if (!opened) return;
+    const onDown = (e: MouseEvent | TouchEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpened(false);
+      }
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("touchstart", onDown);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("touchstart", onDown);
+    };
+  }, [opened]);
 
   return (
-    <div className="navigation"
-      onMouseEnter={isMobile ? () => {return false} : (e) => showOnHoverEvent(e)}
-      onMouseLeave={(e) => hideOnLeaveEvent(e)}
-      onClick={(e) => onClick(e)}
-    >
-      {opened ?
-        (
-          <div id="opened">
+    <>
+      {opened && isMobile && (
+        <div className="nav-backdrop" onClick={() => setOpened(false)} />
+      )}
+      <div
+        className="navigation"
+        ref={menuRef}
+        onMouseEnter={isMobile ? undefined : () => setOpened(true)}
+        onMouseLeave={isMobile ? undefined : () => setOpened(false)}
+      >
+        {opened ? (
+          // Clicking a link (or anywhere in the panel) also closes the menu.
+          <div id="opened" onClick={() => setOpened(false)}>
             <AsideLinks />
           </div>
-        )
-        :
-        (
-          <div id="closed">
-            <img src={menuIcon} className="social-midia-icon" alt="github icon/link" />
+        ) : (
+          <div
+            id="closed"
+            role="button"
+            tabIndex={0}
+            aria-label="menu"
+            onClick={() => setOpened(true)}
+          >
+            <img src={menuIcon} className="menu-icon" alt="menu" />
           </div>
-        )
-      }
-    </div>
+        )}
+      </div>
+    </>
   );
 }
-
-//if need to change windows size
-// function handleWindowSizeChange() {
-//   setWidth(window.innerWidth);
-// }
-// useEffect(() => {
-//   window.addEventListener('resize', handleWindowSizeChange);
-//   return () => {
-//       window.removeEventListener('resize', handleWindowSizeChange);
-//   }
-// }, []);
 
 export default Navigation;
