@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // pictures
 import engineer from 'assets/engineer-min.png';
@@ -10,20 +11,21 @@ import './personas.css'
 const cards = [
     {
         picture: engineer,
-        persona: "Engenheiro",
+        key: "engineer",
     },
     {
         picture: educator,
-        persona: "Educador",
+        key: "educator",
     },
     {
         picture: citizen,
-        persona: "Cidadão",
+        key: "citizen",
     }
 ]
 
 
 const PersonasSlider = () => {
+    const { t } = useTranslation();
     const [currentPersona, setCurrentPersona] = useState(0)
 
     useEffect(() => {
@@ -37,22 +39,21 @@ const PersonasSlider = () => {
         return () => clearInterval(interval);
     }, [currentPersona])
 
+    const label = t(`personas.${cards[currentPersona].key}`);
+
     return (
         <div className="persona-slider">
             <div className='persona'>
                 <div className='persona-title'>
-                    <h1>{cards[currentPersona].persona}</h1>
+                    <h1>{label}</h1>
                 </div>
                 <img className='img-flex'
                     loading="lazy"
                     src={cards[currentPersona].picture}
-                    alt={cards[currentPersona].persona} />
+                    alt={label} />
             </div>
         </div>
     );
 }
 
 export default PersonasSlider;
-
-
-

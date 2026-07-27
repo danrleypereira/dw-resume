@@ -1,0 +1,35 @@
+.content-container {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Desktop: leave room for the fixed left navigation rail */
+@media (min-width: 992px) {
+  .content-container {
+    margin-left: 70px;
+  }
+}
+
+.route-wrapper {
+  width: 100%;
+}
+
+/* Route transition (subtle fade + slide; dice/flip is a later phase) */
+.route-fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.route-fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+.route-fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.route-fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}

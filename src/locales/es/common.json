@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "cv": "Currículum",
+    "contact": "Contacto",
+    "profile": "Danrley Pereira"
+  },
+  "personas": {
+    "engineer": "Ingeniero",
+    "educator": "Educador",
+    "citizen": "Ciudadano"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "search": "Buscar habilidades...",
+    "minLevel": "Nivel mínimo",
+    "technical": "Habilidades Técnicas",
+    "soft": "Habilidades Blandas",
+    "level": "Nivel"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una línea de tiempo de mi trabajo.",
+    "comingSoon": "Línea de tiempo interactiva próximamente."
+  },
+  "cv": {
+    "title": "Currículum",
+    "download": "Descargar PDF",
+    "note": "Elige un idioma en el selector para ver el currículum correspondiente.",
+    "comingSoon": "Visor de currículum próximamente."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Hablemos — elige el canal que prefieras.",
+    "whatsapp": "WhatsApp",
+    "email": "Correo",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "discord": "Discord",
+    "discordNote": "Comunidad en Discord — para evitar bots, envíame un DM para unirte.",
+    "website": "Sitio web"
+  },
+  "lang": {
+    "label": "Idioma"
+  }
+}

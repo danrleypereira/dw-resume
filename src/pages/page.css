@@ -1,0 +1,46 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  color: #111;
+  text-align: left;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+  color: #111;
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  margin: 0 0 2rem;
+}
+
+.page-rule {
+  height: 3px;
+  width: 56px;
+  background: #111;
+  border: 0;
+  margin: 0 0 2rem;
+}
+
+.page-placeholder {
+  padding: 2.5rem;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  color: #777;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .page {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+  }
+}
