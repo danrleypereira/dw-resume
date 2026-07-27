@@ -22,8 +22,11 @@
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Una línea de tiempo de mi trabajo.",
-    "comingSoon": "Línea de tiempo interactiva próximamente."
+    "subtitle": "Una línea de tiempo de mi trabajo — desplázate y haz clic en un proyecto.",
+    "present": "Actualidad",
+    "close": "Cerrar",
+    "tech": "Tecnologías",
+    "scrollHint": "→ desplázate horizontalmente"
   },
   "cv": {
     "title": "Currículum",
