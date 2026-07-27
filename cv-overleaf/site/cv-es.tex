@@ -1,147 +1,125 @@
-% CV completo — Español. Base: trayectoria completa + aportes de IA y founder.
-\documentclass[11pt,a4paper]{article}
-\usepackage[T1]{fontenc}
+%%% CV con estilo (AltaCV) — Español. Trayectoria completa + aportes de IA y founder.
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+
+\geometry{left=1.2cm,right=6.8cm,marginparwidth=5.2cm,marginparsep=0.8cm,top=1.2cm,bottom=1.2cm,footskip=1\baselineskip}
+
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1.4cm]{geometry}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=cyan}
 
-\definecolor{ink}{HTML}{111111}
-\definecolor{muted}{HTML}{555555}
-\color{ink}
-\pagestyle{empty}
-\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=2pt}
-
-\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[{\color{ink}\titlerule[1.2pt]}]
-\titlespacing{\section}{0pt}{1.0em}{0.45em}
-
-\newcommand{\job}[3]{\vspace{3pt}\noindent{\bfseries #1} \textcolor{muted}{— #2}\hfill\textcolor{muted}{\small #3}\par}
-\newcommand{\heads}[1]{\textbf{#1:} }
+\definecolor{accent}{HTML}{000e17}
+\definecolor{heading}{HTML}{283AFF}
+\definecolor{emphasis}{HTML}{696969}
+\definecolor{body}{HTML}{01415f}
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
 
 \begin{document}
-
-{\Huge\bfseries Danrley Pereira}\\[2pt]
-{\large\color{muted} Fundador e Ingeniero de Software Full-Stack — IA, Backend y Producto}\\[4pt]
-{\small
-danrley.pereira@dwcorp.com.br \textbullet{} +55 61 9 9423-4712 \textbullet{} Brasília, Brasil \textbullet{}
-\href{https://www.linkedin.com/in/danrleypereira}{LinkedIn} \textbullet{}
-\href{https://github.com/danrleypereira}{GitHub} \textbullet{}
-\href{https://danrleypereira.com}{danrleypereira.com}
+\name{Danrley Pereira}
+\tagline{Fundador e Ingeniero de Software Full-Stack — IA, Backend y Producto}
+\photo{2.6cm}{Photo.jpeg}
+\personalinfo{
+  \email{danrley.pereira@dwcorp.com.br}
+  \phone{+55 61 9 9423-4712}
+  \location{Brasília - Brasil}
+  \linkedin{\url{https://www.linkedin.com/in/danrleypereira}}
+  \github{https://github.com/danrleypereira}
+  \homepage{https://danrleypereira.com}
 }
 
-\section{Resumen}
-Ingeniero de software full-stack desde 2017 y fundador de DW Corp, construyendo \textbf{productos habilitados por IA de extremo a extremo} — agentes LLM, pipelines RAG y machine learning — sobre una base sólida de backend en Python, C\#/.NET y Node.js. He llevado funciones de IA a clientes reales, construido \textbf{bases de producto reutilizables} (autenticación, pagos, CI/CD, infraestructura en la nube y on-premise), contratado y mentorizado ingenieros, y lidero la primera comunidad de \textbf{Software Craftsmanship} de Brasília. Soy responsable de todo el camino, desde los datos y la recuperación hasta los servicios de backend y las interfaces web que los entregan, y tengo amplia experiencia en software operativo y de logística.
+\makecvheader
 
-\section{Habilidades Principales}
+\addsidebar{es-side1}
+\addnextpagesidebar{es-side2}
+
+\cvsection{Resumen}
+Ingeniero de software full-stack desde 2017 y fundador de DW Corp, construyendo \textbf{productos habilitados por IA de extremo a extremo} — agentes LLM, pipelines RAG y machine learning — sobre una base sólida de backend en Python, C\#/.NET y Node.js. Llevo funciones a clientes reales, construyo \textbf{bases de producto reutilizables} (auth, pagos, CI/CD, nube y on-premise), contrato y mentorizo ingenieros, y lidero la primera comunidad de \textbf{Software Craftsmanship} de Brasília. Soy responsable de todo el camino, de los datos y la recuperación al backend y las interfaces web, con amplia experiencia en software operativo y de logística.
+
+\cvsection{Experiencia}
+
+\cvevent{Fundador e Ingeniero de IA}{DW Corp}{sep 2022 - Actualidad}{Brasília - Brasil}
 \begin{itemize}
-\item \heads{IA / ML} APIs de LLM (OpenAI, Anthropic, Azure OpenAI), RAG y embeddings, FAISS, LangChain / LangGraph, flujos con agentes, prompt engineering, TensorFlow / Keras, aprendizaje por refuerzo.
-\item \heads{Backend} Python (FastAPI, Flask, Django, Celery), C\#/.NET y ASP.NET, Node.js, Rust, APIs RESTful, arquitectura orientada a eventos (RabbitMQ), microservicios.
-\item \heads{Frontend} React, Next.js, Vue / Nuxt, Angular, TypeScript.
-\item \heads{Datos} PostgreSQL, SQLAlchemy, MySQL, MongoDB, Redis, Snowflake, ETL / pipelines de datos, Pandas.
-\item \heads{Nube y DevOps} Docker, Kubernetes, AWS, GCP, Azure, CI/CD (GitHub y GitLab), Terraform, Grafana, on-premise / Linux bare-metal.
-\item \heads{Pruebas} Pytest, Playwright, Cypress, Cucumber, Behave, Allure, TDD / BDD.
+\item Construí \textbf{agentes LangChain/LangGraph} (un asistente de presupuesto por WhatsApp y un bus multi-agente orientado a eventos) tras una interfaz común multi-proveedor de LLM.
+\item Construí \textbf{Curupira}, una plataforma de autenticación Rust/OIDC reutilizable (multi-tenancy, SSO, MFA), además de integraciones de pago, CI/CD y un stack bare-metal + nube híbrida (Terraform, Grafana).
+\item Contraté y mentoricé a más de 10 ingenieros, y lidero la primera comunidad de Software Craftsmanship de Brasília.
 \end{itemize}
+\divider
 
-\section{Experiencia}
-
-\job{Fundador e Ingeniero de IA}{DW Corp}{sep 2022 -- Actualidad}
+\cvevent{Ingeniero de Software Senior}{Epicor}{nov 2023 - mar 2025}{Austin, TX - EE. UU.}
 \begin{itemize}
-\item Construí \textbf{agentes LangChain / LangGraph} — un asistente de presupuesto por WhatsApp y un bus multi-agente orientado a eventos — tras una interfaz común multi-proveedor de LLM.
-\item Construí \textbf{Curupira}, una plataforma de autenticación Rust/OIDC reutilizable (multi-tenancy, SSO, MFA), además de integraciones de pago (Stripe, Adyen) y un stack bare-metal + nube híbrida con Terraform y Grafana.
-\item Entregué productos para clientes: un gestor de pedidos de restaurantes (Django, Celery, resiliencia con circuit-breaker hacia un data lake) y una app de field-service en .NET MAUI con procedimientos, vistas y triggers de base de datos.
-\item Contraté y mentoricé a más de 10 ingenieros, y lidero la primera comunidad de Software Craftsmanship de Brasília (katas de TDD, mesas redondas).
+\item Integré \textbf{Azure OpenAI} y un \textbf{pipeline RAG} sobre datos propietarios; construí microservicios \textbf{.NET Aspire} con RabbitMQ en Kubernetes; lideré la refactorización de un portal Angular a microfrontends.
 \end{itemize}
+\divider
 
-\job{Ingeniero de Software Senior}{Epicor}{nov 2023 -- mar 2025}
+\cvevent{Investigador}{Ibict / MCTI (gobierno federal)}{mar 2025 - Actualidad}{Brasília - Brasil}
 \begin{itemize}
-\item Integré \textbf{Azure OpenAI} y un \textbf{pipeline RAG} sobre datos propietarios; usé Azure Document Intelligence para extracción estructurada.
-\item Construí microservicios \textbf{.NET Aspire} con procesamiento orientado a eventos (\textbf{RabbitMQ}), OAuth2/SAML personalizado, desplegados en Kubernetes.
-\item Lideré la refactorización de un portal Angular a microfrontends, con sólida cobertura xUnit y end-to-end, e impulsé la planificación de sprints y la documentación.
+\item Construí pipelines de datos en \textbf{Snowflake} sobre datos institucionales; co-orienté una tesis RAG para el poder judicial (9,0/10); audité una plataforma de más de 600 mil usuarios (ISO/IEC 25000, LGPD).
 \end{itemize}
+\divider
 
-\job{Investigador}{Ibict / MCTI (gobierno federal)}{mar 2025 -- Actualidad}
+\cvevent{Consultor Full-Stack Senior}{SubSurface Dynamics}{ene 2024 - jun 2024}{Alberta - Canadá}
 \begin{itemize}
-\item Construí pipelines de datos en \textbf{Snowflake} sobre datos institucionales, avanzando hacia el entrenamiento de modelos con datos propietarios.
-\item Co-orienté una tesis de grado que diseñó un \textbf{sistema RAG} para el poder judicial brasileño (calificada 9,0/10); audité una plataforma de más de 600 mil usuarios frente a ISO/IEC 25000 y LGPD.
+\item Refactoricé una app MERN a \textbf{TypeScript} sobre Fastify, \textbf{Socket.io} y \textbf{Redis} (miles de usuarios); ajusté las series temporales de MongoDB Atlas; aseguré con Auth0/ADAL; construí una visualización 3D con \textbf{Three.js}.
 \end{itemize}
+\divider
 
-\job{Consultor Full-Stack Senior}{SubSurface Dynamics}{ene 2024 -- jun 2024}
+\cvevent{Ingeniero de Datos y DevOps}{Dado Global}{dic 2021 - abr 2023}{Porto - Portugal}
 \begin{itemize}
-\item Refactoricé una app MERN a un proyecto \textbf{TypeScript} moderno sobre \textbf{Fastify, Socket.io, Redis} y Typegoose, sirviendo a miles de usuarios en tiempo real.
-\item Ajusté Redis y las series temporales de MongoDB Atlas por costo y rendimiento; aseguré la plataforma con Azure AD (ADAL) + Auth0 (OAuth2/SAML).
-\item Construí gráficos 2D/3D y una visualización de pozos con \textbf{Three.js}, además de modo oscuro y un sistema de notificaciones.
+\item Diseñé un sistema \textbf{ETL} en Python (SQLAlchemy, pytest) y llevé la entrega a Continuous Delivery con GitHub Actions, mejorando el SLA del 70\% al 95\%.
 \end{itemize}
+\divider
 
-\job{Ingeniero de Datos y DevOps}{Dado Global}{dic 2021 -- abr 2023}
+\cvevent{Ingeniero de Software}{ClearSale}{nov 2021 - mar 2022}{Miami - FL}
 \begin{itemize}
-\item Diseñé un sistema \textbf{ETL} con responsabilidades por capas usando \textbf{SQLAlchemy} y cobertura rigurosa de pytest; automaticé la extracción con Selenium y Behave.
-\item Llevé la entrega a \textbf{Continuous Delivery} con GitHub Actions (semanal $\rightarrow$ diaria), mejorando el SLA del 70\% al 95\%.
+\item Construí microservicios antifraude de alto rendimiento (\textbf{C\#/.NET}, Dapper) con vistas, triggers y procedimientos almacenados; definí procesos UML/BPMN y mentoricé al equipo.
 \end{itemize}
+\divider
 
-\job{Ingeniero de Software}{ClearSale}{nov 2021 -- mar 2022}
-\begin{itemize}
-\item Construí microservicios antifraude de alto rendimiento en \textbf{C\#/.NET}; diseñé vistas, triggers y procedimientos almacenados y optimicé consultas con Dapper.
-\item Definí procesos de ingeniería (UML/BPMN), inicié pruebas unitarias y mentoricé al equipo.
-\end{itemize}
-
-\job{Líder Técnico e Investigador}{LabTech, UDF}{ene 2023 -- dic 2023}
+\cvevent{Líder Técnico e Investigador}{LabTech, UDF}{ene 2023 - dic 2023}{Brasília - Brasil}
 \begin{itemize}
 \item Lideré una plataforma multinivel de gestión de eventos (React, Python, Spring Boot, RabbitMQ, Kubernetes) y mentoricé a ingenieros junior.
 \end{itemize}
+\divider
 
-\job{Ingeniero de Software}{Layers Education}{mar 2022 -- sep 2022}
+\cvevent{Ingeniero de Software}{Layers Education}{mar 2022 - sep 2022}{São Caetano - SP}
 \begin{itemize}
-\item Mantuve sistemas backend y microfrontend; reduje los tiempos de consulta de MongoDB de 1,3s a 0,6s bajo carga, construí un data lake en BigQuery para ETL y reforcé la seguridad según OWASP.
+\item Mantuve sistemas backend y microfrontend; reduje los tiempos de consulta de MongoDB de 1,3s a 0,6s, construí un data lake en BigQuery y reforcé la seguridad según OWASP.
+\end{itemize}
+\divider
+
+\cvevent{Ingeniero Full-Stack}{Compuletra}{jul 2020 - ago 2021}{Porto Alegre - RS}
+\begin{itemize}
+\item Construí software de logística de \textbf{transporte, entrega y patio} con sistemas de flota e \textbf{inspección de vehículos}, y una plataforma ERP de escritorio (Electron) sobre PostgreSQL con checkout compatible con PCI.
+\end{itemize}
+\divider
+
+\cvevent{Desarrollador Full-Stack y BPM}{ConsultMídia / Banco de Brasília}{abr 2020 - ene 2021}{Brasília - DF}
+\begin{itemize}
+\item Construí interfaces AngularJS/Spring Boot y APIs REST sobre BPM \textbf{Camunda} para modernizar los flujos del banco; integré Alfresco y automaticé pruebas de rendimiento (JMeter, Selenium).
+\end{itemize}
+\divider
+
+\cvevent{Desarrollador Full-Stack y Móvil}{Transoft}{feb 2021 - oct 2021}{Brasília - DF}
+\begin{itemize}
+\item Construí y renové aplicaciones para gestionar sensores y cámaras de flotas de autobuses, y una app móvil de gestión de personal (Angular, Ionic, Laravel).
+\end{itemize}
+\divider
+
+\cvevent{Desarrollador de Plataforma}{Ministerio de Salud / USP}{jun 2019 - jul 2020}{Brasília - DF}
+\begin{itemize}
+\item Ayudé a gestionar la \textbf{distribución de medicamentos en más de 5.000 municipios}; construí el frontend e integré APIs REST y microservicios para exponer datos y reducir el fraude.
 \end{itemize}
 
-\job{Ingeniero Full-Stack}{Compuletra}{jul 2020 -- ago 2021}
+\cvsection{Experiencia Anterior}
 \begin{itemize}
-\item Construí software de logística de \textbf{transporte, entrega y patio} con sistemas de flota e \textbf{inspección de vehículos}, y una plataforma ERP de escritorio (Electron) sobre PostgreSQL.
-\item Migré una app legacy de seguimiento vehicular de AngularJS a React (on-premise), y construí un generador de páginas comerciales con checkout compatible con PCI gestionado desde la base de datos.
+\item \textbf{Taurus Software} — aplicaciones IoT, móviles híbridas (Ionic) y de captación de leads \emph{(2018--2020)}. \quad \textbf{Gama Cidadão} — Gerente Web y de Marketing Digital \emph{(2017--2018)}. \quad \textbf{UMESB} — sistema de registro de estudiantes \emph{(2017)}. \quad \textbf{IT Universe} — instructor \emph{(2017)}.
 \end{itemize}
-
-\job{Desarrollador Full-Stack y BPM}{ConsultMídia / Banco de Brasília}{abr 2020 -- ene 2021}
-\begin{itemize}
-\item Construí interfaces AngularJS/Spring Boot y APIs REST sobre BPM \textbf{Camunda} para modernizar los flujos del banco; integré Alfresco (gestión documental) y automaticé pruebas de rendimiento (JMeter, Selenium).
-\end{itemize}
-
-\job{Desarrollador Full-Stack y Móvil}{Transoft}{feb 2021 -- oct 2021}
-\begin{itemize}
-\item Construí y renové aplicaciones para gestionar sensores y cámaras de flotas de autobuses, y una app móvil de gestión de personal integrada con Oracle (Angular, Ionic, Laravel).
-\end{itemize}
-
-\job{Desarrollador de Plataforma}{Ministerio de Salud / USP}{jun 2019 -- jul 2020}
-\begin{itemize}
-\item Ayudé al Ministerio de Salud a gestionar la \textbf{distribución de medicamentos en más de 5.000 municipios}; construí el frontend e integré APIs REST y microservicios para exponer datos, reducir el fraude y optimizar la integración de servicios.
-\end{itemize}
-
-\section{Experiencia Anterior}
-\begin{itemize}
-\item \textbf{Taurus Software} — aplicaciones de gestión de energía IoT, móviles híbridas (Ionic) y de captación de leads. \emph{2018--2020}
-\item \textbf{Gama Cidadão} — Gerente Web y de Marketing Digital; portales WordPress/Vue, landing pages y SEO. \emph{2017--2018}
-\item \textbf{UMESB} — Desarrollador por contrato (sistema de registro de estudiantes, Polymer/Node.js). \emph{2017}
-\item \textbf{IT Universe} — Instructor de diseño web/gráfico y fundamentos de computación. \emph{2017}
-\end{itemize}
-
-\section{Educación}
-\begin{itemize}
-\item Grado en Ingeniería de Software — Universidad de Brasília
-\item Grado en Ciencias de la Computación — Centro Universitario del Distrito Federal
-\item MBA, Cadena de Suministro y Logística Integrada — Southern Cross University
-\item MBA, Administración de Bases de Datos — Anhanguera
-\end{itemize}
-
-\section{Certificaciones y Charlas}
-\begin{itemize}
-\item Ponente en el escenario principal de \textbf{Campus Party Brasil} — Clean Architecture, TDD, IA, SDET y Software Craftsmanship.
-\item Business Intelligence con Power BI \textbullet{} Scrum Fundamentals (SFC) \textbullet{} Kanban Foundation \textbullet{} Producción Oral B2 (Inglés) — UnB.
-\end{itemize}
-
-\section{Idiomas}
-Portugués (nativo) \textbullet{} Inglés (C2) \textbullet{} Español (intermedio)
 
 \end{document}
