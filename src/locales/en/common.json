@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "cv": "Curriculum",
+    "contact": "Contact",
+    "profile": "Danrley Pereira"
+  },
+  "personas": {
+    "engineer": "Engineer",
+    "educator": "Educator",
+    "citizen": "Citizen"
+  },
+  "skills": {
+    "title": "Skills",
+    "search": "Search skills...",
+    "minLevel": "Min level",
+    "technical": "Technical Skills",
+    "soft": "Soft Skills",
+    "level": "Level"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A timeline of my work.",
+    "comingSoon": "Interactive timeline coming soon."
+  },
+  "cv": {
+    "title": "Curriculum",
+    "download": "Download PDF",
+    "note": "Pick a language in the selector to see the matching CV.",
+    "comingSoon": "CV viewer coming soon."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk — pick whichever channel you prefer.",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "slack": "Slack",
+    "website": "Website"
+  },
+  "lang": {
+    "label": "Language"
+  }
+}

@@ -1,0 +1,42 @@
+.language-switcher {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 30;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: #555;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.lang-btn:hover {
+  color: #111;
+}
+
+.lang-btn.active {
+  background: #111;
+  color: #fff;
+}
+
+/* On mobile the nav collapses to the top-right; nudge the switcher left of it */
+@media (max-width: 991.98px) {
+  .language-switcher {
+    right: 64px;
+  }
+}
