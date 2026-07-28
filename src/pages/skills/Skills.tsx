@@ -6,6 +6,7 @@ import {
   byId,
   hasChildren,
   GraphNode,
+  Lang,
 } from "data/graphData";
 
 import "../page.css";
@@ -15,21 +16,49 @@ interface Placed {
   node: GraphNode;
   x: number; // 0-100 (percent of the square canvas)
   y: number;
+  small: boolean;
 }
 
+// Radius grows with the number of children; large levels stagger on two radii.
 function placeChildren(children: GraphNode[]): Placed[] {
   const n = children.length;
-  const radius = 34;
+  const small = n > 10;
+  const base = n <= 6 ? 32 : n <= 10 ? 36 : 40;
   return children.map((node, i) => {
+    const r = base + (n > 11 ? (i % 2 === 0 ? 3.5 : -3.5) : 0);
     const deg = -90 + (n === 1 ? 0 : (i * 360) / n);
     const rad = (deg * Math.PI) / 180;
     return {
       node,
-      x: 50 + radius * Math.cos(rad),
-      y: 50 + radius * Math.sin(rad),
+      x: 50 + r * Math.cos(rad),
+      y: 50 + r * Math.sin(rad),
+      small,
     };
   });
 }
+
+const KIND: Record<string, Record<Lang, string>> = {
+  framework: { en: "Framework", es: "Framework", pt: "Framework" },
+  library: { en: "Library", es: "Librería", pt: "Biblioteca" },
+  orm: { en: "ORM", es: "ORM", pt: "ORM" },
+  database: { en: "Database", es: "Base de datos", pt: "Banco de dados" },
+  warehouse: { en: "Warehouse", es: "Warehouse", pt: "Warehouse" },
+  storage: { en: "Storage", es: "Almacenamiento", pt: "Armazenamento" },
+  concept: { en: "Concept", es: "Concepto", pt: "Conceito" },
+  practice: { en: "Practice", es: "Práctica", pt: "Prática" },
+  tool: { en: "Tool", es: "Herramienta", pt: "Ferramenta" },
+  cloud: { en: "Cloud", es: "Nube", pt: "Nuvem" },
+  service: { en: "Service", es: "Servicio", pt: "Serviço" },
+  runtime: { en: "Runtime", es: "Runtime", pt: "Runtime" },
+  language: { en: "Language", es: "Lenguaje", pt: "Linguagem" },
+  foundation: { en: "Foundation", es: "Fundamento", pt: "Fundamento" },
+  mindset: { en: "Mindset", es: "Mentalidad", pt: "Mentalidade" },
+  leadership: { en: "Leadership", es: "Liderazgo", pt: "Liderança" },
+  soft: { en: "Soft Skill", es: "Habilidad Blanda", pt: "Soft Skill" },
+  role: { en: "Role", es: "Rol", pt: "Papel" },
+  domain: { en: "Area", es: "Área", pt: "Área" },
+  skill: { en: "Skill", es: "Habilidad", pt: "Habilidade" },
+};
 
 function ProficiencyDots({ level }: { level: number }) {
   return (
@@ -42,7 +71,8 @@ function ProficiencyDots({ level }: { level: number }) {
 }
 
 export default function Skills() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = ((i18n.language || "pt").split("-")[0] || "pt") as Lang;
   const [path, setPath] = useState<string[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -53,7 +83,7 @@ export default function Skills() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const placed = useMemo(() => placeChildren(children), [currentId]);
 
-  const centerLabel = current ? current.label : t("skills.title");
+  const centerLabel = current ? current.label[lang] : t("skills.title");
   const sel = selectedId ? byId(selectedId) : current;
 
   const onNodeClick = (node: GraphNode) => {
@@ -71,8 +101,13 @@ export default function Skills() {
 
   const crumbs = [
     { label: t("skills.title") },
-    ...path.map((id) => ({ label: byId(id)?.label ?? id })),
+    ...path.map((id) => ({ label: byId(id)?.label[lang] ?? id })),
   ];
+
+  const kindLabel = (node: GraphNode) => {
+    const k = node.kind || node.tier;
+    return KIND[k]?.[lang] || k;
+  };
 
   return (
     <div className="skills-page">
@@ -145,16 +180,16 @@ export default function Skills() {
               key={p.node.id}
               type="button"
               className={`rnode rnode-${p.node.tier} ${
-                selectedId === p.node.id ? "is-selected" : ""
-              }`}
+                p.small ? "rnode-sm" : ""
+              } ${selectedId === p.node.id ? "is-selected" : ""}`}
               style={{
                 left: `${p.x}%`,
                 top: `${p.y}%`,
-                animationDelay: `${i * 45}ms`,
+                animationDelay: `${i * 35}ms`,
               }}
               onClick={() => onNodeClick(p.node)}
             >
-              <span>{p.node.label}</span>
+              <span>{p.node.label[lang]}</span>
             </button>
           ))}
         </div>
@@ -168,10 +203,12 @@ export default function Skills() {
           {sel ? (
             <div className="panel-card">
               <span className={`panel-tier tier-${sel.tier}`}>
-                {sel.kind || sel.tier}
+                {kindLabel(sel)}
               </span>
-              <h3 className="panel-title">{sel.label}</h3>
-              {sel.description && <p className="panel-desc">{sel.description}</p>}
+              <h3 className="panel-title">{sel.label[lang]}</h3>
+              {sel.description && (
+                <p className="panel-desc">{sel.description[lang]}</p>
+              )}
               {typeof sel.level === "number" && (
                 <div className="panel-prof">
                   <span>{t("skills.proficiency")}</span>
