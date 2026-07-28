@@ -167,10 +167,12 @@ export default function Skills() {
           )}
           {sel ? (
             <div className="panel-card">
-              <span className={`panel-tier tier-${sel.tier}`}>{sel.tier}</span>
+              <span className={`panel-tier tier-${sel.tier}`}>
+                {sel.kind || sel.tier}
+              </span>
               <h3 className="panel-title">{sel.label}</h3>
               {sel.description && <p className="panel-desc">{sel.description}</p>}
-              {sel.tier === "skill" && typeof sel.level === "number" && (
+              {typeof sel.level === "number" && (
                 <div className="panel-prof">
                   <span>{t("skills.proficiency")}</span>
                   <ProficiencyDots level={sel.level} />
