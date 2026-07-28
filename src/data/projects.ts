@@ -295,4 +295,149 @@ export const projects: Project[] = [
     ],
     tech: ["Angular", "Python", "Flask", "PostgreSQL"],
   },
+  {
+    id: "clearsale",
+    org: "ClearSale",
+    role: {
+      en: "Software Engineer",
+      es: "Ingeniero de Software",
+      pt: "Engenheiro de Software",
+    },
+    start: "2021-11",
+    end: "2022-03",
+    summary: {
+      en: "High-performance anti-fraud microservices.",
+      es: "Microservicios antifraude de alto rendimiento.",
+      pt: "Microsserviços antifraude de alto desempenho.",
+    },
+    details: [
+      {
+        en: "Built and tested anti-fraud microservices in C#/.NET; optimized large-scale queries with Dapper.",
+        es: "Construí y probé microservicios antifraude en C#/.NET; optimicé consultas a gran escala con Dapper.",
+        pt: "Construí e testei microsserviços antifraude em C#/.NET; otimizei consultas em larga escala com Dapper.",
+      },
+      {
+        en: "Designed DB views, triggers and stored procedures for real-time detection and alerting.",
+        es: "Diseñé vistas, triggers y procedimientos almacenados para detección y alertas en tiempo real.",
+        pt: "Projetei views, triggers e stored procedures para detecção e alertas em tempo real.",
+      },
+    ],
+    tech: ["C#/.NET", "ASP.NET", "Dapper", "SQL Server", "Azure Service Bus"],
+  },
+  {
+    id: "labtech",
+    org: "LabTech, UDF",
+    role: {
+      en: "Technical Lead & Researcher",
+      es: "Líder Técnico e Investigador",
+      pt: "Líder Técnico e Pesquisador",
+    },
+    start: "2023-01",
+    end: "2023-12",
+    summary: {
+      en: "Multi-tier event-management platform.",
+      es: "Plataforma multinivel de gestión de eventos.",
+      pt: "Plataforma multicamada de gestão de eventos.",
+    },
+    details: [
+      {
+        en: "Led a multi-tier platform (React frontend, Python logic, Spring Boot data) with RabbitMQ and Kubernetes.",
+        es: "Lideré una plataforma multinivel (React, Python, Spring Boot) con RabbitMQ y Kubernetes.",
+        pt: "Liderei uma plataforma multicamada (React, Python, Spring Boot) com RabbitMQ e Kubernetes.",
+      },
+      {
+        en: "Organized teams by technology and mentored young professionals into the industry.",
+        es: "Organicé equipos por tecnología y mentoricé a jóvenes profesionales hacia la industria.",
+        pt: "Organizei times por tecnologia e mentorei jovens profissionais rumo à indústria.",
+      },
+    ],
+    tech: ["React", "Python", "Spring Boot", "RabbitMQ", "Kubernetes"],
+  },
+  {
+    id: "layers",
+    org: "Layers Education",
+    role: {
+      en: "Software Engineer",
+      es: "Ingeniero de Software",
+      pt: "Engenheiro de Software",
+    },
+    start: "2022-03",
+    end: "2022-09",
+    summary: {
+      en: "Backend & microfrontends; performance and security.",
+      es: "Backend y microfrontends; rendimiento y seguridad.",
+      pt: "Backend e microfrontends; desempenho e segurança.",
+    },
+    details: [
+      {
+        en: "Maintained backend services and white-label microfrontends; cut MongoDB query times from 1.3s to 0.6s.",
+        es: "Mantuve servicios backend y microfrontends white-label; reduje consultas de MongoDB de 1,3s a 0,6s.",
+        pt: "Mantive serviços backend e microfrontends white-label; reduzi consultas do MongoDB de 1,3s para 0,6s.",
+      },
+      {
+        en: "Built a BigQuery data lake for ETL and hardened security to OWASP standards.",
+        es: "Construí un data lake en BigQuery para ETL y reforcé la seguridad según OWASP.",
+        pt: "Construí um data lake no BigQuery para ETL e reforcei a segurança conforme OWASP.",
+      },
+    ],
+    tech: ["Node.js", "Vue", "MongoDB", "BigQuery", "GCP"],
+  },
+  {
+    id: "consultmidia",
+    org: "ConsultMídia / Bank of Brasília",
+    role: {
+      en: "Full-Stack Developer & BPM",
+      es: "Desarrollador Full-Stack y BPM",
+      pt: "Desenvolvedor Full-Stack e BPM",
+    },
+    start: "2020-04",
+    end: "2021-01",
+    summary: {
+      en: "Workflow modernization for a bank (Camunda BPM).",
+      es: "Modernización de flujos para un banco (Camunda BPM).",
+      pt: "Modernização de fluxos para um banco (Camunda BPM).",
+    },
+    details: [
+      {
+        en: "Built AngularJS/Spring Boot interfaces and REST APIs on Camunda to modernize the Bank of Brasília's workflows.",
+        es: "Construí interfaces AngularJS/Spring Boot y APIs REST sobre Camunda para modernizar los flujos del Banco de Brasília.",
+        pt: "Construí interfaces AngularJS/Spring Boot e APIs REST sobre Camunda para modernizar os fluxos do Banco de Brasília.",
+      },
+      {
+        en: "Integrated Alfresco (document management) and automated performance tests (JMeter, Selenium).",
+        es: "Integré Alfresco (gestión documental) y automaticé pruebas de rendimiento (JMeter, Selenium).",
+        pt: "Integrei o Alfresco (gestão documental) e automatizei testes de desempenho (JMeter, Selenium).",
+      },
+    ],
+    tech: ["AngularJS", "Java", "Spring Boot", "Camunda", "Alfresco"],
+  },
+  {
+    id: "transoft",
+    org: "Transoft",
+    role: {
+      en: "Full-Stack & Mobile Developer",
+      es: "Desarrollador Full-Stack y Móvil",
+      pt: "Desenvolvedor Full-Stack e Mobile",
+    },
+    start: "2021-02",
+    end: "2021-10",
+    summary: {
+      en: "Fleet sensor/camera and staff-management apps.",
+      es: "Apps de sensores/cámaras de flota y gestión de personal.",
+      pt: "Apps de sensores/câmeras de frota e gestão de pessoal.",
+    },
+    details: [
+      {
+        en: "Revamped an application managing sensors and cameras for bus fleets (Angular, Laravel).",
+        es: "Renové una aplicación de sensores y cámaras para flotas de autobuses (Angular, Laravel).",
+        pt: "Renovei uma aplicação de sensores e câmeras para frotas de ônibus (Angular, Laravel).",
+      },
+      {
+        en: "Built a mobile staff-management app integrated with Oracle (Ionic, Angular).",
+        es: "Construí una app móvil de gestión de personal integrada con Oracle (Ionic, Angular).",
+        pt: "Construí um app móvel de gestão de pessoal integrado ao Oracle (Ionic, Angular).",
+      },
+    ],
+    tech: ["Angular", "Ionic", "Laravel", "PHP", "Oracle"],
+  },
 ];

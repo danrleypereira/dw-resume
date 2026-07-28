@@ -1,0 +1,562 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CV Danrley Pereira 01/11/23  %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+
+%Layout
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+%Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Colors
+\definecolor{accent}{HTML}{000e17}
+\definecolor{heading}{HTML}{283AFF}
+\definecolor{emphasis}{HTML}{696969}
+\definecolor{body}{HTML}{01415f}
+
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+
+\begin{document}
+\name{Danrley Willyan da Silva Pereira}
+\tagline{Founder \& Full-Stack Software Engineer — AI, Backend \& Product}
+\photo{2.6cm}{Photo.jpg}
+\personalinfo{
+    % \printinfo{\faBirthdayCake}{8th Jan 1992}
+    \email{danrleywillian@gmail.com}
+    \phone{+55 61 9 9423-4712}
+%    \mailaddress{SR Njemačke 6, 10000}
+    \location{Brasil, Brasília - DF}
+    \linkedin{\url{https://www.linkedin.com/in/danrleypereira}}
+    \github{https://github.com/danrleypereira}
+    \homepage{https://danrleypereira.com}
+    %\scholar{https://scholar.google.com/citations?user=c6uRw90AAAAJ&hl=en}
+}
+
+%
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection[page1sidebar]{Briefing}
+
+Initiating my software development career in 2017, I've gained extensive experience in web and mobile development, RestAPI, and UI/UX design, with hands-on IT contracts during my tenure at the University of Brasilia. \\
+
+Skilled in Python, Node.js, React, and .NET, my experience spans across software engineering, data engineering, and DevOps. My holistic understanding of these domains positions me uniquely for roles in \textbf{architecture}, \textbf{tech leadership}, and \textbf{management}. I thrive in guiding teams, optimizing processes, and ensuring a seamless delivery across various technological landscapes. \\
+
+Additionally, my involvement with UDF (University Center of Federal District) showcases my commitment to mentorship, having \textbf{guided four professionals} into the industry.\\
+
+Seeking a company where I can \textbf{truly invest and integrate}, leveraging my multifaceted expertise not just in coding, but also in \textbf{core business operations} and \textbf{executive collaboration}. With a rich history of engagement in foundational company teams and \textbf{entrepreneurial experience} of my own, I'm eager to find an organization I can genuinely call home and contribute to its overarching vision. \\
+
+\cvsection[]{Background}
+%%%%%%%%%%%%%
+%Experience 1
+%%%%%%%%%%%%%
+%\divider
+%\smallskip
+%\medskip
+
+\cvevent{Founder \& AI Engineer}{DW Corp LTDA}{Mar 2025 - Present}{Brasília - Brazil}
+
+\textbf{Key Achievements:}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Founded and lead DW Corp, building reusable, enterprise-grade product foundations to launch products faster and at high quality.
+\item[--] Built LangChain/LangGraph agents (a WhatsApp budget assistant and an event-driven multi-agent bus) behind a common multi-provider LLM interface.
+\item[--] Built Curupira, a Rust/OIDC authentication platform (multi-tenancy, SSO, MFA); integrated payments (Stripe, Adyen); standardized CI/CD and a bare-metal + hybrid-cloud stack (Terraform, Grafana).
+\item[--] Hired and mentored 10+ engineers, and lead Brasília's first Software Craftsmanship community.
+\end{itemize}
+\textbf{Technologies:} Python, LangChain, LangGraph, Rust, Next.js, Stripe, Adyen, Terraform, Grafana, Docker, Kubernetes.
+\vspace{4mm}
+
+\cvevent{Researcher}{Ibict — Brazilian Institute of Information in Science and Technology (MCTI)}{Mar 2025 - Present}{Brasília - Brazil}
+
+\textbf{Key Achievements:}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Built data pipelines feeding a Snowflake database with institutional data, driving progress toward training ML models on proprietary data.
+\item[--] Co-advised an undergraduate thesis that designed a RAG system for the Brazilian judiciary (graded 9.0/10).
+\item[--] Led a technical audit of a 600K+-user platform against ISO/IEC 25000 and LGPD, producing a prioritized remediation roadmap.
+\end{itemize}
+\textbf{Technologies:} Python, Snowflake, RAG, FastAPI, ISO/IEC 25000, LGPD.
+
+\break
+\newpage
+\cvsection[page2sidebar]{Background}
+
+\cvevent{Senior Software Engineer}{Epicor}{Nov 2023 - Mar 2025}{Austin TX - USA}
+
+\textbf{Key Achievements:} 
+\begin{itemize} 
+\setlength{\itemindent}{0.5em} 
+\item[--] Developed and fine-tuned LLMs by integrating Azure OpenAI Service APIs.
+\item[--] Integrated a RAG pipeline with custom company data to better approach customer needs and achieve better accuracy and satisfaction.
+\item[--] Implemented message producers and consumers using RabbitMQ for event-driven processes. 
+\item[--] Integrated custom OAuth2 and SAML solutions in .NET, leveraging JWT for secure authentication and authorization. 
+\item[--] Leveraged .NET’s features, such as Results and Generics, to build an abstract, SOLID-compliant solution, applying design patterns for better code maintainability and scalability. 
+\item[--] Implemented custom reactive functions, reducing reliance on try-catch blocks and enhancing code readability and observability.  
+\item[--] Refactored and containerized applications using .NET Aspire, improving deployment efficiency through Kubernetes. 
+\item[--] Led the refactoring of an Angular integration portal to utilize microfrontends, enhancing modularity and scalability. 
+\item[--] Drove team improvements in sprint planning and communication, taking ownership of process optimization and overall product enhancement.
+\item[--] Guided frontend team in delivering correctly and faster. Foresaw frontend blockers, e.g: api endpoints, to improve pace of entire team, leading to stackholder satisfaction.
+\item[--] Authored comprehensive documentation to support onboarding and internal knowledge sharing, ensuring team-wide understanding of complex solution components.
+\item[--] Consistently pushed for software engineering best practices, reducing technical debt and minimizing future refactoring needs.
+\item[--] Implemented pixel-perfect screens based on Figma designs, collaborating closely with designers.
+\item[--] Collaborated closely with QA to resolve bugs, ensure seamless functionality and automate functional tests through CI pipelines.  
+\end{itemize}
+
+\textbf{Technologies:} .NET, Angular, .NET Aspire, RxJS, Azure OpenAI Service, Azure Cosmos DB, RabbitMQ, OAuth2, SAML, JWT, Kubernetes, Microfrontends, Figma, Design System, SOLID, Design Patterns.
+
+
+\cvevent{Software Engineering Consultant}{Contract — SubSurface Dynamics}{Jan 2023 - Jun 2024}{Alberta - Canada}
+
+\textbf{Key Achievements:}
+\begin{itemize}
+\setlength{\itemindent}{0.5em}
+\item[--] Implemented a robust authentication system integrating Microsoft Azure ADAL and Auth0 to enhance security protocols leveraging OAuth2 and SAML.
+\item[--] Led the technical refactoring of MERN stack from a JavaScript solution (Express, Mongoose) to a modern, best-practice-driven TypeScript project utilizing Fastify, Redis, Socket.io, and Typegoose, significantly improving system architecture and maintainability.
+\item[--]  Optimized Redis configurations to enhance the performance and cost-efficiency of real-time data streaming for extraction processes.
+\item[--]  Collaborated with the team leader to leverage MongoDB Atlas’s time series features, reducing costs, enhancing performance, and delivering more precise custom analyses.
+\item[--] Re-engineered the frontend using React and TypeScript, modularizing the code into reusable components, which enhanced feature testability and reduced future development times.
+\item[--]  Implemented dark mode and a notification system to help engineers keep track of updates since their last login.
+\item[--] Developed a responsive UI adaptable across large, medium and small screens, ensuring consistent user experience.
+\item[--] Transformed data to display a range of different charts, in two and three dimensions, to assist companies in their real-time decisions. 
+–\item[--] Implemented a 3D visualization of wellbore pipes using Three.js, improving operational insights to engineers better improve well extraction and risk handling.  
+\item[--] Instituted Git best practices and Continuous Delivery processes, educating a multidisciplinary team on software engineering principles.
+\end{itemize}
+
+\textbf{Technologies:} Auth0, OAuth2, JWT React, TypeScript, JavaScript, Redis, Socket.io, Digital Ocean, Microsoft Active Directory, Typegoose, Mongoose, Material UI, React Testing Library, Mocha, Vite, Vitest, MongoDB, Microsoft Graph API, Three.js.
+
+\vspace{5mm}
+\cvevent{Senior Software Engineer}{DW Corp LTDA}{Sep 2022 - Oct 2023}{Brasília - Brazil}
+
+\textbf{General Responsibilities:}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Developed with the team marketing campaign tracking and solution sharing.
+    \item[--] Mentored the team on building a book registration and exchange system for NGOs.
+    \item[--] Managed and maintained cloud infrastructure services across GCP, Digital Ocean and AWS.
+    \break
+    \newpage
+    \cvsection[page3sidebar]{Background}
+    \item[--] Maintained On-Premise MinIO object storage for development and testing environments.
+\end{itemize}
+
+\textbf{Project: Restaurant Orders Manager}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Integrated Symphony (Oracle - v1 and v2) for transitioning from SOAP (v1) to REST (v2).
+    \item[--] Developed and optimized solutions using the Django framework while implementing Clean Architecture.
+    \item[--] Implemented Celery tasks to ensure continuous synchronization of services, considering potential internet connectivity issues at restaurant locations. Leveraged the circuit breaker pattern to enhance system resilience and ensure data consistency.
+    \item[--] Delivered data to a data lake, facilitating its consumption by the data analysis team.
+    \item[--] Mentored junior and mid-level developers in grasping and applying SOLID principles and effectively integrating Clean Architecture into their work.
+\end{itemize}
+
+\textbf{Project: Field Service Management (FSM) Mobile App}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Collaborated with an external partner to develop a mobile FSM application using .NET MAUI.
+    \item[--] Designed and enhanced the UI/UX, creating an intuitive and user-friendly interface.
+    \item[--] Developed and optimized RESTful services with .NET Core and .NET MVC to support robust backend functionality.
+    \item[--] Authored comprehensive architecture and infrastructure reports to document design improvements.
+    \item[--] Implemented XUnit tests integrated with Allure Reports to ensure high code quality and maintainability.
+    \item[--] Managed deployment workflows and published the app to both the App Store and Google Play Store.
+    \item[--] Created and maintained database procedures, views, and triggers to support critical business logic.
+    \item[--] Performed weekly database backups and synchronized production data to ensure data integrity.
+\end{itemize}
+
+
+
+\textbf{Project: Quality Analysis Report with CI/CD}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Generated Surefire reports in the CI pipeline using Maven and GitLab actions.
+    \item[--] Dispatched Surefire reports to an S3 bucket.
+    \item[--] Deployed a Lambda Function written in Python, triggered by changes in the S3 bucket.
+    \item[--] Updated EC2 container to reflect Allure reports based on the S3 bucket changes.
+    \item[--] Assisted the client in propagating the solution across the organization.
+    \item[--] Tutored developers into TDD and how to efficiently write JUnit tests before writing any code.
+    \item[--] Configured SES to automatically send email notifications to stakeholders when the Allure report is updated.
+\end{itemize}
+
+\textbf{Technologies/Methodologies:} GCP, AWS, Digital Ocean, Agile, Vue, React, PostgreSQL, Oracle Database, .NET, C\#, XUnit, Allure, Typescript, Python, Django, Celery, Symphony, Maven, GitLab, S3, MinIO, Lambda, EC2, SES, Allure, JUnit, TDD.
+\vspace{5mm}
+
+\break
+\cvsection[page4sidebar]{Background}
+
+\cvevent{Product Manager}{DW Corp LTDA}{Sep 2022 - Current}{Brasília - Brazil}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Refined, estimated, and controlled tasks for marketing campaign tracking and sharing solution.
+    \item[--] Refined, estimated, and controlled tasks of a book registration and exchange system for NGOs.
+    \item[--] On this role I have positioned myself as a PO as well.
+\end{itemize}
+\textbf{Technologies/Methodologies:} Trello, Scrum, Kanban, Agile Methodologies, Agile Manifest, Burndown.
+\vspace{5mm}
+
+\cvevent{Technical Lead \& Project Manager}{LabTetch, UDF}{Jan  - Dec [2023]}{Brasilia - Brazil}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Spearheaded a multi-tier application designed for event management, certificate issuance, and room scheduling, integrating seamlessly with Sympla's API.
+    \item[--] Orchestrated teams based on technology and responsibility: JavaScript (React) for frontend, Python for business logic, and Java (Spring Boot) for database operations.
+    \item[--] Implemented RabbitMQ to facilitate asynchronous communication and event-driven architecture across services, utilizing publish/subscribe messaging patterns for efficient topic-based data distribution.
+    \item[--] Championed a strategy to leverage the strengths of team members, leading to efficient project segmentation and rapid development.
+    \item[--] Instituted GitHub actions for CI/CD, maintaining tier-wise repositories within a structured GitHub organization.
+    \item[--] Containerized each microservice, prepping them for orchestration using Kubernetes.
+    \item[--] Demonstrated leadership by adopting a hands-on approach, ensuring alignment with stakeholder requirements, and mentoring young professionals.
+\end{itemize}
+\textbf{Technologies/Tools:} React, Python, Java (Spring Boot), GitHub Actions, RabbitMQ, Kubernetes, Selenium, Sympla API.
+
+\vspace{5mm}
+
+\cvevent{DevOps Engineer}{Dado Global}{Mar 2022 - April 2023}{Porto - Portugal}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Improved the manual delivery to a Continuous Delivery based on GitHub Actions and system routines (From weekly deploys to daily deploys).
+    \item[--] Set up and maintained infrastructure using Docker, Docker Compose, and MySQL.
+    \item[--] Administered Fedora and Debian systems both on Digital Ocean droplet and On-Premise infrastructure.
+    \item[--] Utilized pytest for unit testing to generate Allure reports, and employed Behave and Selenium for automated testing, capturing screenshots for integration into the Allure interface.
+\end{itemize}
+\textbf{Technologies:} Digital Ocean Droplet, MySQL, Fedora, Debian, Linux Administration Tools, Allure, Selenium, Behave, Docker Compose, Docker, GitHub Actions, cron scripts, systemd and systemctl.
+\vspace{5mm}
+
+\break
+\cvsection[page5sidebar]{Background}
+
+\cvevent{Data Engineer}{Dado Global}{Dec 2021 - Dec 2022}{Porto - Portugal}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Upgraded Manual tasks to automatic tasks using Selenium, Behave, and Gherkin (Extraction Layer).
+    \item[--] Designed and developed an ETL system, employing pytest to rigorously test the Transform and Load layers.
+    \item[--] Transitioned from query-based procedural solutions to an object-oriented project with layered responsibilities.
+    \item[--] Improved SLA of 70\% to 95\%.
+\end{itemize}
+\textbf{Technologies/Tools:} Python, Pytest, Pandas, Flask, Celery, MySQL, SQLAlchemy, Selenium, Gherkin, Behave, Azure DevOps, Docker.
+\vspace{5mm}
+
+\cvevent{Software Engineer}{Layers Education (Time-bound contract)}{Mar 2022 - Sep 2022}{São Caetano do Sul - SP - Brazil}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Served as an IT Consultant, collaborating with CTO and CMO to implement performant and trackable marketing campaigns.
+    \item[--] Worked as part of the CORE team to maintain backend services and microfrontend systems (white label to App and Play Store).
+    \item[--] Helped to track performance issues.
+    \item[--] MongoDB queries up to 1.3 seconds in higher traffic to 0.6 seconds.
+    \item[--] DataLake using BigQuery to disposal data to ETL systems (focusing on migrate to relational data).
+    \item[--] Addressed security issues based on OWASP standards.
+    \item[--] Add new features and fix bugs of an internal CLI to build up, monitor and set environment (Golang) - from one day or two of setting things up to a pair of hours.
+\end{itemize}
+\textbf{Technologies/Tools:} Google Analytics, Node, Express, Vue, MongoDB, Redis, GCP, Docker, Kubernetes, TypeScript, JavaScript, Go, Mocha.
+\vspace{5mm}
+
+
+\cvevent{Software Engineer}{ClearSale}{Nov 2021 - Mar 2022}{Miami - FL}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Developed and tested various microservices for a high-performance anti-fraud system.
+    \item[--] Designed, implemented, and maintained database views, triggers, and stored procedures to support real-time fraud detection and automated alerting.
+    \item[--] Executed and optimized database queries using Dapper to efficiently process large-scale anti-fraud data.
+    \item[--] Collaborated with the Product Owner to implement agile methodologies (e.g., SCRUM), streamlining project delivery.
+    \item[--] Contributed to the core team by outlining software engineering processes, creating detailed UML and BPMN diagrams, and mentoring team members.
+    \item[--] Initiated comprehensive unit testing to enhance service robustness and reliability.
+\end{itemize}
+\textbf{Technologies/Tools:} C\#, .NET, ASP.NET, Dapper, Entity Framework, XUnit, SQLServer, Azure DevOps, Azure Service Bus, Microservices.
+\vspace{5mm}
+
+\break
+\cvsection[page6sidebar]{Background}
+
+\cvevent{Contract Developer}{DW Corp}{Nov 2021 -- Jan 2022}{Brasília - DF - Brazil}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Developed an MVP for trader gamification.
+\end{itemize}
+\textbf{Technologies/Tools:} React, JavaScript, NodeJS, Python, Django, Django REST Framework, Celery, Redis, PostgreSQL, Google Cloud.
+\vspace{5mm}
+
+\cvevent{Consultant}{Joves}{Sep 2021 -- Nov 2021}{Brasília - DF - Brazil}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Supported an early-stage startup in the adoption of agile methodologies.
+    \item[--] Contributed to the modeling of business processes for a startup with a 1 million investment.
+    \item[--] Integrated and optimized backoffice systems for streamlined operations.
+    \item[--] Coached Chief Level executives on the utilization of cutting-edge systems for management and backoffice tasks.
+\end{itemize}
+\textbf{Technologies/Tools:} Google Workspace, Scrum, Trello, RD Station, Kanban, BPMN.
+\vspace{5mm}
+
+\cvevent{Mobile Developer}{Transoft}{Jul 2021 -- Oct 2021}{Brasília - DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Developed with the team a mobile application for managing company staff.
+    \item[--] Ensured smooth integration with Oracle database and cloud services.
+\end{itemize}
+\textbf{Technologies/Tools:} Ionic, Angular 9, Typescript, PHP, Laravel, Oracle DB, Oracle Cloud.
+\vspace{5mm}
+
+\cvevent{Full Stack Engineer}{Compuletra}{Jul 2021 -- Oct 2021}{Porto Alegre - RS}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Designed and developed a commercial page generator for selling inspections across various industries.
+    \item[--] Implemented a PCI-compliant checkout flow and plan section leveraging PostgreSQL data.
+    \item[--] Plans and services were automated updated based on database, without the need to redeploy.
+\end{itemize}
+\textbf{Technologies/Tools:} IUGU payment, React, JavaScript, NodeJS, C\#, .NET, Entity Framework, PostgreSQL, Azure DevOps, Google Cloud, Cypress.
+
+\vspace{5mm}
+
+\cvevent{Information Technology Consultant}{Compuletra}{May 2021 -- Jun 2021}{Porto Alegre - RS}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Spearheaded the development of a system to manage connections to IP cameras.
+    \item[--] Delivered consultancy services for optimized system development and deployment.
+    \item[--] Make the system available with and SLA of 95\%.
+    \item[--] Make the system fit the legislation.
+\end{itemize}
+\textbf{Technologies/Tools:} Python3, Flask, OpenCV, Docker, Jenkins.
+\vspace{5mm}
+
+\cvevent{Full Stack Developer}{Transoft}{Feb 2021 -- Jul 2021}{Brasília - DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Revamped UX and UI for an application managing sensors and cameras for bus fleets.
+    \item[--] Ensured high responsiveness and seamless integration with backend services.
+\end{itemize}
+\textbf{Technologies/Tools:} HTML5, CSS, JavaScript, Angular 5, Laravel, PHP, Vagrant, Linux Mint, VirtualBox, Selenium, PostgreSQL, Cypress.
+\vspace{5mm}
+
+\cvevent{Full Stack Engineer}{Compuletra}{Jan 2021 -- Aug 2021}{Porto Alegre - RS}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Engineered an Enterprise Resource Planning (ERP) desktop platform.
+    \item[--] Led the vehicle inspection management system development, optimizing the review process.
+\end{itemize}
+\textbf{Technologies/Tools:} C\#, .NET Core, Entity Framework, JavaScript, React, Electron, React Hooks, NodeJS, SQLite, PostgreSQL, C++, Docker, Jenkins.
+\vspace{5mm}
+
+\cvevent{Information Technology Consultant}{Compuletra}{Jul 2020 -- Dec 2020}{Porto Alegre - RS}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Engineered a front-end architecture to transition a legacy web application from AngularJS to React, focusing on the management of vehicle tracking.
+    \item[--] Launched a Proof of Concept (PoC) to validate the feasibility and ensure a smooth migration process that allowed the React application to operate in tandem with the legacy system.
+    \item[--] Championed containerization strategies to integrate applications seamlessly on remote machines.
+    \item[--] Spearheaded the on-premise deployment process to enhance operational efficiency and system stability.
+    \item[--] End to End functional testing using Cypress.
+\end{itemize}
+\textbf{Technologies/Tools:} C\#, .NET Core, Entity Framework, TypeScript, React, React Hooks, NodeJS, SQL Server, Docker, Mocha, Selenium, Linux Administration.
+\vspace{5mm}
+
+% \divider
+% \break
+% \break
+
+\cvevent{Business Process Analyst}{ConsultMídia - Bank of Brasília}{Oct 2020 -- Jan 2021}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Engaged with stakeholders to comprehend and refine processes.   
+    \item[--] Employed Camunda Modeler to implement internal processes aimed at upgrading the Bank of Brasília's workflow.    
+    \item[--] Guided clients in platform comprehension and collected feedback on implemented processes.
+\end{itemize}
+\textbf{Technologies/Tools:} Bizagi, Camunda, Camunda Modeler, BPMS, BPMN, Selenium, Tomcat.
+\vspace{5mm}
+
+\cvevent{Full Stack Developer}{ConsultMídia - Bank of Brasília}{Apr 2020 -- Jan 2021}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Designed and developed user experiences and interfaces using AngularJS components for the BPMS software, Camunda.
+    \item[--] Crafted RESTful API endpoints to cater to the demands of BPM processes and analysis.
+    \item[--] Integrated Alfresco for document management and executed client-approved processes.
+    \item[--] Identified and addressed performance bottlenecks, ensuring correct delivery with Selenium.
+    \item[--] Worked with Alfresco (Electronic Document Manager - GED), debugged and found traces in TomCat Java server.
+    \item[--] Created and managed flows for end-to-end testing using Katalon and Selenium.
+    \item[--] Handled Java code and debugging in Camunda, utilized JUnit for testing and Spring Boot for API development, and JavaScript for consuming APIs in AngularJS frontends.
+    \item[--] Auxiliou o arquiteto de software na integração do JMeter com o plugin Maven Surefire para automatizar a geração de relatórios de teste de desempenho durante os ciclos de vida do Maven.
+    \item[--] Esse envolvimento ajudou significativamente na identificação e solução de gargalos no início do processo de desenvolvimento, melhorando o desempenho do sistema antes da implantação.
+\end{itemize}
+\textbf{Technologies/Tools:} HTML5, CSS, JavaScript, AngularJS, RestAPI, Java, SpringBoot, Surefire, Camunda, Camunda Modeler, Vagrant, BPMS, BPMN, DMS, Selenium, Java, Tomcat.
+\vspace{5mm}
+
+\cvevent{Lead Capture Web App Developer}{Taurus Software}{Sep 2019 -- Feb 2020}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Developed a Polymer-based application tailored for marketing campaigns.
+    \item[--] Designed functionalities to capture leads, send emails, maintain consistent contact, and provide detailed analytics.
+\end{itemize}
+\textbf{Technologies/Tools:} Polymer 2, NodeJS, JavaScript, HTML5, CSS, MariaDB, Debian 8, Docker.
+\vspace{5mm}
+
+\cvevent{Platform Developer}{Universidade de São Paulo (USP) \& Ministry of Health - Dept. of Pharmaceutical Assistance}{Jun 2019 -- Jul 2020}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Assisted the Pharmaceutical Department of the Health Ministry in managing medicine distribution across 5,000+ counties.
+    \item[--] Played a pivotal role in developing the frontend and integrating it with the REST API and microservices to present data and simplify task execution, reducing fraud and optimizing service integration.
+\end{itemize}
+\textbf{Technologies/Tools:} HTML5, CSS, TypeScript, Angular 6, Python, Flask, PostgreSQL, Debian 8, Docker.
+\vspace{5mm}
+
+\cvevent{IT Service Provider}{Taurus Software}{May 2018 -- Jan 2019}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Delivered a solution for an IoT product using Polymer, concentrating on managing energy consumption in homes and industries.
+    \item[--] Designed and implemented a website for a software development partner using Polymer for marketing purposes.
+    \item[--] Crafted and launched a performance-focused landing page with integrated email and analytic functionalities.
+    \item[--] Developed hybrid mobile applications for both Android and iOS using Ionic 3, aimed at showcasing events and providing bonuses and prizes to users.
+\end{itemize}
+\textbf{Technologies/Tools:} Polymer, NodeJS, SendGrid, Ionic, Angular, PostgreSQL, Docker.
+\vspace{5mm}
+
+\cvevent{Web and Digital Marketing Manager}{Gama Cidadão - Digital Media and Communications Group}{Jun 2017 -- Mar 2018}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Spearheaded the design and implementation of all websites utilizing WordPress and Vue.js, while overseeing migration from Joomla to WordPress.
+    \item[--] Supervised the main WordPress portal that offered news and vital citizenship information.
+    \item[--] Established and diligently maintained portals for partners.
+    \item[--] Crafted high-performance landing pages tailored for marketing campaigns, leveraging Vue.
+    \item[--] Orchestrated various social educational programs, and organized events, while capturing moments as the official photographer.
+    \item[--] Delved into journalism, reporting news, and managing social media platforms.
+    \item[--] Played an instrumental role in projects management, offering consultation in digital marketing and team management strategies.
+    \item[--] Ensured WordPress optimization, security, and maintenance, while championing SEO initiatives for digital outreach.
+\end{itemize}
+\textbf{Technologies/Tools:} WordPress, Vue.js, Vuetify, React, Polymer, CSS3, HTML5, PowerBI.
+\vspace{5mm}
+
+\cvevent{Contract Developer}{UMESB}{May 2017 -- Nov 2017}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Initiated the system development in WordPress and transitioned to Polymer due to intricacies related to student IDs and registrations.
+    \item[--] Emphasized on delivering the frontend using Elementor and transitioned the core functionality using Polymer and Node.js.
+\end{itemize}
+\textbf{Technologies/Tools:} Polymer, HTML5, CSS, JavaScript, Debian 8, Node.js.
+\vspace{5mm}
+
+%\divider
+
+\cvevent{Instructor}{IT Universe}{Jan 2017 -- Jun 2017}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Led courses in Web Design, Graphic Design, Computer Basics, and Computer Maintenance.
+    \item[--] Applied UX and UI expertise to simplify complex concepts for young learners.
+    \item[--] Created and delivered course content, emphasizing design principles and information architecture.
+    \item[--] Fostered an understanding of computer functionality and website development processes among students.
+\end{itemize}
+
+\cvevent{Project Developer}{Trinca Social Project - Master's Degree Contribution}{Jan 2015 -- Dec 2015}{Brasília, DF}
+\begin{itemize}
+    \setlength{\itemindent}{0.5em}
+    \item[--] Contributed to the "Trinca Social Game," a serious game designed to assist a master's degree student with a focus on education.
+    \item[--] Played a pivotal role in frontend development, leveraging technologies like JADE, while providing support to the backend developer.
+    \item[--] Collaborated in emulating card games to address and propose solutions to social issues, where each card represented a cause, problem, or solution.
+    \item[--] Expanded skillset by venturing into backend technologies, despite initial lack of experience.
+\end{itemize}
+\textbf{Technologies/Tools:} NodeJS, JavaScript, HTML5, CSS, MongoDB, JADE.
+
+
+%\divider
+% \break
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\cvsection[page1sidebar]{Publications and Lectures}
+
+%%%%%%%%%%%%%
+%Project 1
+%%%%%%%%%%%%%
+
+%\cvevent{}{Research}{}{}{}
+
+%\begin{tabular}{rll}
+   %\small{
+%   2017      & Joint pain detection prototype for UMCG patients \\
+%   2014      & Sigma-Delta Modulator for high resolution A/D converter. \\
+%   2013      & Matlab course with emphasis on Signal and Image Processing. \\
+   
+   
+%\cvevent{Research Assistant}{Hanzehogeschool, Elbow Project}{Apr 2017 –- Aug 2017}{Groningen, NL}
+%\begin{itemize}
+%    \setlength{\itemindent}{0.5em}
+%    \item[--]   \small{}
+%\    \item[--]   \small{Tests and electrical simulations, prototyping and responsible for the production and supply chain. Programming in high-level devices such as Bluetooth and Transceivers..}
+%\end{itemize}
+
+%\end{tabular}
+
+%\divider
+
+%
+
+%%%%%%%%%%%%%
+%Project 2
+%%%%%%%%%%%%%
+
+%\cvevent{Sporting}{}{Ongoing}{The Earth}
+
+%\begin{tabular}{rll}
+    %\ \small{
+    %2016 & 11 th in age group, IronMan Copenhagen. Qualified to \\
+    %& represent the UK for Long Distance Duathalon  \\
+    %2016 & Silver Medal, Nottinghamshire Fell Running Championships  \\
+    %2005-2007 & National Mini-field youth hockey champion U13 and U15
+    % }
+    %\\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Certificates %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\cvsection{}
+
+%%%%%%%%%%%%%
+%Certificate 1
+%%%%%%%%%%%%%
+%\begin{tabular}{rll}
+%2019 & Invited by the UN to give a talk on AI for space at \\
+%& the AI for good global summit, \emph{Geneva, CH}.\\
+%\end{tabular}
+% \cvevent{MCSD: App Builder — Certified 2019}{Microsoft}{Jan 2019 -- No Expiration Date}{}
+% \divider
+
+%%%%%%%%%%%%%
+%Certificate 2
+%%%%%%%%%%%%%
+
+% \cvevent{MCSA: Web Applications — Certified 2019}{Microsoft}{Jan 2019 -- No Expiration Date}{}
+% \divider
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Interests %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \cvsection{Interests}
+
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/10em/accent!30/Electronics,
+%   25/9em/accent!60/Science,
+%   5/13em/accent!10/Movies,
+%   20/15em/accent!40/Sport,
+%   30/9em/accent/Technology,
+%   5/8em/accent!20/Literature
+% }
+
+
+%%New Page
+% \clearpage
+
+\end{document}
