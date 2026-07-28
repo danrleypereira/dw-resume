@@ -14,7 +14,7 @@ export default function Cv() {
   const lang = (i18n.language || "pt").split("-")[0];
   const fileName = LANG_FILE[lang] || LANG_FILE.pt;
   // ?v bumps when the PDFs change, so browsers don't serve a stale cached copy.
-  const fileUrl = `${process.env.PUBLIC_URL}/cv/${fileName}?v=5`;
+  const fileUrl = `${process.env.PUBLIC_URL}/cv/${fileName}?v=6`;
   const downloadName = `Danrley-Pereira-CV-${lang.toUpperCase()}.pdf`;
 
   return (
