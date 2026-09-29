@@ -8,6 +8,7 @@ import linkedin from 'assets/social-midias/linkedin.svg';
 import github from 'assets/social-midias/github.svg';
 import instagram from 'assets/social-midias/instagram.svg';
 import './aside-social-midia.css';
+import WhatsAppLink from './whatsapp-link';
 
 const socialMidias = [
   {
@@ -43,19 +44,21 @@ function SocialMidiaAside() {
       {
         socialMidias.map((midia, index) => {
           return (
-            <a
-              key={index}
-              href={midia.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={midia.name}
-            >
-              <img
-                src={midia.icon}
-                className={`social-midia-icon ${midia.spin && 'spin'}`}
-                alt={midia.name}
-              />
-            </a>
+            <React.Fragment key={midia.link}>
+              {index === 2 && <WhatsAppLink />}
+              <a
+                href={midia.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={midia.name}
+              >
+                <img
+                  src={midia.icon}
+                  className={`social-midia-icon ${midia.spin && 'spin'}`}
+                  alt={midia.name}
+                />
+              </a>
+            </React.Fragment>
           )
         })
       }
