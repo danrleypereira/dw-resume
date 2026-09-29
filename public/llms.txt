@@ -1,0 +1,28 @@
+# Danrley Pereira
+
+> Professional portfolio of Danrley Willyan da Silva Pereira, founder and AI engineer at DW Corp, based in Brasília, Brazil.
+
+Danrley works across full-stack software engineering, AI applications, data pipelines, cloud infrastructure, and technical mentorship. His client work includes fixed-term Forward Deployed Engineer (FDE) engagements. He also co-founded Software Craftsmanship Community Brasília.
+
+The website is available in English, Portuguese, and Spanish. Interactive pages require JavaScript; the PDF résumés below can be retrieved directly and contain detailed experience, dates, and technologies. This site publishes professional information, not a hosted agent or callable AI service.
+
+## Résumés
+
+- [English résumé](https://danrleypereira.com.br/cv/cv-en.pdf): Professional experience, education, and technical skills in English.
+- [Currículo em português](https://danrleypereira.com.br/cv/cv-pt.pdf): Experiência profissional, formação e competências em português.
+- [Currículum en español](https://danrleypereira.com.br/cv/cv-es.pdf): Experiencia profesional, formación y competencias en español.
+
+## Portfolio
+
+- [Home](https://danrleypereira.com.br/): Professional introduction.
+- [Skills](https://danrleypereira.com.br/habilidades): Interactive technical skills explorer.
+- [Projects](https://danrleypereira.com.br/projetos): Project and work history timeline.
+- [Résumé viewer](https://danrleypereira.com.br/curriculo): Multilingual résumé previews and downloads.
+- [Contact](https://danrleypereira.com.br/contato): Professional contact channels.
+
+## Optional
+
+- [Resource catalog](https://danrleypereira.com.br/ai-catalog.json): Machine-readable catalog of public professional resources.
+- [LinkedIn](https://www.linkedin.com/in/danrleypereira/): Professional profile.
+- [GitHub](https://github.com/danrleypereira): Source code and projects.
+- [Arandu](https://dwcorp.com.br/arandu): Software Craftsmanship community blog.

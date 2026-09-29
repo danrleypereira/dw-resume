@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Danrley Pereira — Professional Portfolio",
+    "documentationUrl": "https://danrleypereira.com.br/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:danrleypereira.com.br:portfolio:overview",
+      "displayName": "Danrley Pereira — Portfolio Guide",
+      "type": "text/plain",
+      "url": "https://danrleypereira.com.br/llms.txt",
+      "description": "Markdown guide to public professional information and résumé downloads. An informational resource, not a callable AI service.",
+      "representativeQueries": [
+        "What is Danrley Pereira's professional background?",
+        "Where can I find Danrley Pereira's résumé and contact information?"
+      ]
+    },
+    {
+      "identifier": "urn:air:danrleypereira.com.br:portfolio:resume-en",
+      "displayName": "Danrley Pereira — English Résumé",
+      "type": "application/pdf",
+      "url": "https://danrleypereira.com.br/cv/cv-en.pdf",
+      "description": "English résumé covering software engineering, AI, FDE client engagements, education, and community leadership.",
+      "representativeQueries": [
+        "What software engineering and AI experience does Danrley Pereira have?",
+        "What are Danrley Pereira's Forward Deployed Engineer engagements?"
+      ]
+    },
+    {
+      "identifier": "urn:air:danrleypereira.com.br:portfolio:resume-pt",
+      "displayName": "Danrley Pereira — Currículo em Português",
+      "type": "application/pdf",
+      "url": "https://danrleypereira.com.br/cv/cv-pt.pdf",
+      "description": "Currículo em português com experiência profissional, formação e competências técnicas.",
+      "representativeQueries": [
+        "Qual é a experiência profissional de Danrley Pereira?",
+        "Onde posso baixar o currículo de Danrley Pereira em português?"
+      ]
+    },
+    {
+      "identifier": "urn:air:danrleypereira.com.br:portfolio:resume-es",
+      "displayName": "Danrley Pereira — Currículum en Español",
+      "type": "application/pdf",
+      "url": "https://danrleypereira.com.br/cv/cv-es.pdf",
+      "description": "Currículum en español con experiencia profesional, formación y competencias técnicas.",
+      "representativeQueries": [
+        "¿Cuál es la experiencia profesional de Danrley Pereira?",
+        "¿Dónde puedo descargar el currículum de Danrley Pereira en español?"
+      ]
+    }
+  ]
+}
