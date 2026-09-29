@@ -1,0 +1,46 @@
+SOFTWARE CRAFTSMANSHIP COMMUNITY BRASÍLIA
+LinkedIn experience entry — English and Portuguese
+
+ENGLISH
+
+Title: Co-founder & Community Leader
+Organization: Software Craftsmanship Community Brasília
+Dates: Late 2023 – Present
+Location: Brasília, Federal District, Brazil
+Website / featured link: https://dwcorp.com.br/arandu
+
+Description:
+I co-founded Brasília's first Software Craftsmanship community with my partner and friends, inspired by meeting Sandro Mancuso and Codurance and discovering the global Software Craftsmanship movement.
+
+I bring developers together to practice their craft, share knowledge, and build better software through hands-on learning.
+
+- Organize monthly meetups, university talks, and coding challenges focused on Test-Driven Development (TDD), pair programming, and Extreme Programming (XP).
+- Mentor professionals and share the principles of the Software Craftsmanship Manifesto, encouraging continuous learning, collaboration, and software quality.
+- Co-built Arandu, our community blog, using Django and Next.js to share knowledge beyond our events.
+- Led the agenda for an entire stage at the national edition of Campus Party Brasil 2025, covering SOLID, Clean Architecture, the Software Craftsmanship Manifesto, Scrum, OWASP Top 10 security risks, and AI in SDET workflows, alongside talks by startup founders.
+
+Suggested skills: Community Building; Mentoring; Test-Driven Development; Extreme Programming; Software Engineering
+
+PORTUGUÊS
+
+Título: Cofundador e Líder da Comunidade
+Organização: Software Craftsmanship Community Brasília
+Período: Final de 2023 – Atual
+Localidade: Brasília, Distrito Federal, Brasil
+Site / link em destaque: https://dwcorp.com.br/arandu
+
+Descrição:
+Cofundei a primeira comunidade de Software Craftsmanship de Brasília com minha companheira e amigos, inspirado pelo encontro com Sandro Mancuso e a Codurance e pelo movimento global de Software Craftsmanship.
+
+Reúno pessoas desenvolvedoras para aperfeiçoar suas práticas, compartilhar conhecimento e construir software de qualidade por meio do aprendizado prático.
+
+- Organizo encontros mensais, palestras em universidades e desafios de programação com foco em Desenvolvimento Orientado a Testes (TDD), programação em pares e Extreme Programming (XP).
+- Ofereço mentoria e compartilho os princípios do Manifesto Software Craftsmanship, incentivando aprendizado contínuo, colaboração e qualidade de software.
+- Desenvolvi com a comunidade o Arandu, nosso blog, usando Django e Next.js para compartilhar conhecimento além dos encontros.
+- Liderei a programação de um palco inteiro na edição nacional da Campus Party Brasil 2025, com palestras sobre SOLID, Clean Architecture, Manifesto Software Craftsmanship, Scrum, riscos de segurança do OWASP Top 10 e IA em fluxos de SDET, além de palestras com fundadores de startups.
+
+Competências sugeridas: Gestão de Comunidades; Mentoria; Desenvolvimento Orientado a Testes; Extreme Programming; Engenharia de Software
+
+Posting note / Nota para publicação:
+The résumé records only "late 2023"; select the actual start month when filling in LinkedIn's date fields. Employment type is not specified in the source; leave it unset unless applicable.
+O currículo registra apenas "final de 2023"; selecione o mês real de início nos campos do LinkedIn. O tipo de vínculo não consta na fonte; deixe sem seleção se não for aplicável.

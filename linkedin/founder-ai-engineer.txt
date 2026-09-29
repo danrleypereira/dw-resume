@@ -1,0 +1,56 @@
+DW CORP LTDA
+LinkedIn experience entry — English and Portuguese
+
+ENGLISH
+
+Title: Founder & AI Engineer
+Company: DW Corp LTDA
+Dates: March 2025 – Present
+Location: Brasília, Federal District, Brazil
+Website: https://dwcorp.com.br
+
+Description:
+I founded and lead DW Corp, building AI applications and reusable product foundations while delivering client solutions through fixed-term Forward Deployed Engineer (FDE) engagements.
+
+- Built LangChain/LangGraph agents, including a WhatsApp budget assistant and an event-driven multi-agent bus, behind a shared interface for multiple LLM providers.
+- Built Curupira, a Rust/OIDC authentication platform with multi-tenancy, SSO, and MFA; integrated Stripe and Adyen payments; standardized CI/CD and bare-metal/hybrid-cloud infrastructure with Terraform and Grafana.
+- Hired and mentored 10+ engineers.
+
+TAMP | Forward Deployed Engineer (FDE)
+September 2025 – September 2026 | Fixed-term contract via DW Corp
+Maintained the client's design system across React and Vue microfrontends. Strengthened unit, API, and end-to-end testing with Playwright, Cucumber/Gherkin, Bruno, and Allure, helping raise unit test coverage from below 50% to nearly 97% and move releases from monthly to weekly. Built a reporting platform that cut delivery of new customer-specific reports from months to days, helping secure at least two major deals and retain an at-risk customer.
+
+CBMS | Forward Deployed Engineer (FDE)
+March 2025 – August 2025 | Six-month contract via DW Corp
+Worked directly with directors to modernize a legacy financial system, owning the React application. Co-created a Figma design system and built 30+ reusable components with Tailwind CSS, Radix UI, Storybook, and Chromatic. Contributed to Python/AWS ETL pipelines and integrated real financial data, delivering beyond the MVP within six months. Completed the planned handover and trained the PHP/Twig team in React so they could own and evolve the application.
+
+Suggested skills: Artificial Intelligence; Forward Deployed Engineering; Full-Stack Development; Test Automation; Technical Leadership
+
+PORTUGUÊS
+
+Título: Fundador e Engenheiro de IA
+Empresa: DW Corp LTDA
+Período: Março de 2025 – Atual
+Localidade: Brasília, Distrito Federal, Brasil
+Site: https://dwcorp.com.br
+
+Descrição:
+Fundei e lidero a DW Corp, criando aplicações de IA e bases reutilizáveis para produtos, além de entregar soluções a clientes como Forward Deployed Engineer (FDE) em contratos por prazo determinado.
+
+- Desenvolvi agentes LangChain/LangGraph, incluindo um assistente de orçamento no WhatsApp e um barramento multiagente orientado a eventos, com interface comum para múltiplos provedores de LLM.
+- Criei o Curupira, plataforma Rust/OIDC com multi-tenancy, SSO e MFA; integrei pagamentos Stripe e Adyen; padronizei CI/CD e infraestrutura bare-metal e de nuvem híbrida com Terraform e Grafana.
+- Contratei e ofereci mentoria a mais de 10 engenheiros.
+
+TAMP | Forward Deployed Engineer (FDE)
+Setembro de 2025 – Setembro de 2026 | Contrato por prazo determinado via DW Corp
+Mantive o design system em microfrontends React e Vue. Aprimorei testes unitários, de API e ponta a ponta com Playwright, Cucumber/Gherkin, Bruno e Allure, contribuindo para elevar a cobertura unitária de menos de 50% para quase 97% e passar de entregas mensais para semanais. Criei uma plataforma que reduziu de meses para dias a entrega de novos relatórios personalizados, ajudando a fechar ao menos dois grandes contratos e reter um cliente em risco de saída.
+
+CBMS | Forward Deployed Engineer (FDE)
+Março de 2025 – Agosto de 2025 | Contrato de seis meses via DW Corp
+Trabalhei com diretores na modernização de um sistema financeiro legado, assumindo a aplicação React. Criei um design system no Figma com o diretor de UI/UX e mais de 30 componentes com Tailwind CSS, Radix UI, Storybook e Chromatic. Contribuí para pipelines ETL em Python/AWS e integrei dados financeiros reais, entregando além do MVP em seis meses. Concluí a transição planejada e capacitei a equipe PHP/Twig em React para manter e evoluir a aplicação.
+
+Competências sugeridas: Inteligência Artificial; Forward Deployed Engineering; Desenvolvimento Full-Stack; Automação de Testes; Liderança Técnica
+
+Posting note / Nota para publicação:
+TAMP and CBMS are client engagements under DW Corp, not separate direct employment. FDE describes the work performed. Employment type and remote/hybrid/on-site status are not specified in the source; select those fields according to your actual arrangement.
+TAMP e CBMS são contratos de clientes via DW Corp, sem vínculo empregatício direto descrito aqui. FDE descreve a atuação. O tipo de vínculo e a modalidade remota/híbrida/presencial não constam na fonte; preencha conforme sua situação real.
