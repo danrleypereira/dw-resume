@@ -2,21 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import PersonaSlider from './persona-slider';
 
-test('renders some image from DW', () => {
+test('loads the initial portrait eagerly with responsive sources and reserved dimensions', () => {
   const { container } = render(<PersonaSlider />);
     let images = container.querySelectorAll(".img-flex");
     let imageE = images[0]
-    const sources = [
-        'engineer-min.png',
-        'educator-min.png',
-        'citizen-min.png',
-    ];
-
-    let thereIsImage = false
-    thereIsImage = sources.some((image) => {
-      return imageE.getAttribute('src') === image
-    })
-
-    expect(thereIsImage).toBe(true)
+    expect(imageE).toHaveAttribute('loading', 'eager');
+    expect(imageE).toHaveAttribute('fetchpriority', 'high');
+    expect(imageE).toHaveAttribute('width', '1013');
+    expect(imageE).toHaveAttribute('height', '1265');
+    expect(imageE.getAttribute('srcset')).toContain('480w');
+    expect(imageE.getAttribute('srcset')).toContain('800w');
     expect(imageE).toBeInTheDocument();
 });

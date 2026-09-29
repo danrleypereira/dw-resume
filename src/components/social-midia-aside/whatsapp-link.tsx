@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import whatsapp from 'assets/social-midias/whatsapp.gif';
-import whatsappStill from 'assets/social-midias/whatsapp-still.png';
+import whatsapp from 'assets/social-midias/whatsapp.webp';
+import whatsappStill from 'assets/social-midias/whatsapp-still.webp';
 
 export default function WhatsAppLink() {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ export default function WhatsAppLink() {
     >
       <picture>
         <source media="(prefers-reduced-motion: reduce)" srcSet={whatsappStill} />
-        <img src={whatsapp} alt="" width="56" height="56" loading="lazy" decoding="async" />
+        <img src={whatsapp} alt="" width="56" height="56" loading="lazy" decoding="async" {...{ fetchpriority: 'low' }} />
       </picture>
     </a>
   );

@@ -54,7 +54,9 @@ function SocialMidiaAside() {
               >
                 <img
                   src={midia.icon}
-                  className={`social-midia-icon ${midia.spin && 'spin'}`}
+                  width="48"
+                  height="48"
+                  className={`social-midia-icon${midia.spin ? ' spin' : ''}`}
                   alt={midia.name}
                 />
               </a>

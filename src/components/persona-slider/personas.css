@@ -12,6 +12,7 @@
 
 .persona img {
     object-fit: cover;
+    height: auto;
 }
 
 .persona-title {
@@ -52,4 +53,3 @@
 @media (min-width: 992px) { 
 
  }
-

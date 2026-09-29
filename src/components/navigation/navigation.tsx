@@ -60,7 +60,7 @@ function Navigation() {
             aria-label="menu"
             onClick={() => setOpened(true)}
           >
-            <img src={menuIcon} className="menu-icon" alt="menu" />
+            <img src={menuIcon} className="menu-icon" alt="menu" width="48" height="48" />
           </div>
         )}
       </div>

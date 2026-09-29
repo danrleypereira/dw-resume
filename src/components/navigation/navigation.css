@@ -87,6 +87,7 @@
 
 .menu-icon {
     height: 48px;
+    width: 48px;
     pointer-events: none;
 }
 
@@ -113,6 +114,7 @@
     .menu-icon {
         margin: 0;
         height: 30px;
+        width: 30px;
         display: block;
     }
 

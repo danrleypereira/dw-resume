@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
+import React, { lazy, Suspense, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 import Home from "pages/home/Home";
-import Skills from "pages/skills/Skills";
-import Projects from "pages/projects/Projects";
-import Cv from "pages/cv/Cv";
-import Contact from "pages/contact/Contact";
-
 import "./routes.css";
+
+const Skills = lazy(() => import("pages/skills/Skills"));
+const Projects = lazy(() => import("pages/projects/Projects"));
+const Cv = lazy(() => import("pages/cv/Cv"));
+const Contact = lazy(() => import("pages/contact/Contact"));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -24,6 +24,7 @@ function AnimatedRoutes() {
         unmountOnExit
       >
         <div ref={nodeRef} className="route-wrapper">
+          <Suspense fallback={<div role="progressbar" aria-label="Loading" />}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/habilidades" element={<Skills />} />
@@ -32,6 +33,7 @@ function AnimatedRoutes() {
             <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>
+          </Suspense>
         </div>
       </CSSTransition>
     </SwitchTransition>
