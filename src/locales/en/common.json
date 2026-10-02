@@ -45,7 +45,12 @@
     "linkedin": "LinkedIn",
     "instagram": "Instagram",
     "instagramNote": "Brasília's Software Craftsmanship community.",
-    "website": "Website"
+    "website": "Website",
+    "writingTitle": "Where I write",
+    "arandu": "Arandu",
+    "aranduNote": "Engineering articles at DW Corp.",
+    "recortnews": "RecortNews",
+    "recortnewsNote": "Editor."
   },
   "lang": {
     "label": "Language"

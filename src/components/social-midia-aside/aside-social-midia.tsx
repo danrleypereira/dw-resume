@@ -7,30 +7,31 @@ import facebook from 'assets/social-midias/facebook.svg';
 import linkedin from 'assets/social-midias/linkedin.svg';
 import github from 'assets/social-midias/github.svg';
 import instagram from 'assets/social-midias/instagram.svg';
+import { links } from 'data/links';
 import './aside-social-midia.css';
 import WhatsAppLink from './whatsapp-link';
 
 const socialMidias = [
   {
-    link: "https://github.com/danrleywillyan",
+    link: links.github,
     name: "github icon/link",
     icon: github,
     spin: true
   },
   {
-    link: "https://www.linkedin.com/in/danrleypereira/",
+    link: links.linkedin,
     name: "linkedin icon/link",
     icon: linkedin,
     spin: false
   },
   {
-    link: "https://www.instagram.com/danrleypereira",
+    link: links.instagram,
     name: "instagram icon/link",
     icon: instagram,
     spin: false
   },
   {
-    link: "https://www.facebook.com/danrleywillyan",
+    link: links.facebook,
     name: "facebook icon/link",
     icon: facebook,
     spin: true

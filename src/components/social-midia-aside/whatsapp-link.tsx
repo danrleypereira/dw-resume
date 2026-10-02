@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import whatsapp from 'assets/social-midias/whatsapp.webp';
 import whatsappStill from 'assets/social-midias/whatsapp-still.webp';
+import { links } from 'data/links';
 
 export default function WhatsAppLink() {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ export default function WhatsAppLink() {
   return (
     <a
       className="whatsapp-shortcut"
-      href="https://wa.me/5561994234712"
+      href={links.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t('contact.whatsappAction')}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { displayUrl, links, whatsappUrl } from "data/links";
 import "../page.css";
 import "./contact.css";
 
@@ -14,41 +15,83 @@ type ContactItem = {
 const items: ContactItem[] = [
   {
     key: "whatsapp",
-    value: "+55 61 9 9423-4712",
-    href: "https://api.whatsapp.com/send?phone=5561994234712&text=Hey%2C%20I%20found%20you%20on%20danrleypereira.com",
+    value: links.phone,
+    href: whatsappUrl("Hey, I found you on danrleypereira.com.br"),
     external: true,
   },
   {
     key: "email",
-    value: "danrley.pereira@dwcorp.com.br",
-    href: "mailto:danrley.pereira@dwcorp.com.br",
+    value: links.email,
+    href: `mailto:${links.email}`,
   },
   {
     key: "github",
-    value: "github.com/danrleypereira",
-    href: "https://github.com/danrleypereira",
+    value: displayUrl(links.github),
+    href: links.github,
     external: true,
   },
   {
     key: "linkedin",
-    value: "linkedin.com/in/danrleypereira",
-    href: "https://www.linkedin.com/in/danrleypereira",
+    value: displayUrl(links.linkedin),
+    href: links.linkedin,
     external: true,
   },
   {
     key: "instagram",
-    value: "instagram.com/software_craftsmanship",
-    href: "https://instagram.com/software_craftsmanship",
+    value: displayUrl(links.instagramCommunity),
+    href: links.instagramCommunity,
     external: true,
     noteKey: "contact.instagramNote",
   },
   {
     key: "website",
-    value: "danrleypereira.com",
-    href: "https://danrleypereira.com",
+    value: displayUrl(links.website),
+    href: links.website,
     external: true,
   },
 ];
+
+const writing: ContactItem[] = [
+  {
+    key: "arandu",
+    value: displayUrl(links.aranduAuthor),
+    href: links.aranduAuthor,
+    external: true,
+    noteKey: "contact.aranduNote",
+  },
+  {
+    key: "recortnews",
+    value: displayUrl(links.recortnewsAuthor),
+    href: links.recortnewsAuthor,
+    external: true,
+    noteKey: "contact.recortnewsNote",
+  },
+];
+
+const ContactList = ({ items, rel }: { items: ContactItem[]; rel?: string }) => {
+  const { t } = useTranslation();
+
+  return (
+    <ul className="contact-list">
+      {items.map((item) => (
+        <li key={item.key} className="contact-card">
+          <a
+            href={item.href}
+            {...(item.external
+              ? { target: "_blank", rel: [rel, "noopener noreferrer"].filter(Boolean).join(" ") }
+              : {})}
+          >
+            <span className="contact-label">{t(`contact.${item.key}`)}</span>
+            <span className="contact-value">{item.value}</span>
+            {item.noteKey && (
+              <span className="contact-note">{t(item.noteKey)}</span>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -60,26 +103,11 @@ export default function Contact() {
       <hr className="page-rule" />
 
       <div className="page-body">
-        <ul className="contact-list">
-          {items.map((item, index) => (
-            <li key={index} className="contact-card">
-              <a
-                href={item.href}
-                {...(item.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-              >
-                <span className="contact-label">
-                  {t(`contact.${item.key}`)}
-                </span>
-                <span className="contact-value">{item.value}</span>
-                {item.noteKey && (
-                  <span className="contact-note">{t(item.noteKey)}</span>
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <ContactList items={items} />
+
+        <h2 className="contact-section-title">{t("contact.writingTitle")}</h2>
+        {/* rel="me" tells search engines these author pages describe the same person. */}
+        <ContactList items={writing} rel="me" />
       </div>
     </div>
   );

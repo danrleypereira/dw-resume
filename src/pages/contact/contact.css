@@ -46,3 +46,11 @@
   opacity: 0.75;
   margin-top: 0.15rem;
 }
+
+.contact-section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+  margin: 2rem 0 1rem;
+}
