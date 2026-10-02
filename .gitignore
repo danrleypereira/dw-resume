@@ -35,6 +35,6 @@ cv-overleaf/**/*.aux
 cv-overleaf/**/*.log
 cv-overleaf/**/*.out
 cv-overleaf/**/*.pdf
-# Local-only files, not part of the CV build
-cv-overleaf/Photo.png
-cv-overleaf/Resume_Danrley_english_version.zip
+
+# Firebase CLI deploy cache (local `firebase deploy` only)
+.firebase/
