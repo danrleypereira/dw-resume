@@ -27,4 +27,4 @@ The website is available in English, Portuguese, and Spanish. Interactive pages 
 - [GitHub](https://github.com/danrleypereira): Source code and projects.
 - [Arandu](https://dwcorp.com.br/arandu): Software Craftsmanship community blog.
 - [Arandu author page](https://dwcorp.com.br/arandu/br/autor/danrley-pereira): Engineering articles by Danrley at DW Corp.
-- [RecortNews author page](https://recortnews.com.br/br/autor/danrley-pereira): Articles where Danrley is editor.
+- [RecortNews author page](https://recortnews.com.br/br/autor/danrley-pereira): Articles by Danrley as a journalist.

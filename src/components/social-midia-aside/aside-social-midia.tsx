@@ -50,7 +50,7 @@ function SocialMidiaAside() {
               <a
                 href={midia.link}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 title={midia.name}
               >
                 <img
