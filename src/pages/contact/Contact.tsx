@@ -10,8 +10,6 @@ type ContactItem = {
   href: string;
   external?: boolean;
   noteKey?: string;
-  // rel="me": the page is a profile of mine, so search engines can link the identities.
-  me?: boolean;
 };
 
 const items: ContactItem[] = [
@@ -31,14 +29,12 @@ const items: ContactItem[] = [
     value: displayUrl(links.github),
     href: links.github,
     external: true,
-    me: true,
   },
   {
     key: "linkedin",
     value: displayUrl(links.linkedin),
     href: links.linkedin,
     external: true,
-    me: true,
   },
   {
     key: "instagram",
@@ -61,7 +57,6 @@ const writing: ContactItem[] = [
     value: displayUrl(links.aranduAuthor),
     href: links.aranduAuthor,
     external: true,
-    me: true,
     noteKey: "contact.aranduNote",
   },
   {
@@ -69,7 +64,6 @@ const writing: ContactItem[] = [
     value: displayUrl(links.recortnewsAuthor),
     href: links.recortnewsAuthor,
     external: true,
-    me: true,
     noteKey: "contact.recortnewsNote",
   },
 ];
@@ -84,7 +78,7 @@ const ContactList = ({ items }: { items: ContactItem[] }) => {
           <a
             href={item.href}
             {...(item.external
-              ? { target: "_blank", rel: `${item.me ? "me " : ""}noopener noreferrer` }
+              ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
           >
             <span className="contact-label">{t(`contact.${item.key}`)}</span>

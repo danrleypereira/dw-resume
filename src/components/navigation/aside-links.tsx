@@ -49,7 +49,7 @@ function AsideLinks() {
             key={index}
             href={midia.link}
             target="_blank"
-            rel="me noopener noreferrer"
+            rel="noopener noreferrer"
             title={midia.name}
           >
             <img

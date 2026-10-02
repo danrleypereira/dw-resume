@@ -29,10 +29,9 @@ test.each(['index.html', 'llms.txt'])('public/%s uses the canonical profile link
     .forEach((url) => expect(url).toBe(SITE_URL));
 });
 
-test('public/index.html declares the author pages as rel="me" and in sameAs', () => {
+test('public/index.html lists the author pages in sameAs', () => {
   const html = readPublic('index.html');
   [links.aranduAuthor, links.recortnewsAuthor].forEach((url) => {
-    expect(html).toContain(`<link rel="me" href="${url}" />`);
     expect(html).toContain(`"${url}"`);
   });
 });
