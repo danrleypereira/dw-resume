@@ -1,8 +1,9 @@
-import React, { lazy, Suspense, useRef } from "react";
+import React, { lazy, Suspense, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 import Home from "pages/home/Home";
+import { titleFor } from "data/seo";
 import "./routes.css";
 
 const Skills = lazy(() => import("pages/skills/Skills"));
@@ -13,6 +14,10 @@ const Contact = lazy(() => import("pages/contact/Contact"));
 function AnimatedRoutes() {
   const location = useLocation();
   const nodeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.title = titleFor(location.pathname);
+  }, [location.pathname]);
 
   return (
     <SwitchTransition mode="out-in">
