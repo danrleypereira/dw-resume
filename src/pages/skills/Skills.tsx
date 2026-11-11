@@ -70,6 +70,22 @@ function ProficiencyDots({ level }: { level: number }) {
   );
 }
 
+// Every descendant of a node, so the full catalog is in the DOM without clicks.
+function SkillTree({ id, lang, trail }: { id: string; lang: Lang; trail: string[] }) {
+  const children = childrenOf(id).filter((c) => !trail.includes(c.id));
+  if (!children.length) return null;
+  return (
+    <ul>
+      {children.map((c) => (
+        <li key={c.id}>
+          {c.label[lang]}
+          <SkillTree id={c.id} lang={lang} trail={[...trail, c.id]} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Skills() {
   const { t, i18n } = useTranslation();
   const lang = ((i18n.language || "pt").split("-")[0] || "pt") as Lang;
@@ -221,6 +237,18 @@ export default function Skills() {
           )}
         </aside>
       </div>
+
+      <details className="skills-all">
+        <summary>{t("skills.allTitle")}</summary>
+        <div className="skills-all-body">
+          {roleNodes().map((role) => (
+            <section key={role.id}>
+              <h3>{role.label[lang]}</h3>
+              <SkillTree id={role.id} lang={lang} trail={[role.id]} />
+            </section>
+          ))}
+        </div>
+      </details>
     </div>
   );
 }

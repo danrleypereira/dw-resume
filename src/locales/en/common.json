@@ -19,7 +19,8 @@
     "back": "Back",
     "proficiency": "Proficiency",
     "level": "Level",
-    "selectHint": "Select a node to see details."
+    "selectHint": "Select a node to see details.",
+    "allTitle": "All skills and tools"
   },
   "projects": {
     "title": "Projects",

@@ -270,3 +270,31 @@
     width: 100%;
   }
 }
+
+/* Collapsible full catalog below the graph */
+.skills-all {
+  flex: 0 0 auto;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+.skills-all summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.skills-all-body {
+  max-height: 40vh;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  columns: 3 220px;
+}
+.skills-all-body section {
+  break-inside: avoid;
+}
+.skills-all-body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+.skills-all-body ul {
+  margin: 0;
+  padding-left: 1rem;
+}

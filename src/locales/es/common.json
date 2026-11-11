@@ -19,7 +19,8 @@
     "back": "Atrás",
     "proficiency": "Competencia",
     "level": "Nivel",
-    "selectHint": "Selecciona un nodo para ver los detalles."
+    "selectHint": "Selecciona un nodo para ver los detalles.",
+    "allTitle": "Todas las habilidades y herramientas"
   },
   "projects": {
     "title": "Proyectos",

@@ -19,7 +19,8 @@
     "back": "Voltar",
     "proficiency": "Proficiência",
     "level": "Nível",
-    "selectHint": "Selecione um nó para ver os detalhes."
+    "selectHint": "Selecione um nó para ver os detalhes.",
+    "allTitle": "Todas as habilidades e ferramentas"
   },
   "projects": {
     "title": "Projetos",
