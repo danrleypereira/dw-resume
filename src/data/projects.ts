@@ -90,9 +90,9 @@ export const projects: Project[] = [
     id: "epicor",
     org: "Epicor",
     role: {
-      en: "Senior Software Engineer",
-      es: "Ingeniero de Software Senior",
-      pt: "Engenheiro de Software Sênior",
+      en: "AI Engineer",
+      es: "Ingeniero de IA",
+      pt: "Engenheiro de IA",
     },
     start: "2023-11",
     end: "2025-03",
