@@ -95,7 +95,7 @@ export const projects: Project[] = [
       pt: "Engenheiro de IA",
     },
     start: "2023-11",
-    end: "2025-03",
+    end: "2025-02",
     summary: {
       en: "AI-assisted procurement automation connected to the Epicor ERP.",
       es: "Automatización de compras asistida por IA conectada al ERP de Epicor.",
@@ -235,7 +235,7 @@ export const projects: Project[] = [
       es: "Ingeniero Full-Stack",
       pt: "Engenheiro Full-Stack",
     },
-    start: "2020-07",
+    start: "2020-06",
     end: "2021-08",
     summary: {
       en: "Logistics: transport, delivery and yard management.",
