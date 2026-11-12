@@ -10,7 +10,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - run: npm install --legacy-peer-deps
       - run: npm ci --legacy-peer-deps && npm run build
       - name: Verify CV PDFs in the deployment
