@@ -3,14 +3,14 @@ LinkedIn experience entry — English and Portuguese
 
 ENGLISH
 
-Title: Co-founder & Community Leader
+Title: Community Leader
 Organization: Software Craftsmanship Community Brasília
 Dates: Late 2023 – Present
 Location: Brasília, Federal District, Brazil
 Website / featured link: https://dwcorp.com.br/arandu
 
 Description:
-I co-founded Brasília's first Software Craftsmanship community with my partner and friends, inspired by meeting Sandro Mancuso and Codurance and discovering the global Software Craftsmanship movement.
+I started Brasília's first Software Craftsmanship community with my partner and friends, inspired by meeting Sandro Mancuso and Codurance and discovering the global Software Craftsmanship movement.
 
 I bring developers together to practice their craft, share knowledge, and build better software through hands-on learning.
 
@@ -23,14 +23,14 @@ Suggested skills: Community Building; Mentoring; Test-Driven Development; Extrem
 
 PORTUGUÊS
 
-Título: Cofundador e Líder da Comunidade
+Título: Líder da Comunidade
 Organização: Software Craftsmanship Community Brasília
 Período: Final de 2023 – Atual
 Localidade: Brasília, Distrito Federal, Brasil
 Site / link em destaque: https://dwcorp.com.br/arandu
 
 Descrição:
-Cofundei a primeira comunidade de Software Craftsmanship de Brasília com minha companheira e amigos, inspirado pelo encontro com Sandro Mancuso e a Codurance e pelo movimento global de Software Craftsmanship.
+Criei a primeira comunidade de Software Craftsmanship de Brasília com minha companheira e amigos, inspirado pelo encontro com Sandro Mancuso e a Codurance e pelo movimento global de Software Craftsmanship.
 
 Reúno pessoas desenvolvedoras para aperfeiçoar suas práticas, compartilhar conhecimento e construir software de qualidade por meio do aprendizado prático.
 

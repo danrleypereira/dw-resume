@@ -94,7 +94,7 @@ const profileLinks = () =>
     .join("")}</ul>`;
 
 const homeContent = () =>
-  `<p>Software and AI engineer, founder of DW Corp, based in Brasília, Brazil.</p><ul>${Object.keys(routeSeo)
+  `<p>AI engineer and Forward Deployed Engineer (FDE) at DW Corp, based in Brasília, Brazil.</p><ul>${Object.keys(routeSeo)
     .map((route) => `<li><a href="${route}">${escapeXml(routeSeo[route].title)}</a></li>`)
     .join("")}</ul>`;
 

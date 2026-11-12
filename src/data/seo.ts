@@ -17,7 +17,7 @@ export const routeSeo: Record<string, { title: string; description: string }> = 
   "/curriculo": {
     title: "Résumé — Danrley Pereira",
     description:
-      "Résumé of Danrley Pereira, founder and AI engineer at DW Corp, in English, Portuguese and Spanish, available as PDF.",
+      "Résumé of Danrley Pereira, AI engineer and Forward Deployed Engineer (FDE) at DW Corp, in English, Portuguese and Spanish, available as PDF.",
   },
   "/contato": {
     title: "Contact — Danrley Pereira",

@@ -21,9 +21,9 @@ export const projects: Project[] = [
     id: "dwcorp",
     org: "DW Corp",
     role: {
-      en: "Founder & AI Engineer",
-      es: "Fundador e Ingeniero de IA",
-      pt: "Fundador e Engenheiro de IA",
+      en: "AI Engineer",
+      es: "Ingeniero de IA",
+      pt: "Engenheiro de IA",
     },
     start: "2022-09",
     end: "present",

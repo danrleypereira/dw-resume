@@ -1,8 +1,8 @@
 # Danrley Pereira
 
-> Professional portfolio of Danrley Willyan da Silva Pereira, founder and AI engineer at DW Corp, based in Brasília, Brazil.
+> Professional portfolio of Danrley Willyan da Silva Pereira, AI engineer and Forward Deployed Engineer (FDE) at DW Corp, based in Brasília, Brazil.
 
-Danrley works across full-stack software engineering, AI applications, data pipelines, cloud infrastructure, and technical mentorship. His client work includes fixed-term Forward Deployed Engineer (FDE) engagements. He also co-founded Software Craftsmanship Community Brasília.
+Danrley works across full-stack software engineering, AI applications, data pipelines, cloud infrastructure, and technical mentorship. His client work includes fixed-term Forward Deployed Engineer (FDE) engagements. He also leads Software Craftsmanship Community Brasília.
 
 The website is available in English, Portuguese, and Spanish. Interactive pages require JavaScript; the PDF résumés below can be retrieved directly and contain detailed experience, dates, and technologies. This site publishes professional information, not a hosted agent or callable AI service.
 

@@ -3,21 +3,21 @@ LinkedIn experience entry — English and Portuguese
 
 ENGLISH
 
-Title: Founder & AI Engineer
+Title: AI Engineer
 Company: DW Corp LTDA
 Dates: March 2025 – Present
 Location: Brasília, Federal District, Brazil
 Website: https://dwcorp.com.br
 
 Description:
-I founded and lead DW Corp, building AI applications and reusable product foundations while delivering client solutions through fixed-term Forward Deployed Engineer (FDE) engagements.
+I build AI applications and reusable product foundations at DW Corp, and deliver client solutions through fixed-term Forward Deployed Engineer (FDE) engagements.
 
 - Built LangChain/LangGraph agents, including a WhatsApp budget assistant and an event-driven multi-agent bus, behind a shared interface for multiple LLM providers.
 - Built Curupira, a Rust/OIDC authentication platform with multi-tenancy, SSO, and MFA; integrated Stripe and Adyen payments; standardized CI/CD and bare-metal/hybrid-cloud infrastructure with Terraform and Grafana.
 - Hired and mentored 10+ engineers.
 
 TAMP | Forward Deployed Engineer (FDE)
-September 2025 – September 2026 | Fixed-term contract via DW Corp
+September 2025 – Present | Fixed-term contract via DW Corp
 Maintained the client's design system across React and Vue microfrontends. Strengthened unit, API, and end-to-end testing with Playwright, Cucumber/Gherkin, Bruno, and Allure, helping raise unit test coverage from below 50% to nearly 97% and move releases from monthly to weekly. Built a reporting platform that cut delivery of new customer-specific reports from months to days, helping secure at least two major deals and retain an at-risk customer.
 
 CBMS | Forward Deployed Engineer (FDE)
@@ -28,21 +28,21 @@ Suggested skills: Artificial Intelligence; Forward Deployed Engineering; Full-St
 
 PORTUGUÊS
 
-Título: Fundador e Engenheiro de IA
+Título: Engenheiro de IA
 Empresa: DW Corp LTDA
 Período: Março de 2025 – Atual
 Localidade: Brasília, Distrito Federal, Brasil
 Site: https://dwcorp.com.br
 
 Descrição:
-Fundei e lidero a DW Corp, criando aplicações de IA e bases reutilizáveis para produtos, além de entregar soluções a clientes como Forward Deployed Engineer (FDE) em contratos por prazo determinado.
+Na DW Corp, crio aplicações de IA e bases reutilizáveis para produtos, além de entregar soluções a clientes como Forward Deployed Engineer (FDE) em contratos por prazo determinado.
 
 - Desenvolvi agentes LangChain/LangGraph, incluindo um assistente de orçamento no WhatsApp e um barramento multiagente orientado a eventos, com interface comum para múltiplos provedores de LLM.
 - Criei o Curupira, plataforma Rust/OIDC com multi-tenancy, SSO e MFA; integrei pagamentos Stripe e Adyen; padronizei CI/CD e infraestrutura bare-metal e de nuvem híbrida com Terraform e Grafana.
 - Contratei e ofereci mentoria a mais de 10 engenheiros.
 
 TAMP | Forward Deployed Engineer (FDE)
-Setembro de 2025 – Setembro de 2026 | Contrato por prazo determinado via DW Corp
+Setembro de 2025 – Atual | Contrato por prazo determinado via DW Corp
 Mantive o design system em microfrontends React e Vue. Aprimorei testes unitários, de API e ponta a ponta com Playwright, Cucumber/Gherkin, Bruno e Allure, contribuindo para elevar a cobertura unitária de menos de 50% para quase 97% e passar de entregas mensais para semanais. Criei uma plataforma que reduziu de meses para dias a entrega de novos relatórios personalizados, ajudando a fechar ao menos dois grandes contratos e reter um cliente em risco de saída.
 
 CBMS | Forward Deployed Engineer (FDE)
